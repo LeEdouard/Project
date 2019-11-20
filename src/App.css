@@ -109,6 +109,7 @@ a:hover {
   width: 150px;
   height: 150px;
   transition: 0.3s;
+  cursor: default;
 }
 
 .projet:hover {
@@ -406,6 +407,7 @@ SECOND
 }
 
 .menu {
+  cursor: default;
 }
 
 .second .back {
