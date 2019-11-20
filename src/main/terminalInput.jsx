@@ -5,7 +5,7 @@ class TerminalInput extends Component {
   render() {
     return (
       <form onSubmit={this.props.onSubmit} className="terminal">
-        <span className="mr-1">></span>
+        <span className="ml-1 mr-1 text-white">></span>
         <input
           type="text"
           id="terminalInput"

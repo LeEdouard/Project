@@ -63,13 +63,10 @@ class Main extends Component {
   };
   render() {
     return (
-      <div
-        className="main container-fluid p-0"
-        style={{ opacity: this.state.opacity }}
-      >
-        <div className="row terminal terminalWrap">
+      <div className="main" style={{ opacity: this.state.opacity }}>
+        <div className="terminalWrap">
           <label htmlFor="terminalInput">
-            <h1 className=" terminal">{this.state.h1}</h1>
+            <h1 className=" terminalTxt">{this.state.h1}</h1>
             <TerminalInput
               value={this.state.terminalinput}
               onChange={this.onchange}
@@ -77,7 +74,7 @@ class Main extends Component {
             />
           </label>
         </div>
-        <div className="projets row p-5 justify-content-center">
+        <div className="projets">
           {this.state.projects.map((project, key) => {
             return (
               <Project key={key} project={project} fadeOut={this.fadeout} />
