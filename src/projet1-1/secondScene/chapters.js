@@ -225,9 +225,26 @@ const chapters = [
           "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem dolorem quas, numquam ullam libero aperiam iusto laboriosam, at et, dicta dolor quaerat qui temporibus inventore illum natus enim rerum quia."
       },
       {
-        type: "chart",
-        content:
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem dolorem quas, numquam ullam libero aperiam iusto laboriosam, at et, dicta dolor quaerat qui temporibus inventore illum natus enim rerum quia."
+        type: "bar",
+        content: `{
+          "maxValue": "100",
+          "data": [
+            {
+              "id": "0",
+              "label": "Chocolatine",
+              "value": "50",
+              "bgColor": "blue",
+              "color": "white"
+            },
+            {
+              "id": "1",
+              "label": "Pain au chocolat",
+              "value": "75",
+              "bgColor": "red",
+              "color": "white"
+            }
+          ]
+        }`
       }
     ]
   },

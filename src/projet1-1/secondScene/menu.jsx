@@ -3,7 +3,7 @@ import MenuItems from "./menuItems";
 import { Link as ScrollLink } from "react-scroll";
 import svg from "./svg";
 // import { Link } from "react-router-dom";
-// import DelayLink from "react-delay-link";
+import DelayLink from "react-delay-link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStepBackward } from "@fortawesome/free-solid-svg-icons";
 
@@ -11,16 +11,14 @@ class Menu extends Component {
   state = {};
   render() {
     return (
-      <header className="row">
-        <div className="col-1 back">
-          <FontAwesomeIcon icon={faStepBackward} />
-        </div>
-        <div className="menu row col bg-white shadow border-bottom border-dark justify-content-center">
-          {/* <DelayLink delay={500} to="" clickAction={this.props.fadeOut}>
-          <div className="back">
+      <header className="bg-white shadow border-bottom border-dark p-1">
+        <div className="back border-right">
+          <DelayLink delay={500} to="" clickAction={this.props.fadeOut}>
             <FontAwesomeIcon icon={faStepBackward} />
-          </div>
-        </DelayLink> */}
+          </DelayLink>
+        </div>
+
+        <div className="menu p-1">
           {this.props.chapters.map((chapter, key) => {
             return <MenuItems key={key} chapter={chapter} />;
           })}
@@ -32,7 +30,7 @@ class Menu extends Component {
             duration={500}
             // onClick={this.changeURL.bind(this)}
             // className={this.activeClass()}
-            className="menuItem col-3 col-sm-2 col-md-2 col-lg-1 m-2 p-0"
+            className="menuItem"
           >
             <div className="menuItemFix">
               <div

@@ -15,7 +15,7 @@ class TextType extends Component {
       css: TypeCode,
       javascript: TypeCode,
       quote: TypeQuote,
-      chart: TypeChart
+      bar: TypeChart
       // type image
     };
     const CompVar = types[type];

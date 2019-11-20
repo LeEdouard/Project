@@ -26,7 +26,7 @@ class menuItems extends Component {
         duration={500}
         // onClick={this.changeURL.bind(this)}
         // className={this.activeClass()}
-        className="menuItem col-3 col-sm-2 col-md-2 col-lg-1 m-2 p-0"
+        className="menuItem"
       >
         <div className="menuItemFix">
           <div

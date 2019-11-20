@@ -1,44 +1,30 @@
 import React, { Component } from "react";
-import { blue } from "ansi-colors";
 
 class TypeChart extends Component {
-  state = {
-    data: [
-      {
-        id: 0,
-        label: "label_1",
-        value: 50,
-        bgColor: "blue",
-        color: "white"
-      },
-      {
-        id: 1,
-        label: "label_2",
-        value: 75,
-        bgColor: "red",
-        color: "white"
-      }
-    ],
-    maxValue: 100
-  };
+  state = {};
   render() {
-    const { content, type } = this.props;
-
+    const { content } = this.props;
+    const parsed = JSON.parse(content);
     return (
-      <div className="border">
-        {this.state.data.map(elem => {
+      <div className="border-right">
+        {parsed.data.map((elem, key) => {
           return (
-            <p
-              className="border"
-              style={{
-                width: `${elem.value}%`,
-                height: 100,
-                background: elem.bgColor,
-                color: elem.color
-              }}
-            >
-              <p style={{ overflow: "break-word" }}>{JSON.stringify(elem)}</p>
-            </p>
+            <div key={key} className="row">
+              <div className="bar-label col-2 border-bottom border-top">
+                {elem.label}
+              </div>
+              <div className="col-10">
+                <div
+                  className="bar border-bottom border-top"
+                  style={{
+                    width: `${(elem.value / parsed.maxValue) * 100}%`,
+                    height: 100,
+                    background: elem.bgColor,
+                    color: elem.color
+                  }}
+                ></div>
+              </div>
+            </div>
           );
         })}
       </div>
