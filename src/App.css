@@ -420,6 +420,9 @@ SECOND
 .back > * {
   transform: scale(2);
 }
+.back:hover > * {
+  transform: scale(2.5);
+}
 
 .menu {
   cursor: default;
