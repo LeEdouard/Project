@@ -18,9 +18,9 @@ class Projet12 extends Component {
           transition: "1s"
         }}
       >
-        <header>Header</header>
+        <header>Rien d'interressant</header>
         <Listing />
-        <footer>footer</footer>
+        <footer>-----------</footer>
       </div>
     );
   }

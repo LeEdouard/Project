@@ -687,3 +687,12 @@ PROEJT 1-2
   background: white;
   margin: 10% auto;
 }
+
+@media screen and (max-width: 600px) {
+  .genre {
+    display: none;
+  }
+  .unit {
+    grid-template-columns: 4fr 4fr;
+  }
+}

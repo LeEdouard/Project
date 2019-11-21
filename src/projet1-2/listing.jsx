@@ -152,9 +152,9 @@ class Listing extends Component {
               data-picture={elem.picture}
               onClick={this.onclick}
             >
-              <div className="border-right">{elem.title}</div>
-              <div className="border-right">{elem.genre}</div>
-              <div className="border-right text-center">
+              <div className="border-right title">{elem.title}</div>
+              <div className="border-right genre">{elem.genre}</div>
+              <div className="border-right text-center rating">
                 {starArr.map((nbr, key) => {
                   if (nbr === 1) {
                     return <FontAwesomeIcon key={key} icon={fasStar} />;
