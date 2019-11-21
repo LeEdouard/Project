@@ -120,9 +120,9 @@ class Listing extends Component {
               placeholder="Search by name or genre"
             />
           </form>
-          <button onClick={this.sortChange} className="btn btn-primary">
+          {/* <button onClick={this.sortChange} className="btn btn-primary">
             Changer l'order
-          </button>
+          </button> */}
         </div>
         {db.sort(this.compare).map((elem, key) => {
           return (
