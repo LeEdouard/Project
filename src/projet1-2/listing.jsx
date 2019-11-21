@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import db from "./db.js";
 // import $ from "jquery";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar as fasStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar } from "@fortawesome/free-regular-svg-icons";
+// import { faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
 
 class Listing extends Component {
   state = {
@@ -12,8 +16,10 @@ class Listing extends Component {
 
   onsubmit = e => {
     e.preventDefault();
-    const aaa = document.getElementsByClassName("unit");
-    for (const elem of aaa) {
+    console.log(true);
+
+    const unitList = document.getElementsByClassName("unit");
+    for (const elem of unitList) {
       if (
         elem.attributes["data-name"].value
           .toLowerCase()
@@ -31,6 +37,9 @@ class Listing extends Component {
         elem.style["border"] = "none";
       }
     }
+    this.setState({ input: "" });
+    console.log(this.state.input);
+
     // $.ajax({
     //   url: "https://sg.media-imdb.com/suggests/a/aa.json",
     //   dataType: "jsonp",
@@ -125,6 +134,13 @@ class Listing extends Component {
           </button> */}
         </div>
         {db.sort(this.compare).map((elem, key) => {
+          let starArr = [];
+          for (let index = 0; index < elem.rating; index++) {
+            starArr.push(1);
+          }
+          for (let index = 0; index < 5 - elem.rating; index++) {
+            starArr.push(0);
+          }
           return (
             <div
               key={key}
@@ -138,7 +154,15 @@ class Listing extends Component {
             >
               <div className="border-right">{elem.title}</div>
               <div className="border-right">{elem.genre}</div>
-              <div className="border-right">{elem.rating}</div>
+              <div className="border-right text-center">
+                {starArr.map((nbr, key) => {
+                  if (nbr === 1) {
+                    return <FontAwesomeIcon key={key} icon={fasStar} />;
+                  } else {
+                    return <FontAwesomeIcon key={key} icon={faStar} />;
+                  }
+                })}
+              </div>
             </div>
           );
         })}
