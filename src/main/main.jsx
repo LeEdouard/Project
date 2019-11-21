@@ -45,7 +45,7 @@ class Main extends Component {
     } else if (folder === "2019") {
       window.location = "/2019";
     } else if (folder === "secretfolder") {
-      this.setState({ h1: "Baited! No secret folder for you!" });
+      this.setState({ h1: "Baited!" });
     } else if (firstTwo === "cd") {
       this.setState({ h1: "No such file or directory" });
     } else if (this.state.terminalinput === "clear") {

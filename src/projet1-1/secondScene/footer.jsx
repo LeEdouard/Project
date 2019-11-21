@@ -218,6 +218,23 @@ class Footer extends Component {
             responsive, ---------------------mettre le tout en composant pour
             pouvoir avoir plusieurs projets qu'on peut cliquer à l'accueil(de
             style mur avec des tableaus où l'on rentre dedans) */}
+            {/* <form action="">
+              <input type="text" placeholder="votre titre" />
+              <div>
+                <select name="" id="">
+                  <option value="">1</option>
+                  <option value="">2</option>
+                </select>
+                <textarea
+                  name=""
+                  id=""
+                  cols="30"
+                  rows="10"
+                  placeholder="1er paragraph"
+                ></textarea>
+                <button>Ajouter un 2e paragraph</button>
+              </div>
+            </form> */}
           </div>
         </div>
       </footer>
