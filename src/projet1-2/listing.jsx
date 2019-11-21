@@ -133,39 +133,41 @@ class Listing extends Component {
             Changer l'order
           </button> */}
         </div>
-        {db.sort(this.compare).map((elem, key) => {
-          let starArr = [];
-          for (let index = 0; index < elem.rating; index++) {
-            starArr.push(1);
-          }
-          for (let index = 0; index < 5 - elem.rating; index++) {
-            starArr.push(0);
-          }
-          return (
-            <div
-              key={key}
-              className="unit"
-              data-name={elem.title}
-              data-genre={elem.genre}
-              data-rating={elem.rating}
-              data-review={elem.review}
-              data-picture={elem.picture}
-              onClick={this.onclick}
-            >
-              <div className="border-right title">{elem.title}</div>
-              <div className="border-right genre">{elem.genre}</div>
-              <div className="border-right text-center rating">
-                {starArr.map((nbr, key) => {
-                  if (nbr === 1) {
-                    return <FontAwesomeIcon key={key} icon={fasStar} />;
-                  } else {
-                    return <FontAwesomeIcon key={key} icon={faStar} />;
-                  }
-                })}
+        <div className="tableau">
+          {db.sort(this.compare).map((elem, key) => {
+            let starArr = [];
+            for (let index = 0; index < elem.rating; index++) {
+              starArr.push(1);
+            }
+            for (let index = 0; index < 5 - elem.rating; index++) {
+              starArr.push(0);
+            }
+            return (
+              <div
+                key={key}
+                className="unit"
+                data-name={elem.title}
+                data-genre={elem.genre}
+                data-rating={elem.rating}
+                data-review={elem.review}
+                data-picture={elem.picture}
+                onClick={this.onclick}
+              >
+                <div className="border-right title">{elem.title}</div>
+                <div className="border-right genre">{elem.genre}</div>
+                <div className="border-right text-center rating">
+                  {starArr.map((nbr, key) => {
+                    if (nbr === 1) {
+                      return <FontAwesomeIcon key={key} icon={fasStar} />;
+                    } else {
+                      return <FontAwesomeIcon key={key} icon={faStar} />;
+                    }
+                  })}
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
         {/* <div id="popup" onClick={this.onclickfade}>
           <div id="popup_window">
             <div id="popup_title"></div>

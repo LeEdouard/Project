@@ -646,6 +646,11 @@ PROEJT 1-2
 
 
 */
+.tableau {
+  border: 10px solid red;
+  min-height: 300px;
+}
+
 .unit {
   transition: 0.5s;
   border: 1px solid black;
@@ -654,14 +659,18 @@ PROEJT 1-2
   grid-template-columns: 4fr 4fr 1fr;
   border-radius: 2px;
 }
-
+/* @font-face {
+  font-family: movie;
+  src: url(./font/SF_Movie_Poster.ttf);
+} */
 .unit > * {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  /* font-family: movie; */
 }
 
-.div_thumbnail {
+/* .div_thumbnail {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -686,8 +695,13 @@ PROEJT 1-2
   width: 300px;
   background: white;
   margin: 10% auto;
-}
+} */
 
+@media screen and (max-width: 900px) {
+  .unit {
+    grid-template-columns: 4fr 4fr 2fr;
+  }
+}
 @media screen and (max-width: 600px) {
   .genre {
     display: none;
