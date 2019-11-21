@@ -41,7 +41,7 @@ a:hover {
 }
 .terminalWrap {
   background: rgb(43, 5, 28);
-  height: 65px;
+  height: 85px;
 }
 .terminalTxt {
   padding: 3px;
@@ -49,7 +49,7 @@ a:hover {
   /* color: #39d695; */
   color: white;
   text-shadow: 2px 2px 1px hsla(155, 55%, 28%, 0.568);
-  font-size: calc(10px + 2vh);
+  font-size: calc(25px);
   font-family: terminal;
 }
 
@@ -58,6 +58,8 @@ a:hover {
   color: white;
   border: none;
   width: 90%;
+  font-size: calc(25px);
+  font-family: terminal;
 }
 .main input:focus {
   outline: none;

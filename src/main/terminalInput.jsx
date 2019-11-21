@@ -12,9 +12,10 @@ class TerminalInput extends Component {
           onChange={this.props.onChange}
           autoFocus
           value={this.props.value}
-          maxLength="15"
+          maxLength="25"
           autoComplete="off"
           placeholder="help"
+          spellCheck="false"
         />
       </form>
     );

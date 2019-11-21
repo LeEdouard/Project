@@ -136,7 +136,7 @@ class Footer extends Component {
     return (
       <footer red="form" name="form" className="row m-0">
         <div className="col p-0">
-          <div className="row justify-content-center">
+          <div className="row justify-content-center m-0">
             <div
               style={{
                 transform: `rotateX(${this.state.rotate}deg) skew(${this.state.skew2}deg)`
@@ -174,7 +174,7 @@ class Footer extends Component {
               }}
             ></div> */}
           </div>
-          <div className="row  bg-white text-dark justify-content-center">
+          <div className="w-100 bg-white text-dark justify-content-center">
             contact@edouard-dev.com
             {/* <form
               onSubmit={this.submit}

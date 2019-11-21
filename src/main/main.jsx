@@ -64,16 +64,14 @@ class Main extends Component {
   render() {
     return (
       <div className="main" style={{ opacity: this.state.opacity }}>
-        <div className="terminalWrap">
-          <label htmlFor="terminalInput">
-            <h1 className=" terminalTxt">{this.state.h1}</h1>
-            <TerminalInput
-              value={this.state.terminalinput}
-              onChange={this.onchange}
-              onSubmit={this.onsubmit}
-            />
-          </label>
-        </div>
+        <label className="terminalWrap w-100" htmlFor="terminalInput">
+          <h1 className=" terminalTxt">{this.state.h1}</h1>
+          <TerminalInput
+            value={this.state.terminalinput}
+            onChange={this.onchange}
+            onSubmit={this.onsubmit}
+          />
+        </label>
         <div className="projets">
           {this.state.projects.map((project, key) => {
             return (

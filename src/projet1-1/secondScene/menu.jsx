@@ -24,12 +24,9 @@ class Menu extends Component {
           })}
           <ScrollLink
             to="form"
-            // activeClass="menuItemActive" //doesn't work somehow
             smooth={true}
             offset={-150}
             duration={500}
-            // onClick={this.changeURL.bind(this)}
-            // className={this.activeClass()}
             className="menuItem"
           >
             <div className="menuItemFix">
@@ -38,17 +35,14 @@ class Menu extends Component {
                 dangerouslySetInnerHTML={{ __html: svg.menuIcons.contact }}
                 style={{
                   background: "white"
-                  //   color: chapter.color
                 }}
               ></div>
               <div
                 className="menuItemBack"
                 style={{
                   background: "white"
-                  //   color: chapter.color
                 }}
               >
-                {/* {chapter.name} */}
                 Contact
               </div>
             </div>
