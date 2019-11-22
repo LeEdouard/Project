@@ -4,14 +4,12 @@ import SliderButton from "./sliderButton";
 class SliderMove extends Component {
   state = {
     width: 0,
-    btnClass: "sliderButton btnBlink",
     btnOpacity: 1
   };
 
   unzip = () => {
     this.setState({
-      width: 100,
-      btnClass: "sliderButton"
+      width: 100
     });
     setTimeout(() => {
       this.props.fadingOut();
@@ -31,7 +29,6 @@ class SliderMove extends Component {
           btnWidth={this.props.btnWidth}
           btnOpacity={this.state.btnOpacity}
           unzip={this.unzip}
-          className={this.state.btnClass}
         />
       </div>
     );

@@ -4,7 +4,7 @@ import SliderMove from "./sliderMove";
 class Slider extends Component {
   state = {
     exist: true,
-    btnWidth: 50,
+    btnWidth: 75,
     opacity: 1
   };
   fadingOut = () => {

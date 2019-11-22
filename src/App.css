@@ -325,9 +325,9 @@ FIRST
 }
 
 .slider {
-  height: 4%;
+  height: 10%;
   position: fixed;
-  top: 48%;
+  top: 45%;
   left: 15px;
   width: 100%;
   z-index: 1000;
@@ -353,13 +353,18 @@ FIRST
   color: black;
 }
 
-.btnBlink {
+.btnbtn {
   animation: blink 1s linear infinite;
 }
 
 @keyframes blink {
-  50% {
-    width: 40px;
+  25% {
+    /* width: 5px; */
+    transform: translateX(1rem) scale(4);
+  }
+  75% {
+    /* width: 5px; */
+    transform: translateX(-0.7rem) scale(4);
   }
 }
 

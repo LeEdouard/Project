@@ -21,7 +21,7 @@ class SliderButton extends Component {
   render() {
     return (
       <div
-        className={this.props.className}
+        className="sliderButton"
         style={{
           width: `${this.props.btnWidth}px`,
           opacity: this.props.btnOpacity
@@ -31,7 +31,8 @@ class SliderButton extends Component {
         onMouseOut={this.mouseOuting}
       >
         <FontAwesomeIcon
-          style={{ transform: "scale(2.3)" }}
+          className="btnbtn"
+          style={{ transform: "scale(4)" }}
           icon={this.state.hovered ? faAngleDoubleRight : faAngleRight}
         />
       </div>
