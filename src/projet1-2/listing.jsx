@@ -17,46 +17,46 @@ class Listing extends Component {
 
   componentDidMount() {}
 
-  // onsubmit = e => {
-  //   e.preventDefault();
-  //   const unitList = document.getElementsByClassName("unit");
-  //   let counting = 0;
-  //   for (const elem of unitList) {
-  //     if (
-  //       elem.attributes["data-drug"].value
-  //         .toLowerCase()
-  //         .includes(this.state.input.toLowerCase()) ||
-  //       elem.attributes["data-company"].value
-  //         .toLowerCase()
-  //         .includes(this.state.input.toLowerCase())
-  //     ) {
-  //       elem.style["opacity"] = "1";
-  //       elem.style["height"] = "3.15rem";
-  //       elem.style["border"] = "1px solid black";
-  //       counting = counting + 1;
-  //     } else {
-  //       elem.style["opacity"] = "0";
-  //       elem.style["height"] = "0em";
-  //       elem.style["border"] = "none";
-  //     }
-  //   }
-  //   this.setState({ empty: false });
-  //   if (counting === 0) {
-  //     this.setState({ empty: true });
-  //   }
+  onsubmit = e => {
+    e.preventDefault();
+    const unitList = document.getElementsByClassName("unit");
+    let counting = 0;
+    for (const elem of unitList) {
+      if (
+        elem.attributes["data-drug"].value
+          .toLowerCase()
+          .includes(this.state.input.toLowerCase()) ||
+        elem.attributes["data-company"].value
+          .toLowerCase()
+          .includes(this.state.input.toLowerCase())
+      ) {
+        elem.style["opacity"] = "1";
+        elem.style["height"] = "3.15rem";
+        elem.style["border"] = "1px solid black";
+        counting = counting + 1;
+      } else {
+        elem.style["opacity"] = "0";
+        elem.style["height"] = "0em";
+        elem.style["border"] = "none";
+      }
+    }
+    this.setState({ empty: false });
+    if (counting === 0) {
+      this.setState({ empty: true });
+    }
 
-  // this.setState({ input: "" });
+    // this.setState({ input: "" });
 
-  // $.ajax({
-  //   url: "https://sg.media-imdb.com/suggests/a/aa.json",
-  //   dataType: "jsonp",
-  //   cache: true,
-  //   jsonp: false,
-  //   jsonpCallback: "imdb$aa"
-  // }).then(function(results) {
-  //   console.log(results);
-  // });
-  // };
+    // $.ajax({
+    //   url: "https://sg.media-imdb.com/suggests/a/aa.json",
+    //   dataType: "jsonp",
+    //   cache: true,
+    //   jsonp: false,
+    //   jsonpCallback: "imdb$aa"
+    // }).then(function(results) {
+    //   console.log(results);
+    // });
+  };
 
   // onclick = e => {
   //   console.log(e.target.parentElement);
@@ -76,10 +76,9 @@ class Listing extends Component {
   //   }
   // };
 
-  // onchange = e => {
-  //   this.setState({ input: e.target.value });
-  //   console.log(this.state.input);
-  // };
+  onchange = e => {
+    this.setState({ input: e.target.value });
+  };
 
   alphaSortAsc = (a, b) => {
     if (this.state.sortType === "price" || this.state.sortType === "rating") {
@@ -108,6 +107,12 @@ class Listing extends Component {
   compare = this.state.compare === "alphaSortAsc" ? this.alphaSortAsc : null;
 
   sortChange = e => {
+    const unitList = document.getElementsByClassName("unit");
+    for (const elem of unitList) {
+      elem.style["opacity"] = "1";
+      elem.style["height"] = "3.15rem";
+      elem.style["border"] = "1px solid black";
+    }
     if (this.state.compare === "alphaSortAsc") {
       this.setState({ compare: "alphaSortDesc" });
     } else {
@@ -125,7 +130,7 @@ class Listing extends Component {
     return (
       <div className="listing">
         <div className="filter_zone">
-          {/* <form onSubmit={this.onsubmit}>
+          <form onSubmit={this.onsubmit}>
             <input
               type="text"
               onChange={this.onchange}
@@ -140,7 +145,7 @@ class Listing extends Component {
                 height: 0
               }}
             />
-          </form> */}
+          </form>
           <input
             onClick={this.sortChange}
             data-type="drug"
