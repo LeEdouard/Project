@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import Listing from "./listing";
+import DelayLink from "react-delay-link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStepBackward } from "@fortawesome/free-solid-svg-icons";
 
 class Projet12 extends Component {
   state = {
@@ -8,18 +11,29 @@ class Projet12 extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({ opacity: 1 });
-    }, 200);
+    }, 0);
   }
+  fadeout = () => {
+    setTimeout(() => {
+      this.setState({ opacity: 0 });
+    }, 0);
+  };
   render() {
     return (
       <div
         className="projet12"
         style={{
-          opacity: this.state.opacity,
-          transition: "1s"
+          opacity: this.state.opacity
         }}
       >
-        <header>Les médicaments</header>
+        <header>
+          <div className="back">
+            <DelayLink delay={500} to="" clickAction={this.fadeout}>
+              <FontAwesomeIcon icon={faStepBackward} />
+            </DelayLink>
+          </div>
+          <h1>Les médicaments</h1>
+        </header>
         <Listing />
         <footer>-----------</footer>
       </div>

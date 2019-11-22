@@ -437,10 +437,10 @@ SECOND
   justify-content: center;
 }
 
-.back > * {
+.second .back > * {
   transform: scale(2);
 }
-.back:hover > * {
+.second .back:hover > * {
   transform: scale(2.5);
 }
 
@@ -672,12 +672,27 @@ PROEJT 1-2
   left: 0;
   right: 0;
   bottom: 0;
+  transition: 0.5s;
 }
 
 .projet12 header {
   background: rgb(126, 0, 0);
   color: gold;
   font-size: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 9fr;
+}
+
+.projet12 .back {
+  color: gold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.projet12 .back:hover {
+  transform: scale(1.2);
 }
 
 .listing {
@@ -685,12 +700,22 @@ PROEJT 1-2
 }
 .filter_zone {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 
 @media screen and (min-width: 500px) {
   .filter_zone {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media screen and (min-width: 900px) {
+  .filter_zone {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .filter_zone {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 }
 /* @media screen and (max-width: 1080) {
@@ -709,16 +734,14 @@ PROEJT 1-2
   border: 10px solid rgb(126, 0, 0);
   min-height: 700px;
   min-width: 200px;
-  padding: 20px;
   color: white;
 }
 
 .unit {
   transition: 0.5s;
   border: 1px solid black;
-  height: 1.5em;
-  display: grid;
-  grid-template-columns: 4fr 4fr 1fr;
+  /* display: grid; */
+  grid-template-columns: 3fr 3fr 1fr 1fr;
   border-radius: 3px;
   padding-left: 5px;
   color: black;
@@ -734,6 +757,30 @@ PROEJT 1-2
   /* font-family: movie; */
 }
 
+.unit .price:after {
+  content: "€";
+}
+
+.unit .full {
+  display: block;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+@media screen and (max-width: 960px) {
+  .company {
+    display: none;
+  }
+  .unit {
+    font-size: 2vh;
+  }
+}
+@media screen and (max-width: 360px) {
+  .unit {
+    font-size: 1.7vh;
+  }
+}
 .projet12 .empty {
   width: 100%;
   height: 660px;
@@ -772,17 +819,3 @@ PROEJT 1-2
   background: white;
   margin: 10% auto;
 } */
-
-@media screen and (max-width: 900px) {
-  .unit {
-    grid-template-columns: 4fr 4fr 2fr;
-  }
-}
-@media screen and (max-width: 600px) {
-  .company {
-    display: none;
-  }
-  .unit {
-    grid-template-columns: 4fr 4fr;
-  }
-}
