@@ -178,7 +178,9 @@ class Listing extends Component {
           />
         </div>
         <div className="tableau bg-dark">
-          <div className="curtain" style={this.state.curtainStyle}></div>
+          <div className="curtain" style={this.state.curtainStyle}>
+            <div className="papier"></div>
+          </div>
           {listeFilm.map((elem, key) => {
             let starArr = [];
             for (let index = 0; index < elem.rating; index++) {

@@ -822,6 +822,8 @@ PROEJT 1-2
 
 .curtain {
   background-image: url("./img/garage_door.jpeg");
+  background-repeat: repeat, no-repeat;
+  background-position: left top, center top;
   position: fixed;
   top: -100%;
   bottom: 100%;
@@ -829,4 +831,15 @@ PROEJT 1-2
   right: 0;
   z-index: 9999;
   transition: 1s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: bottom;
+}
+.papier {
+  background-image: url("./img/garadedoor.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 450px;
+  height: 100%;
 }
