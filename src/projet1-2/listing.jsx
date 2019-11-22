@@ -97,9 +97,9 @@ class Listing extends Component {
 
     let comparison = 0;
     if (genreA > genreB) {
-      comparison = -1;
-    } else if (genreA < genreB) {
       comparison = 1;
+    } else if (genreA < genreB) {
+      comparison = -1;
     }
     return comparison;
   };
@@ -119,6 +119,11 @@ class Listing extends Component {
   };
 
   render() {
+    const listeFilm =
+      this.state.compare === "alphaSortAsc"
+        ? db.sort(this.compare)
+        : db.sort(this.compare).reverse();
+
     return (
       <div className="listing">
         <div>
@@ -128,13 +133,15 @@ class Listing extends Component {
               onChange={this.onchange}
               placeholder="Search by name or genre"
             />
+            <input
+              type="submit"
+              style={{ visibility: "hidden", position: "absolute" }}
+            />
           </form>
-          {/* <button onClick={this.sortChange} className="btn btn-primary">
-            Changer l'order
-          </button> */}
+          <input onClick={this.sortChange} type="submit" value="Sorting" />
         </div>
         <div className="tableau">
-          {db.sort(this.compare).map((elem, key) => {
+          {listeFilm.map((elem, key) => {
             let starArr = [];
             for (let index = 0; index < elem.rating; index++) {
               starArr.push(1);

@@ -73,12 +73,17 @@ class Main extends Component {
           />
         </label>
         <div className="projets">
-          {this.state.projects.map((project, key) => {
-            return (
-              <Project key={key} project={project} fadeOut={this.fadeout} />
-            );
-          })}
-          <div className="projet projet1 m-1">...</div>
+          <div className="project_wrap">
+            {this.state.projects.map((project, key) => {
+              return (
+                <Project key={key} project={project} fadeOut={this.fadeout} />
+              );
+            })}
+            <div className="projet projet1 m-1">...</div>
+            <div className="projet projet1 m-1">...</div>
+            <div className="projet projet1 m-1">...</div>
+            <div className="projet projet1 m-1">...</div>
+          </div>
         </div>
       </div>
     );

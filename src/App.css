@@ -93,7 +93,21 @@ a:hover {
   justify-content: center;
   text-align: center;
   min-height: 500px;
-  overflow-wrap: break-word;
+}
+.project_wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+@media screen and (max-width: 900px) {
+  .project_wrap {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media screen and (max-width: 600px) {
+  .project_wrap {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .projet {
@@ -660,6 +674,7 @@ PROEJT 1-2
 .tableau {
   border: 10px solid red;
   min-height: 300px;
+  min-width: 200px;
 }
 
 .unit {
