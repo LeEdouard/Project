@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as fasStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 // import { faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
+import { faFrown } from "@fortawesome/free-regular-svg-icons";
 
 class Listing extends Component {
   state = {
@@ -18,8 +19,6 @@ class Listing extends Component {
 
   onsubmit = e => {
     e.preventDefault();
-    console.log(true);
-
     const unitList = document.getElementsByClassName("unit");
     let counting = 0;
     for (const elem of unitList) {
@@ -116,7 +115,7 @@ class Listing extends Component {
 
     return (
       <div className="listing">
-        <div>
+        <div className="filter_zone">
           <form onSubmit={this.onsubmit}>
             <input
               type="text"
@@ -181,7 +180,17 @@ class Listing extends Component {
               </div>
             );
           })}
-          {this.state.empty ? <div>YA RIEN</div> : null}
+          {this.state.empty ? (
+            <div className="empty">
+              <span>Recherche infructueuse</span>
+              <div>
+                <FontAwesomeIcon
+                  icon={faFrown}
+                  style={{ transform: "scale(5)" }}
+                />
+              </div>
+            </div>
+          ) : null}
         </div>
         {/* <div id="popup" onClick={this.onclickfade}>
           <div id="popup_window">
