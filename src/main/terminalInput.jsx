@@ -17,6 +17,10 @@ class TerminalInput extends Component {
           placeholder="help"
           spellCheck="false"
         />
+        <input
+          type="submit"
+          style={{ visibility: "hidden", position: "absolute" }}
+        />
       </form>
     );
   }
