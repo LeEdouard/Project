@@ -44,7 +44,9 @@ class Listing extends Component {
     if (counting === 0) {
       this.setState({ empty: true });
     }
-    this.setState({ input: "" });
+    console.log(this.state.input);
+
+    // this.setState({ input: "" });
 
     // $.ajax({
     //   url: "https://sg.media-imdb.com/suggests/a/aa.json",
@@ -77,6 +79,7 @@ class Listing extends Component {
 
   onchange = e => {
     this.setState({ input: e.target.value });
+    console.log(this.state.input);
   };
 
   alphaSortAsc = (a, b) => {
@@ -199,6 +202,7 @@ class Listing extends Component {
                     if (nbr === 1) {
                       return (
                         <svg
+                          key={key}
                           style={{ width: "1rem" }}
                           version="1.1"
                           id="Capa_1"
@@ -240,6 +244,7 @@ class Listing extends Component {
                     } else {
                       return (
                         <svg
+                          key={key}
                           style={{ width: "1rem" }}
                           version="1.1"
                           id="Capa_1"

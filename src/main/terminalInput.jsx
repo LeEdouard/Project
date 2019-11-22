@@ -19,7 +19,12 @@ class TerminalInput extends Component {
         />
         <input
           type="submit"
-          style={{ visibility: "hidden", position: "absolute" }}
+          style={{
+            visibility: "hidden",
+            position: "absolute",
+            width: 0,
+            height: 0
+          }}
         />
       </form>
     );
