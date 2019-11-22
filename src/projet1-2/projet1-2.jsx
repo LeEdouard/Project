@@ -19,7 +19,7 @@ class Projet12 extends Component {
           transition: "1s"
         }}
       >
-        <header>Rien d'interressant à regarder</header>
+        <header>Les médicaments</header>
         <Listing />
         <footer>-----------</footer>
       </div>

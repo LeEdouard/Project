@@ -701,7 +701,7 @@ PROEJT 1-2
 
 .listing input,
 .listing form {
-  color: goldenrod;
+  color: rgb(131, 100, 21);
   width: 100%;
 }
 
@@ -779,7 +779,7 @@ PROEJT 1-2
   }
 }
 @media screen and (max-width: 600px) {
-  .genre {
+  .company {
     display: none;
   }
   .unit {

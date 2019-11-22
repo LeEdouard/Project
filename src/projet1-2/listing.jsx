@@ -11,7 +11,7 @@ class Listing extends Component {
   state = {
     input: "",
     compare: "alphaSortAsc",
-    sortType: "title",
+    sortType: "drug",
     empty: false
   };
 
@@ -23,10 +23,10 @@ class Listing extends Component {
     let counting = 0;
     for (const elem of unitList) {
       if (
-        elem.attributes["data-name"].value
+        elem.attributes["data-drug"].value
           .toLowerCase()
           .includes(this.state.input.toLowerCase()) ||
-        elem.attributes["data-genre"].value
+        elem.attributes["data-company"].value
           .toLowerCase()
           .includes(this.state.input.toLowerCase())
       ) {
@@ -62,8 +62,8 @@ class Listing extends Component {
 
   //   document.getElementById("popup").style["display"] = "flex";
 
-  //   document.getElementById("popup_title").innerText =
-  //     e.target.parentElement.attributes["data-name"].value;
+  //   document.getElementById("popup_drug").innerText =
+  //     e.target.parentElement.attributes["data-drug"].value;
 
   //   document.getElementById("popup_img").src =
   //     e.target.parentElement.attributes["data-picture"].value;
@@ -120,7 +120,7 @@ class Listing extends Component {
             <input
               type="text"
               onChange={this.onchange}
-              placeholder="Search by name or genre"
+              placeholder="Search by drug or company"
             />
             <input
               type="submit"
@@ -129,15 +129,15 @@ class Listing extends Component {
           </form>
           <input
             onClick={this.sortChange}
-            data-type="title"
+            data-type="drug"
             type="submit"
-            value="Sorting by Title"
+            value="Sorting by Drug"
           />
           <input
             onClick={this.sortChange}
-            data-type="genre"
+            data-type="company"
             type="submit"
-            value="Sorting by Genre"
+            value="Sorting by Company"
           />
           <input
             onClick={this.sortChange}
@@ -159,15 +159,15 @@ class Listing extends Component {
               <div
                 key={key}
                 className="unit bg-light"
-                data-name={elem.title}
-                data-genre={elem.genre}
+                data-drug={elem.drug}
+                data-company={elem.company}
                 data-rating={elem.rating}
                 data-review={elem.review}
                 data-picture={elem.picture}
                 onClick={this.onclick}
               >
-                <div className="border-right title">{elem.title}</div>
-                <div className="border-right genre">{elem.genre}</div>
+                <div className="border-right drug">{elem.drug}</div>
+                <div className="border-right company">{elem.company}</div>
                 <div className="border-right text-center rating">
                   {starArr.map((nbr, key) => {
                     if (nbr === 1) {
@@ -194,7 +194,7 @@ class Listing extends Component {
         </div>
         {/* <div id="popup" onClick={this.onclickfade}>
           <div id="popup_window">
-            <div id="popup_title"></div>
+            <div id="popup_drug"></div>
             <img id="popup_img" src="" alt="" />
             <div id="popup_review"></div>
           </div>
