@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { monokai } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { solarizedLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 class TypeCode extends Component {
   state = {};
@@ -8,8 +8,12 @@ class TypeCode extends Component {
     const { content, type } = this.props;
 
     return (
-      <div>
-        <SyntaxHighlighter language={type} style={monokai}>
+      <div style={{ overflow: "scroll" }}>
+        <SyntaxHighlighter
+          language={type}
+          style={solarizedLight}
+          className="code"
+        >
           {content}
         </SyntaxHighlighter>
       </div>

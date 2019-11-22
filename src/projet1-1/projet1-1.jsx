@@ -4,7 +4,7 @@ import Second from "./secondScene/second";
 
 class Projet11 extends Component {
   state = {
-    activeScene: 1
+    activeScene: 2
   };
 
   componentDidMount() {}
