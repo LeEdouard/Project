@@ -38,6 +38,7 @@ a:hover {
   right: 0;
   bottom: 0;
   transition: opacity 0.5s;
+  overflow-x: hidden;
 }
 .terminalWrap {
   background: rgb(43, 5, 28);
