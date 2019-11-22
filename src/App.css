@@ -701,6 +701,7 @@ PROEJT 1-2
 .filter_zone {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  font-size: 0.75rem;
 }
 
 @media screen and (min-width: 500px) {
@@ -840,6 +841,8 @@ PROEJT 1-2
   background-image: url("./img/garadedoor.png");
   background-repeat: no-repeat;
   background-position: center;
-  width: 450px;
+  background-size: contain;
+  width: 50%;
+  max-width: 450px;
   height: 100%;
 }
