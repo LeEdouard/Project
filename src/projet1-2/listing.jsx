@@ -9,7 +9,8 @@ import { faStar } from "@fortawesome/free-regular-svg-icons";
 class Listing extends Component {
   state = {
     input: "",
-    compare: "alphaSortAsc"
+    compare: "alphaSortAsc",
+    sortType: "title"
   };
 
   componentDidMount() {}
@@ -79,43 +80,27 @@ class Listing extends Component {
   };
 
   alphaSortAsc = (a, b) => {
-    const genreA = a.title.toUpperCase();
-    const genreB = b.title.toUpperCase();
-
+    const elementComparaisonA = a[this.state.sortType].toString().toUpperCase();
+    const elementComparaisonB = b[this.state.sortType].toString().toUpperCase();
     let comparison = 0;
-    if (genreA > genreB) {
+    if (elementComparaisonA > elementComparaisonB) {
       comparison = 1;
-    } else if (genreA < genreB) {
+    } else if (elementComparaisonA < elementComparaisonB) {
       comparison = -1;
     }
     return comparison;
   };
 
-  alphaSortDesc = (a, b) => {
-    const genreA = a.title.toUpperCase();
-    const genreB = b.title.toUpperCase();
+  compare = this.state.compare === "alphaSortAsc" ? this.alphaSortAsc : null;
 
-    let comparison = 0;
-    if (genreA > genreB) {
-      comparison = 1;
-    } else if (genreA < genreB) {
-      comparison = -1;
-    }
-    return comparison;
-  };
-
-  compare =
-    this.state.compare === "alphaSortAsc"
-      ? this.alphaSortAsc
-      : this.alphaSortDesc;
-
-  sortChange = () => {
+  sortChange = e => {
     if (this.state.compare === "alphaSortAsc") {
       this.setState({ compare: "alphaSortDesc" });
     } else {
       this.setState({ compare: "alphaSortAsc" });
     }
-    console.log(this.state.compare);
+    this.setState({ sortType: e.target.dataset.type });
+    console.log(e.target);
   };
 
   render() {
@@ -138,7 +123,24 @@ class Listing extends Component {
               style={{ visibility: "hidden", position: "absolute" }}
             />
           </form>
-          <input onClick={this.sortChange} type="submit" value="Sorting" />
+          <input
+            onClick={this.sortChange}
+            data-type="title"
+            type="submit"
+            value="Sorting by Title"
+          />
+          <input
+            onClick={this.sortChange}
+            data-type="genre"
+            type="submit"
+            value="Sorting by Genre"
+          />
+          <input
+            onClick={this.sortChange}
+            data-type="rating"
+            type="submit"
+            value="Sorting by Rating"
+          />
         </div>
         <div className="tableau">
           {listeFilm.map((elem, key) => {
