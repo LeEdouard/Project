@@ -8,7 +8,7 @@ class TypeCode extends Component {
     const { content, type } = this.props;
 
     return (
-      <div style={{ overflow: "scroll" }}>
+      <div>
         <SyntaxHighlighter
           language={type}
           style={solarizedLight}
