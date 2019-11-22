@@ -666,10 +666,29 @@ PROEJT 1-2
 
 
 */
+.projet12 header {
+  background: rgb(126, 0, 0);
+  color: gold;
+  font-size: 2rem;
+}
+
+.listing {
+  background: rgb(126, 0, 0);
+}
+
+.listing input,
+.listing form {
+  color: goldenrod;
+  display: inline;
+  margin: auto;
+}
+
 .tableau {
-  border: 10px solid red;
+  border: 10px solid rgb(126, 0, 0);
   min-height: 300px;
   min-width: 200px;
+  padding: 20px;
+  color: white;
 }
 
 .unit {
@@ -678,7 +697,9 @@ PROEJT 1-2
   height: 1.5em;
   display: grid;
   grid-template-columns: 4fr 4fr 1fr;
-  border-radius: 2px;
+  border-radius: 3px;
+  padding-left: 5px;
+  color: black;
 }
 /* @font-face {
   font-family: movie;

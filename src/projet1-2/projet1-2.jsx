@@ -13,12 +13,13 @@ class Projet12 extends Component {
   render() {
     return (
       <div
+        className="projet12"
         style={{
           opacity: this.state.opacity,
           transition: "1s"
         }}
       >
-        <header>Rien d'interressant</header>
+        <header>Rien d'interressant à regarder</header>
         <Listing />
         <footer>-----------</footer>
       </div>

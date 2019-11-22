@@ -10,7 +10,8 @@ class Listing extends Component {
   state = {
     input: "",
     compare: "alphaSortAsc",
-    sortType: "title"
+    sortType: "title",
+    empty: false
   };
 
   componentDidMount() {}
@@ -20,6 +21,7 @@ class Listing extends Component {
     console.log(true);
 
     const unitList = document.getElementsByClassName("unit");
+    let counting = 0;
     for (const elem of unitList) {
       if (
         elem.attributes["data-name"].value
@@ -32,14 +34,18 @@ class Listing extends Component {
         elem.style["opacity"] = "1";
         elem.style["height"] = "1.5em";
         elem.style["border"] = "1px solid black";
+        counting = counting + 1;
       } else {
         elem.style["opacity"] = "0";
         elem.style["height"] = "0em";
         elem.style["border"] = "none";
       }
     }
+    this.setState({ empty: false });
+    if (counting === 0) {
+      this.setState({ empty: true });
+    }
     this.setState({ input: "" });
-    console.log(this.state.input);
 
     // $.ajax({
     //   url: "https://sg.media-imdb.com/suggests/a/aa.json",
@@ -100,7 +106,6 @@ class Listing extends Component {
       this.setState({ compare: "alphaSortAsc" });
     }
     this.setState({ sortType: e.target.dataset.type });
-    console.log(e.target);
   };
 
   render() {
@@ -142,7 +147,7 @@ class Listing extends Component {
             value="Sorting by Rating"
           />
         </div>
-        <div className="tableau">
+        <div className="tableau bg-dark">
           {listeFilm.map((elem, key) => {
             let starArr = [];
             for (let index = 0; index < elem.rating; index++) {
@@ -154,7 +159,7 @@ class Listing extends Component {
             return (
               <div
                 key={key}
-                className="unit"
+                className="unit bg-light"
                 data-name={elem.title}
                 data-genre={elem.genre}
                 data-rating={elem.rating}
@@ -176,6 +181,7 @@ class Listing extends Component {
               </div>
             );
           })}
+          {this.state.empty ? <div>YA RIEN</div> : null}
         </div>
         {/* <div id="popup" onClick={this.onclickfade}>
           <div id="popup_window">
