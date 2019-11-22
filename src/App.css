@@ -819,3 +819,14 @@ PROEJT 1-2
   background: white;
   margin: 10% auto;
 } */
+
+.curtain {
+  background-image: url("./img/garage_door.jpeg");
+  position: fixed;
+  top: -100%;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  transition: 1s;
+}

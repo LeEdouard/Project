@@ -12,7 +12,8 @@ class Listing extends Component {
     input: "",
     compare: "alphaSortAsc",
     sortType: "drug",
-    empty: false
+    empty: false,
+    curtainStyle: { top: "-100%", bottom: "100%" }
   };
 
   componentDidMount() {}
@@ -107,18 +108,23 @@ class Listing extends Component {
   compare = this.state.compare === "alphaSortAsc" ? this.alphaSortAsc : null;
 
   sortChange = e => {
-    const unitList = document.getElementsByClassName("unit");
-    for (const elem of unitList) {
-      elem.style["opacity"] = "1";
-      elem.style["height"] = "3.15rem";
-      elem.style["border"] = "1px solid black";
-    }
-    if (this.state.compare === "alphaSortAsc") {
-      this.setState({ compare: "alphaSortDesc" });
-    } else {
-      this.setState({ compare: "alphaSortAsc" });
-    }
-    this.setState({ sortType: e.target.dataset.type });
+    const type = e.target.dataset.type;
+    this.setState({ curtainStyle: { top: "0", bottom: "0" } });
+    setTimeout(() => {
+      const unitList = document.getElementsByClassName("unit");
+      for (const elem of unitList) {
+        elem.style["opacity"] = "1";
+        elem.style["height"] = "3.15rem";
+        elem.style["border"] = "1px solid black";
+      }
+      if (this.state.compare === "alphaSortAsc") {
+        this.setState({ compare: "alphaSortDesc" });
+      } else {
+        this.setState({ compare: "alphaSortAsc" });
+      }
+      this.setState({ sortType: type });
+      this.setState({ curtainStyle: { top: "-100%", bottom: "100%" } });
+    }, 1125);
   };
 
   render() {
@@ -172,6 +178,7 @@ class Listing extends Component {
           />
         </div>
         <div className="tableau bg-dark">
+          <div className="curtain" style={this.state.curtainStyle}></div>
           {listeFilm.map((elem, key) => {
             let starArr = [];
             for (let index = 0; index < elem.rating; index++) {
