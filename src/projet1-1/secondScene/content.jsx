@@ -19,7 +19,9 @@ class Content extends Component {
     });
 
     const filterTxt = (taille, opacity) => {
-      return `drop-shadow(${taille}px ${taille}px ${taille}px rgba(0, 0, 0, ${opacity}))`;
+      return `drop-shadow(${taille}px ${taille}px ${Math.abs(
+        taille
+      )}px rgba(0, 0, 0, ${opacity}))`;
     };
 
     if (pos > 84) {
