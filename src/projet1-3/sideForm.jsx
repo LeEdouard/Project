@@ -1,10 +1,19 @@
 import React, { Component } from "react";
+import DelayLink from "react-delay-link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStepBackward } from "@fortawesome/free-solid-svg-icons";
 
 class SideForm extends Component {
   state = {};
   render() {
     return (
       <div className="sideForm col-2 p-0 bg-info text-white">
+        <div className="back">
+          <DelayLink delay={0} to="" clickAction={this.fadeout}>
+            <FontAwesomeIcon icon={faStepBackward} />
+          </DelayLink>
+        </div>
+
         <h1>test de la librairie chart.js</h1>
         <form onSubmit={this.props.onsubmit} className="form-group">
           <select

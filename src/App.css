@@ -430,7 +430,8 @@ SECOND
   grid-template-columns: 1fr 10fr;
 }
 
-.second .back {
+.second .back,
+.fitness .back {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -935,4 +936,8 @@ PROJET 1-3
 
 .fitness h1 {
   font-size: 3vh;
+}
+
+.fitness .back:hover > * {
+  transform: scale(1.5);
 }
