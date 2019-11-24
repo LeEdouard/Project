@@ -18,6 +18,13 @@ class Main extends Component {
         label: "db",
         link: "db_process",
         className: "projet projet1 m-1"
+      },
+      {
+        id: 2,
+        name: "Projet3",
+        label: "fitness",
+        link: "fitness_log",
+        className: "projet projet1 m-1"
       }
     ],
     terminalinput: "",

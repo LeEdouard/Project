@@ -14,7 +14,7 @@ class App extends Component {
       <div className="app">
         <BrowserRouter>
           <Switch>
-            <Route path="/fitness" component={Projet13} />
+            <Route path="/fitness_log" component={Projet13} />
             <Route path="/db_process" component={Projet12} />
             <Route path="/2019" component={Projet11} />
             <Route path="*" component={Main} />
