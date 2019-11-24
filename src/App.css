@@ -360,7 +360,7 @@ FIRST
 @keyframes blink {
   25% {
     /* width: 5px; */
-    transform: translateX(1rem) scale(4);
+    transform: translateX(0.7rem) scale(4);
   }
   75% {
     /* width: 5px; */
@@ -845,4 +845,94 @@ PROEJT 1-2
   width: 50%;
   max-width: 450px;
   height: 100%;
+}
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PROJET 1-3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+.fitness {
+  background: rgb(38, 36, 58);
+}
+
+.sideForm {
+  background: lightgray;
+  /* width: 100%;
+  height: 100%; */
+}
+/* 
+.sideForm input {
+  border: none;
+  max-width: 10rem;
+  text-align: center;
+} */
+
+.exercicesDisplay {
+  min-height: 1000px;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
+  /* grid-gap: 100px; */
+}
+/* 
+@media screen and (max-width: 540) {
+  .exercicesDisplay {
+    grid-template-columns: 1fr;
+  }
+} */
+
+.exercice {
+  /* width: 23rem; */
+  /* height: 80%; */
+  /* background: rgb(176, 199, 209); */
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: bottom; */
+  /* padding: 10px; */
+}
+
+.fitness canvas {
+  background: rgb(176, 199, 209);
+  border-radius: 10px;
+}
+
+.fitness h1 {
+  font-size: 3vh;
 }

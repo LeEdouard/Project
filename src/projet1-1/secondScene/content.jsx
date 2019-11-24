@@ -25,6 +25,7 @@ class Content extends Component {
     };
 
     if (pos > 84) {
+      //never activated because cause at bottom page the cloud are higher
       this.setState({
         cloudFilter: filterTxt(5, 0.5)
       });
