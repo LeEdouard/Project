@@ -80,7 +80,7 @@ class Exercice extends Component {
   };
   render() {
     return (
-      <div className="exercice col-md-6  col-sm-12 p-5">
+      <div className="exercice col-lg-4 col-md-6  col-sm-12 p-2">
         <h3 className="text-white text-center">
           {this.props.exerciceData.name}
         </h3>

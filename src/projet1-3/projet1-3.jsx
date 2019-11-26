@@ -24,6 +24,16 @@ class Projet13 extends Component {
     //   console.log("The file has been saved!");
     // });
   }
+  moveToFirst = () => {
+    let newExercices = [...this.state.exercices];
+    const findingExoToDelete = newExercices.find(
+      exo => exo.id === parseInt(this.state.select)
+    );
+    const indexOfFoundExo = newExercices.indexOf(findingExoToDelete);
+    newExercices.unshift(findingExoToDelete);
+    newExercices.splice(indexOfFoundExo + 1, 1);
+    this.setState({ exercices: newExercices });
+  };
   onsubmit = e => {
     e.preventDefault();
     if (parseInt(this.state.repsInput)) {
@@ -50,6 +60,7 @@ class Projet13 extends Component {
       this.setState({ exercices: newExcercices });
     }
     this.setState({ repsInput: "" });
+    this.moveToFirst();
   };
   onchange = e => {
     this.setState({ submiting: false });
@@ -73,6 +84,7 @@ class Projet13 extends Component {
     setTimeout(() => {
       this.setState({ deleting: false });
     }, 0);
+    this.moveToFirst();
   };
   resetLog = () => {
     this.setState({ reseting: true });
@@ -83,6 +95,7 @@ class Projet13 extends Component {
     setTimeout(() => {
       this.setState({ reseting: false });
     }, 0);
+    this.moveToFirst();
   };
 
   deleteLog = () => {
