@@ -43,9 +43,9 @@ class SideForm extends Component {
             type="submit"
             value="New entry"
           />
-          A AJOUTER: styliser line/filler/point/animation type de chart, reset,
+          {/* A AJOUTER: styliser line/filler/point/animation type de chart, reset,
           delete exo, add new exo, en dernier enregistrement et fetch dans une
-          vraie db
+          vraie db */}
         </form>
       </div>
     );
