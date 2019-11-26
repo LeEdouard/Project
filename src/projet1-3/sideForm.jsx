@@ -13,13 +13,11 @@ class SideForm extends Component {
             <FontAwesomeIcon icon={faStepBackward} />
           </DelayLink>
         </div>
-
         <h1>test de la librairie chart.js</h1>
         <form onSubmit={this.props.onsubmit} className="form-group">
           <select
             className="form-control"
-            name=""
-            id=""
+            id="exoSelect"
             value={this.props.select}
             onChange={this.props.onchange}
           >
@@ -32,11 +30,12 @@ class SideForm extends Component {
             })}
           </select>
           <input
+            id="newEntryInput"
             className="form-control"
             type="text"
             placeholder="Reps"
             onChange={this.props.onchange}
-            value={this.props.value}
+            value={this.props.entryValue}
           />
           <input
             className="form-control btn btn-primary"
@@ -46,6 +45,39 @@ class SideForm extends Component {
           {/* A AJOUTER: styliser line/filler/point/animation type de chart, reset,
           delete exo, add new exo, en dernier enregistrement et fetch dans une
           vraie db */}
+        </form>
+        <input
+          className="form-control btn btn-danger"
+          type="submit"
+          value="Delete entry"
+          onClick={this.props.deleteEntry}
+        />
+        <input
+          className="form-control btn btn-danger"
+          type="submit"
+          value="Reset log"
+          onClick={this.props.resetLog}
+        />
+        <input
+          className="form-control btn btn-danger"
+          type="submit"
+          value="Delete Exercice"
+          onClick={this.props.deleteLog}
+        />
+        <form onSubmit={this.props.newExo}>
+          <input
+            id="newExoInput"
+            className="form-control"
+            type="text"
+            placeholder="exo name"
+            onChange={this.props.onchange}
+            value={this.props.exoValue}
+          />
+          <input
+            className="form-control btn btn-primary"
+            type="submit"
+            value="New Exo"
+          />
         </form>
       </div>
     );

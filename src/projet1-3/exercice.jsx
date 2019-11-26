@@ -10,15 +10,17 @@ class Exercice extends Component {
   }
   componentDidUpdate() {
     if (
-      this.props.submiting &&
-      parseInt(this.props.exerciceData.id) === parseInt(this.props.selecting)
+      (this.props.reseting &&
+        parseInt(this.props.exerciceData.id) ===
+          parseInt(this.props.selecting)) ||
+      (this.props.deleting &&
+        parseInt(this.props.exerciceData.id) ===
+          parseInt(this.props.selecting)) ||
+      (this.props.submiting &&
+        parseInt(this.props.exerciceData.id) === parseInt(this.props.selecting))
     ) {
       this.chartDisplay();
-      console.log("sucess in updating local exercice");
     }
-    console.log(this.props.exerciceData.name);
-    console.log(this.props.exerciceData.id);
-    console.log(this.props.selecting);
   }
 
   chartDisplay = () => {
@@ -28,6 +30,10 @@ class Exercice extends Component {
     });
     const newValues = exerciceData.entries.map((entry, key) => {
       return entry.value;
+    });
+    //histoire de pouvoir le premier entry si seule
+    const newPointRadius = exerciceData.entries.map((entry, key) => {
+      return key === 0 ? 5 : 0;
     });
     var ctx = document.getElementById(exerciceData.id);
     var myChart = new Chart(ctx, {
@@ -44,7 +50,7 @@ class Exercice extends Component {
             backgroundColor: "rgba(255, 99, 132, 0.2)",
             borderColor: "rgba(0, 0, 0, 1)",
             borderWidth: 2,
-            pointRadius: 0
+            pointRadius: newPointRadius
             // display: false
           }
         ]
@@ -64,7 +70,7 @@ class Exercice extends Component {
           yAxes: [
             {
               ticks: {
-                beginAtZero: false
+                beginAtZero: true
               }
             }
           ]
