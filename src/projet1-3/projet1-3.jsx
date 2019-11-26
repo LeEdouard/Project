@@ -3,7 +3,7 @@ import SideForm from "./sideForm";
 import ExercicesDisplay from "./exercicesDisplay";
 import db from "../../src/data/fitness.json";
 // const http = require("http");
-const fs = require("fs-extra");
+// const fs = require("fs-extra");
 
 class Projet13 extends Component {
   state = {
@@ -26,7 +26,7 @@ class Projet13 extends Component {
   }
   onsubmit = e => {
     e.preventDefault();
-    if (this.state.repsInput && this.state.repsInput - 0 > 1) {
+    if (parseInt(this.state.repsInput)) {
       let newExcercices = [...this.state.exercices];
       if (newExcercices[this.state.select].entries.length === 0) {
         newExcercices[this.state.select].entries[0] = {
