@@ -10,6 +10,7 @@ class Exercice extends Component {
   }
   componentDidUpdate() {
     if (
+      this.props.movingToTop ||
       (this.props.reseting &&
         parseInt(this.props.exerciceData.id) ===
           parseInt(this.props.selecting)) ||
@@ -96,6 +97,9 @@ class Exercice extends Component {
               }
             }
           ]
+        },
+        animation: {
+          duration: 1500
         }
       }
     });

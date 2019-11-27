@@ -61,8 +61,14 @@ class SideForm extends Component {
         <input
           className="form-control btn btn-danger"
           type="submit"
-          value="Delete Exercice"
+          value="Delete Exo"
           onClick={this.props.deleteLog}
+        />
+        <input
+          className="form-control btn btn-primary"
+          type="submit"
+          value="Move to first"
+          onClick={this.props.moveToFirst}
         />
         <form onSubmit={this.props.newExo}>
           <input

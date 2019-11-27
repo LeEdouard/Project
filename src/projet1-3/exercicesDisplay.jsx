@@ -4,7 +4,14 @@ import Exercice from "./exercice";
 class ExercicesDisplay extends Component {
   state = {};
   render() {
-    const { data, submiting, selecting, deleting, reseting } = this.props;
+    const {
+      data,
+      submiting,
+      selecting,
+      deleting,
+      reseting,
+      movingToTop
+    } = this.props;
 
     return (
       <div className="exercicesDisplay col-10 row p-0 m-0">
@@ -17,6 +24,7 @@ class ExercicesDisplay extends Component {
               selecting={selecting}
               deleting={deleting}
               reseting={reseting}
+              movingToTop={movingToTop}
             />
           );
         })}

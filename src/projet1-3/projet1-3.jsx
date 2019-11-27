@@ -10,6 +10,7 @@ class Projet13 extends Component {
     reseting: false,
     deleting: false,
     submiting: false,
+    movingToTop: false,
     repsInput: "",
     select: 0,
     newExoInput: "",
@@ -25,6 +26,7 @@ class Projet13 extends Component {
     // });
   }
   moveToFirst = () => {
+    this.setState({ movingToTop: true });
     let newExercices = [...this.state.exercices];
     const findingExoToDelete = newExercices.find(
       exo => exo.id === parseInt(this.state.select)
@@ -33,23 +35,31 @@ class Projet13 extends Component {
     newExercices.unshift(findingExoToDelete);
     newExercices.splice(indexOfFoundExo + 1, 1);
     this.setState({ exercices: newExercices });
+
+    setTimeout(() => {
+      this.setState({ movingToTop: false });
+    }, 0);
   };
   onsubmit = e => {
     e.preventDefault();
     if (parseInt(this.state.repsInput)) {
-      let newExcercices = [...this.state.exercices];
-      if (newExcercices[this.state.select].entries.length === 0) {
-        newExcercices[this.state.select].entries[0] = {
+      let newExercices = [...this.state.exercices];
+      const findingExo = newExercices.find(
+        exo => exo.id === parseInt(this.state.select)
+      );
+      const indexOfFoundExo = newExercices.indexOf(findingExo);
+      if (newExercices[indexOfFoundExo].entries.length === 0) {
+        newExercices[indexOfFoundExo].entries[0] = {
           id: 1,
           value: parseInt(this.state.repsInput)
         };
       } else {
         const previousEntryId =
-          newExcercices[this.state.select].entries[
-            newExcercices[this.state.select].entries.length - 1
+          newExercices[indexOfFoundExo].entries[
+            newExercices[indexOfFoundExo].entries.length - 1
           ].id;
-        newExcercices[this.state.select].entries[
-          newExcercices[this.state.select].entries.length
+        newExercices[indexOfFoundExo].entries[
+          newExercices[indexOfFoundExo].entries.length
         ] = {
           id: previousEntryId + 1,
           value: parseInt(this.state.repsInput)
@@ -57,10 +67,9 @@ class Projet13 extends Component {
       }
 
       this.setState({ submiting: true });
-      this.setState({ exercices: newExcercices });
+      this.setState({ exercices: newExercices });
     }
     this.setState({ repsInput: "" });
-    // this.moveToFirst();
   };
   onchange = e => {
     this.setState({ submiting: false });
@@ -77,34 +86,49 @@ class Projet13 extends Component {
     this.setState({ deleting: true });
 
     let newExercices = [...this.state.exercices];
-    newExercices[this.state.select].entries = newExercices[
-      this.state.select
-    ].entries.slice(0, newExercices[this.state.select].entries.length - 1);
+    const findingExo = newExercices.find(
+      exo => exo.id === parseInt(this.state.select)
+    );
+    const indexOfFoundExo = newExercices.indexOf(findingExo);
+    newExercices[indexOfFoundExo].entries = newExercices[
+      indexOfFoundExo
+    ].entries.slice(0, newExercices[indexOfFoundExo].entries.length - 1);
     this.setState({ exercices: newExercices });
     setTimeout(() => {
       this.setState({ deleting: false });
     }, 0);
-    // this.moveToFirst();
   };
   resetLog = () => {
     this.setState({ reseting: true });
 
     let newExercices = [...this.state.exercices];
-    newExercices[this.state.select].entries = [];
+
+    const findingExo = newExercices.find(
+      exo => exo.id === parseInt(this.state.select)
+    );
+    const indexOfFoundExo = newExercices.indexOf(findingExo);
+
+    newExercices[indexOfFoundExo].entries = [];
     this.setState({ exercices: newExercices });
     setTimeout(() => {
       this.setState({ reseting: false });
     }, 0);
-    // this.moveToFirst();
   };
 
   deleteLog = () => {
+    console.log(this.state.exercices);
+    console.log(this.state.select);
     let newExercices = [...this.state.exercices];
     const findingExoToDelete = newExercices.find(
-      exo => exo.id === this.state.select
+      exo => parseInt(exo.id) === parseInt(this.state.select)
     );
+    console.log(findingExoToDelete);
+
     const indexOfFoundExo = newExercices.indexOf(findingExoToDelete);
+    console.log(indexOfFoundExo);
+
     newExercices.splice(indexOfFoundExo, 1);
+
     this.setState({ exercices: newExercices });
   };
   newExo = e => {
@@ -126,6 +150,7 @@ class Projet13 extends Component {
       }
       this.setState({ exercices: newExercices });
     }
+    this.setState({ newExoInput: "" });
   };
 
   render() {
@@ -140,6 +165,7 @@ class Projet13 extends Component {
           deleteEntry={this.deleteEntry}
           resetLog={this.resetLog}
           deleteLog={this.deleteLog}
+          moveToFirst={this.moveToFirst}
           exoValue={this.state.newExoInput}
           newExo={this.newExo}
         />
@@ -149,6 +175,7 @@ class Projet13 extends Component {
           selecting={this.state.select}
           deleting={this.state.deleting}
           reseting={this.state.reseting}
+          movingToTop={this.state.movingToTop}
         />
       </div>
     );

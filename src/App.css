@@ -941,3 +941,17 @@ PROJET 1-3
 .fitness .back:hover > * {
   transform: scale(1.5);
 }
+
+@media screen and (max-width: 720px) {
+  .fitness input,
+  .fitness select {
+    font-size: 0.9rem;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 540px) {
+  .fitness input,
+  .fitness select {
+    font-size: 0.7rem;
+  }
+}
