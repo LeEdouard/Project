@@ -2,35 +2,16 @@ import React, { Component } from "react";
 
 class Projet14 extends Component {
   state = {
-    scrolling: 0,
-    scrollTimer: 0,
-    currentSection: 0
+    currentSection: 0,
+    timer: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
   };
   componentDidMount() {
     let allSections = document.getElementsByTagName("section");
     for (let index = 0; index < allSections.length; index++) {
       allSections[index].style["height"] = window.innerHeight + "px";
     }
-    // document.addEventListener("wheel", e => {
-    //   if (this.state.scrolling == 0) {
-    //     this.setState({ scrolling: 1 });
-    //     if (e.deltaY > 0) {
-    //       window.scrollBy(0, window.innerHeight);
-    //     } else if (e.deltaY < 0) {
-    //       window.scrollBy(0, -window.innerHeight);
-    //     }
-    //     setTimeout(() => {
-    //       this.setState({ scrolling: 0 });
-    //     }, 25);
-    //   } else {
-    //     e.preventDefault();
-    //   }
-    // .getBoundingClientRect()
-    //   console.log(e);
-    // });
-    document.addEventListener("wheel", e => {
-      console.log("start" + this.state.currentSection);
 
+    document.addEventListener("wheel", e => {
       let nextPosition =
         this.state.currentSection < 9
           ? allSections[this.state.currentSection + 1].getBoundingClientRect()
@@ -45,7 +26,7 @@ class Projet14 extends Component {
             window.scrollY;
       if (e.deltaY > 0) {
         window.scrollTo(0, nextPosition);
-        if (this.state.currentSection < 9) {
+        if (this.state.currentSection < 10) {
           this.setState({ currentSection: this.state.currentSection + 1 });
         }
       } else if (e.deltaY < 0) {
@@ -54,9 +35,14 @@ class Projet14 extends Component {
           this.setState({ currentSection: this.state.currentSection - 1 });
         }
       }
-
-      console.log("end" + this.state.currentSection);
     });
+
+    setInterval(() => {
+      let newTimer = [...this.state.timer];
+      newTimer[this.state.currentSection] =
+        Math.round((newTimer[this.state.currentSection] + 0.1) * 10) / 10;
+      this.setState({ timer: newTimer });
+    }, 100);
   }
   render() {
     return (
@@ -88,7 +74,7 @@ class Projet14 extends Component {
         </section>
         <section id="5">
           <div className="filter d-flex">
-            <div className="quote m-auto h1">Ne jamais abandonner</div>
+            <div className="quote m-auto h1">trouver image horizontale</div>
           </div>
         </section>
         <section id="6">
@@ -105,12 +91,33 @@ class Projet14 extends Component {
         </section>
         <section id="8">
           <div className="filter d-flex">
+            <div className="quote m-auto h1">trouver image horizontale</div>
+          </div>
+        </section>
+        <section id="9">
+          <div className="filter d-flex">
+            <div className="quote m-auto h1">Fin ?</div>
+          </div>
+        </section>
+        <section id="10">
+          <div className="filter d-flex">
             <div className="quote m-auto h1">
-              La fin peut faire peur, mais la récompe sera là
+              <h1>Temps passé sur chaque image</h1>
+              <h5>
+                utilisation d'un simple setIntervale de 100ms en fonction du
+                currentSection
+              </h5>
+              {this.state.timer.map((sectionTimer, key) => {
+                return (
+                  <li key={key}>
+                    {key} :{" "}
+                    {sectionTimer % 1 != 0 ? sectionTimer : sectionTimer + ".0"}
+                  </li>
+                );
+              })}
             </div>
           </div>
         </section>
-        <section id="9">10</section>
       </div>
     );
   }
