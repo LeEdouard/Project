@@ -117,19 +117,26 @@ class Projet13 extends Component {
 
   deleteLog = () => {
     console.log(this.state.exercices);
-    console.log(this.state.select);
+    console.log("select", this.state.select);
     let newExercices = [...this.state.exercices];
-    const findingExoToDelete = newExercices.find(
+    const findingExo = newExercices.find(
       exo => parseInt(exo.id) === parseInt(this.state.select)
     );
-    console.log(findingExoToDelete);
 
-    const indexOfFoundExo = newExercices.indexOf(findingExoToDelete);
+    console.log(findingExo);
+
+    const indexOfFoundExo = newExercices.indexOf(findingExo);
     console.log(indexOfFoundExo);
 
     newExercices.splice(indexOfFoundExo, 1);
 
     this.setState({ exercices: newExercices });
+    setTimeout(() => {
+      this.setState({
+        select:
+          this.state.exercices.length !== 0 ? this.state.exercices[0].id : 0
+      });
+    }, 0);
   };
   newExo = e => {
     e.preventDefault();
