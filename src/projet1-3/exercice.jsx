@@ -35,6 +35,15 @@ class Exercice extends Component {
     const newPointRadius = exerciceData.entries.map((entry, key) => {
       return key === 0 ? 5 : 0;
     });
+    let diff = [];
+    for (let i = 1; i < exerciceData.entries.length; i++) {
+      diff.push(
+        parseInt(exerciceData.entries[i].value) -
+          parseInt(exerciceData.entries[i - 1].value)
+      );
+    }
+    diff.unshift(0);
+
     var ctx = document.getElementById(exerciceData.id);
     var myChart = new Chart(ctx, {
       type: "line",
@@ -44,20 +53,28 @@ class Exercice extends Component {
         display: false,
         datasets: [
           {
-            // label: false,
-            // backgroundColor: "rgba(255, 99, 132, 1)",
+            label: "Reps",
             data: newValues,
-            backgroundColor: "rgba(255, 99, 132, 0.2)",
+            backgroundColor: "rgba(0, 0, 0, 0.1)",
             borderColor: "rgba(0, 0, 0, 1)",
-            borderWidth: 2,
-            pointRadius: newPointRadius
-            // display: false
+            borderWidth: 2, // 0 1 2 5
+            pointRadius: newPointRadius,
+            lineTension: 0.3, // 0 0.3
+            borderDash: [1, 0] // 1-0 1-1 15-5
+          },
+          {
+            label: "Difference",
+            data: diff,
+            type: "line",
+            pointRadius: 0,
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            borderWidth: 0 // 0 1 2 5
           }
         ]
       },
       options: {
         legend: {
-          display: false
+          display: true
         },
         layout: {
           padding: {
@@ -69,8 +86,13 @@ class Exercice extends Component {
         scales: {
           yAxes: [
             {
-              ticks: {
-                beginAtZero: true
+              position: "left"
+            }
+          ],
+          xAxes: [
+            {
+              gridLines: {
+                display: false
               }
             }
           ]

@@ -60,7 +60,7 @@ class Projet13 extends Component {
       this.setState({ exercices: newExcercices });
     }
     this.setState({ repsInput: "" });
-    this.moveToFirst();
+    // this.moveToFirst();
   };
   onchange = e => {
     this.setState({ submiting: false });
@@ -84,7 +84,7 @@ class Projet13 extends Component {
     setTimeout(() => {
       this.setState({ deleting: false });
     }, 0);
-    this.moveToFirst();
+    // this.moveToFirst();
   };
   resetLog = () => {
     this.setState({ reseting: true });
@@ -95,7 +95,7 @@ class Projet13 extends Component {
     setTimeout(() => {
       this.setState({ reseting: false });
     }, 0);
-    this.moveToFirst();
+    // this.moveToFirst();
   };
 
   deleteLog = () => {
