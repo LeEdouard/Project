@@ -1054,5 +1054,9 @@ PROEJT 1-4
   height: 100%;
 }
 
-.inspiration section .quote {
+.inspiration .quote {
+  font-size: 5vh;
+}
+.inspiration [id="10"] .quote {
+  font-size: 1.25rem;
 }

@@ -1,11 +1,18 @@
 import React, { Component } from "react";
+import $ from "jquery";
 
 class Projet14 extends Component {
   state = {
     currentSection: 0,
-    timer: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    timer: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    dateOpen: ""
   };
   componentDidMount() {
+    const d = new Date();
+    this.setState({
+      dateOpen: "Page ouverte à " + d.getHours() + " heures"
+    });
+
     let allSections = document.getElementsByTagName("section");
     for (let index = 0; index < allSections.length; index++) {
       allSections[index].style["height"] = window.innerHeight + "px";
@@ -115,6 +122,10 @@ class Projet14 extends Component {
                   </li>
                 );
               })}
+              <h6 id="ip"></h6>
+              {/* <h6>Browser : {window.navigator.appCodeName}</h6>
+              <h6>OS : {window.navigator.oscpu}</h6>
+              <h6>{this.state.dateOpen}</h6> */}
             </div>
           </div>
         </section>
@@ -122,5 +133,7 @@ class Projet14 extends Component {
     );
   }
 }
-
+$.getJSON("https://api.ipify.org?format=json", function(data) {
+  $("#ip").html("IP : " + data.ip);
+});
 export default Projet14;
