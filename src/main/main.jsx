@@ -25,6 +25,13 @@ class Main extends Component {
         label: "fitness",
         link: "fitness_log",
         className: "projet projet1 m-1"
+      },
+      {
+        id: 3,
+        name: "Projet4",
+        label: "inspire",
+        link: "inspiration",
+        className: "projet projet1 m-1"
       }
     ],
     terminalinput: "",

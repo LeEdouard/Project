@@ -955,3 +955,104 @@ PROJET 1-3
     font-size: 0.7rem;
   }
 }
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PROEJT 1-4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+.inspiration {
+}
+.inspiration section {
+  min-width: 100%;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.inspiration [id="0"] {
+  background-image: url("./img/mikhail-vasilyev-NodtnCsLdTE-unsplash.jpg");
+}
+.inspiration [id="1"] {
+  background-image: url("./img/ben-white-4K2lIP0zc_k-unsplash.jpg");
+}
+.inspiration [id="2"] {
+  background-image: url("./img/benjamin-davies-FiZTaNTj2Ak-unsplash.jpg");
+}
+.inspiration [id="3"] {
+  background-image: url("./img/bruce-mars-AndE50aaHn4-unsplash.jpg");
+}
+.inspiration [id="4"] {
+  background-image: url("./img/pablo-heimplatz-EAvS-4KnGrk-unsplash.jpg");
+}
+.inspiration [id="5"] {
+  background-image: url("./img/jon-tyson-XmMsdtiGSfo-unsplash.jpg");
+}
+.inspiration [id="6"] {
+  background-image: url("./img/ahmed-hasan-Lvon5hPT818-unsplash.jpg");
+}
+.inspiration [id="7"] {
+  background-image: url("./img/lina-trochez-ktPKyUs3Qjs-unsplash.jpg");
+}
+.inspiration [id="8"] {
+  background-image: url("./img/miguel-bruna-TzVN0xQhWaQ-unsplash.jpg");
+}
+.inspiration [id="9"] {
+  background-image: url("./img/marc-olivier-jodoin-TStNU7H4UEE-unsplash.jpg");
+}
+
+.inspiration section .filter {
+  background: rgba(255, 255, 255, 0.5);
+  width: 100%;
+  height: 100%;
+}
+
+.inspiration section .quote {
+}
