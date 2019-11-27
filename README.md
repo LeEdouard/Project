@@ -35,9 +35,7 @@ cette fonctionnalité-ci semblait être à ma portée, j'ai donc procédé sans 
 Après avoir fini, j'ai eu l'idée d'utiliser ce projet afin de voir comment marche le
 fait de tracker combien de temps passe l'utilisateur sur chaque section de scroll. (pas encore recherché/commencé)
 
-### (Idée de projet5)
-Tous les projets précedement fait ont tous une structure très simpliste. Je reviendrais donc encore plus sur du visuel et de l'intégration, histoire de travailler mieux sur les positionnements, bootstrap, grid, etc....
+### (Idées)
+-Tous les projets précedement fait ont tous une structure très simpliste. Je reviendrais donc encore plus sur du visuel et de l'intégration, histoire de travailler mieux sur les positionnements, bootstrap, grid, etc....
 
-
-### (Idée projet6)
-test d'autres librairies (ceux qui font des choses hors de ma portée si faites manuellement)
+-tester d'autres librairies
