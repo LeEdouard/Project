@@ -28,14 +28,13 @@ Test de l'utilisation de la librairie chart.js, sous le thème d'un log de progr
 La librairire est facile à utiliser. Le challenge se trouve sur le formulaire pour faire toutes les modifications en mode react.
 
 ### Projet4 (en cours)
-Cette fois-ci j'ai choisi de repartir plus sur du visuel. J'ai décidé de reprendre le style du "one-page-scroll" (un scroll = une page différente).
+Cette fois-ci j'ai choisi de repartir plus sur du visuel. J'ai décidé de reprendre le style du "one-page-scroll".
 J'ai vu qu'il existait des librairies pour faire ça en quelques lignes,
 mais contrairement au projet précédement qui exigeait beaucoup si on voulait faire tout à la main,
-cette fonctionnalité-ci semblait être à ma portée, j'ai donc procédé sans librairie.
-Après avoir fini, j'ai eu l'idée d'utiliser ce projet afin de voir comment marche le
-fait de tracker combien de temps passe l'utilisateur sur chaque section de scroll. (pas encore recherché/commencé)
+cette fonctionnalité-ci semblait être à ma portée, j'ai donc procédé sans librairie pour voir comment ça marchait.
+Après avoir fini, j'ai rajouté un tracker sur chaque section afin de voir laquelle a plus ou moins d'impact
 
 ### (Idées)
--Tous les projets précedement fait ont tous une structure très simpliste. Je reviendrais donc encore plus sur du visuel et de l'intégration, histoire de travailler mieux sur les positionnements, bootstrap, grid, etc....
+-Tous les projets précedement faits ont tous une structure très simpliste. Je reviendrais donc encore plus sur du visuel et de l'intégration, histoire de travailler mieux sur les positionnements, bootstrap, grid, etc....
 
--tester d'autres librairies
+-voir comment marche graphql
