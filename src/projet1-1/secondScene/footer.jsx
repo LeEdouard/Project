@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-// import Input from "./input";
-// import Joi from "@hapi/joi";
-// import TextArea from "./textarea";
+import Input from "./input";
+import Joi from "@hapi/joi";
+import TextArea from "./textarea";
 // import http from "http";
 // import express from "express";
 // import nodemailer from "nodemailer";
@@ -44,86 +44,86 @@ class Footer extends Component {
     document.removeEventListener("scroll", this.scrolling);
   }
 
-  // check = () => {
-  //   const checkRules = Joi.object({
-  //     email: Joi.string().email({
-  //       minDomainSegments: 2
-  //     }),
-  //     subject: Joi.string().min(5),
-  //     msg: Joi.string().min(5)
-  //   });
-  //   const result = checkRules.validate(this.state.mailing, {
-  //     abortEarly: false
-  //   });
-  //   console.log(result);
+  check = () => {
+    const checkRules = Joi.object({
+      email: Joi.string().email({
+        minDomainSegments: 2
+      }),
+      subject: Joi.string().min(5),
+      msg: Joi.string().min(5)
+    });
+    const result = checkRules.validate(this.state.mailing, {
+      abortEarly: false
+    });
+    console.log(result);
 
-  //   if (!result.error) return null;
+    if (!result.error) return null;
 
-  //   const errors = {};
-  //   for (let item of result.error.details) {
-  //     if (item.type === "any.empty") {
-  //       errors[item.path[0]] = "Veuillez remplir le champs";
-  //     }
-  //     if (item.type === "string.email") {
-  //       errors[item.path[0]] = "Adresse e-mail non valide";
-  //     }
-  //     if (item.type === "string.min") {
-  //       errors[item.path[0]] = "Ecrivez au moins 5 lettres !";
-  //     }
-  //   }
-  //   return errors;
-  // };
+    const errors = {};
+    for (let item of result.error.details) {
+      if (item.type === "any.empty") {
+        errors[item.path[0]] = "Veuillez remplir le champs";
+      }
+      if (item.type === "string.email") {
+        errors[item.path[0]] = "Adresse e-mail non valide";
+      }
+      if (item.type === "string.min") {
+        errors[item.path[0]] = "Ecrivez au moins 5 lettres !";
+      }
+    }
+    return errors;
+  };
 
-  // submit = e => {
-  //   e.preventDefault();
-  //   const errMsg = this.check();
-  //   this.setState({ error: errMsg || {} });
-  //   if (!errMsg) {
-  //     // ici le code si check true
-  //     console.log("check success");
+  submit = e => {
+    e.preventDefault();
+    const errMsg = this.check();
+    this.setState({ error: errMsg || {} });
+    if (!errMsg) {
+      // ici le code si check true
+      console.log("check success");
 
-  //     // axios.post("smtp.ethereal.email:587", {
-  //     //   Username: "aryanna.toy0@ethereal.email",
-  //     //   Password: "szBcbzadb7HBc78E6W"
-  //     // });
-  //     //
-  //     //
-  //     //
+      // axios.post("smtp.ethereal.email:587", {
+      //   Username: "aryanna.toy0@ethereal.email",
+      //   Password: "szBcbzadb7HBc78E6W"
+      // });
+      //
+      //
+      //
 
-  //     // const server = http.createServer();
+      // const server = http.createServer();
 
-  //     // server.listen(4000, "localhost");
+      // server.listen(4000, "localhost");
 
-  //     // server.on("listening", () => {
-  //     //   console.log("Serveur démarré !");
-  //     // });
+      // server.on("listening", () => {
+      //   console.log("Serveur démarré !");
+      // });
 
-  //     // server.on("request", (request, response) => {
-  //     //   console.log(true);
-  //     // });
+      // server.on("request", (request, response) => {
+      //   console.log(true);
+      // });
 
-  //     // let transporter = nodemailer.createTransport({
-  //     //   host: "smtp.ethereal.email",
-  //     //   port: 587,
-  //     //   secure: false,
-  //     //   auth: {
-  //     //     user: "aryanna.toy0@ethereal.email",
-  //     //     pass: "szBcbzadb7HBc78E6W"
-  //     //   }
-  //     // });
+      // let transporter = nodemailer.createTransport({
+      //   host: "smtp.ethereal.email",
+      //   port: 587,
+      //   secure: false,
+      //   auth: {
+      //     user: "aryanna.toy0@ethereal.email",
+      //     pass: "szBcbzadb7HBc78E6W"
+      //   }
+      // });
 
-  //     // transporter.sendMail({
-  //     //   from: '"Fred Foo 👻" <foo@example.com>',
-  //     //   to: "aryanna.toy0@ethereal.email",
-  //     //   subject: "Sujetttttt",
-  //     //   text: "Message en plain text",
-  //     //   html: "<b>Message en html</b>"
-  //     // });
+      // transporter.sendMail({
+      //   from: '"Fred Foo 👻" <foo@example.com>',
+      //   to: "aryanna.toy0@ethereal.email",
+      //   subject: "Sujetttttt",
+      //   text: "Message en plain text",
+      //   html: "<b>Message en html</b>"
+      // });
 
-  //     // console.log("Message sent: %s", info.messageId);
-  //     // console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-  //   }
-  // };
+      // console.log("Message sent: %s", info.messageId);
+      // console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+    }
+  };
 
   change = e => {
     const newMailing = { ...this.state.mailing };
@@ -176,7 +176,7 @@ class Footer extends Component {
           </div>
           <div className="w-100 bg-white text-dark justify-content-center">
             contact@edouard-dev.com
-            {/* <form
+            <form
               onSubmit={this.submit}
               className="col contact border border-danger p-3 mx-auto"
             >
@@ -205,7 +205,7 @@ class Footer extends Component {
               <button type="submit" className="btn btn-primary">
                 Envoyer
               </button>
-            </form> */}
+            </form>
             {/* ---------------------formulaire ? style béton/brique style sous-sol
             égout, --------------------------rajouter ciel étoilé dans le main
             suivant le % de scroll, -------------------rajouter contenu à type

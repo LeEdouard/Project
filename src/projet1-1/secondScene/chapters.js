@@ -12,38 +12,27 @@ const chapters = [
       {
         type: "text",
         content:
-          "Je commencerais par dire que le contenu ne sera pas détaillé du tout et qu'il ne servira pour l'instant que de démonstration de mes compétences. Je verrais plus tard si j'ai le temps de vraiment rédiger de manière exhaustive mon parcours."
+          "Je commencerai par dire que le contenu ne sera pas détaillé du tout et qu'il ne servira pour l'instant que de démonstration de mes compétences."
       },
       {
         type: "text",
         content:
-          "La formation Développeur Front-End par le GRETA92 est toutes nouvelle. La promo à laquelle j'ai participée n'est que la deuxième depuis sa création. Elle dure un peu plus de deux mois et est sensée nous apprendre assez pour débuter un travail en tant que développeur front-end ou bien d'intégrateur. On apprendra les différents outils et languages informatiques nécessaire à cet objectif."
+          "La formation Développeur Front-End par le GRETA du 92 est toute nouvelle. Elle dure un peu plus de deux mois et est sensée nous apprendre les bases des métiers de développeur front-end et d'intégrateur."
       },
       {
         type: "text",
         content:
-          "La sélection des stagiaires est très diversifiée. On trouve des gens qui sont vraiment néophyte, et on a aussi ceux qui ont déjà travaillé quelques années et qui sont venu pour le module React ou bien pour le Javascript. Cette disparité de niveau n'a peut-être pas toujours eu de cohérence avec le programme imposé, causant certaines déceptions."
+          "La sélection des stagiaires est très diversifiée. On trouve des gens qui sont vraiment débutants, et on a aussi ceux qui ont déjà travaillé quelques années et qui sont venu pour le module React ou bien pour le JavaScript. "
       },
       {
         type: "text",
         content:
-          "Pour ma part, je me retrouvais au milieu du lot. J'avais déjà passé environs deux mois au total à suivre des tutorial sur le net, notemment via le SiteduZer0. C'était il y a plus de 7 ans et je ne me suis jamais lancé dedans. J'avais appris le HTML/CSS et le PHP avec les base de données mySql. Cependant, c'était un apprentissage \"en vrac \". Personne pour me guider, je ne suivais aucune règle, ni convention d'écriture. J'apprennais simplement au fur et à fur de mes expérimentation sur un site cobaye. Par exemple, je n'avais jamais pas ressenti le besoin de faire des fonctions ou bien coder orienté objet. Je me contentais d'imbriquer des if et for dans des if et for à l'infini..."
+          "Pour ma part, je voulais revoir le HTML/CSS et apprendre le JavaScript. J'avais déjà passé du temps à me former au HTML/CSS et au PHP/MySQL sur internet. Cependant, je ne suivais aucune convention d'écriture, et mon code manquait de structure. J'apprenais simplement au fur et à mesure de mes expérimentations."
       },
       {
         type: "text",
         content:
-          "**L'organisation du site n'est pas conforme à la  chronologie du parcours de la formation"
-      },
-
-      {
-        type: "text",
-        content:
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem dolorem quas, numquam ullam libero aperiam iusto laboriosam, at et, dicta dolor quaerat qui temporibus inventore illum natus enim rerum quia."
-      },
-      {
-        type: "text",
-        content:
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem dolorem quas, numquam ullam libero aperiam iusto laboriosam, at et, dicta dolor quaerat qui temporibus inventore illum natus enim rerum quia."
+          "Grâce à cette formation, j'ai beaucoup appris et me suis habitué à utiliser les bonnes pratiques. Ce site, lui-même un exemple de cette évolution, présente succintement les différentes technologies que j'ai appris à maîtriser durant la formation.          "
       }
     ]
   },
@@ -58,22 +47,18 @@ const chapters = [
       {
         type: "text",
         content:
-          "Premier jour, on voit comment marche linux et ubuntu. Je n'avais jamais touché auparavant."
-      },
-      {
-        type: "text",
-        content:
-          "blabla les différences avec windows, les commandes dans le terminal, apache, les vm, etc"
+          "Au début, nous avons eu un cours sur Linux. J'ai eu l'occasion d'apprendre les commandes Bash, les spécificités de Linux / Ubuntu, et plus généralement  d'évoluer dans cet environnement."
       },
 
       {
         type: "html",
-        content: "cat split-file* > win10_x64.iso"
+        content:
+          "split -b 100M image.iso split-file\ncat split-file* > win10_x64.iso"
       },
       {
         type: "text",
         content:
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem dolorem quas, numquam ullam libero aperiam iusto laboriosam, at et, dicta dolor quaerat qui temporibus inventore illum natus enim rerum quia."
+          "Nous avons vu l'installation de machines virtuelles, et survolé la technologie Apache."
       }
     ]
   },
@@ -104,6 +89,11 @@ const chapters = [
       {
         type: "css",
         content: "html, body {\n  margin:0;\n  padding:0\n}"
+      },
+      {
+        type: "text",
+        content:
+          "Durant le module html / css, il s'est avéré que'il s'agissait plus pour moi d'approfondir les concept déjà connus que d'en découvrir de nouveaux (new p les truc appris)"
       }
     ]
   },
@@ -249,31 +239,6 @@ const chapters = [
     ]
   },
   {
-    id: 7,
-    name: "Emploi",
-    bg: "white",
-    svg: svg.menuIcons.resume,
-    link: "emploi",
-    color: "black",
-    sections: [
-      {
-        type: "text",
-        content: "écrire ici peut être mes objectifs de carrière ?"
-      },
-
-      {
-        type: "text",
-        content:
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem dolorem quas, numquam ullam libero aperiam iusto laboriosam, at et, dicta dolor quaerat qui temporibus inventore illum natus enim rerum quia."
-      },
-      {
-        type: "text",
-        content:
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem dolorem quas, numquam ullam libero aperiam iusto laboriosam, at et, dicta dolor quaerat qui temporibus inventore illum natus enim rerum quia."
-      }
-    ]
-  },
-  {
     id: 8,
     name: "Conclusion",
     bg: "white",
@@ -290,7 +255,7 @@ const chapters = [
       {
         type: "text",
         content:
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem dolorem quas, numquam ullam libero aperiam iusto laboriosam, at et, dicta dolor quaerat qui temporibus inventore illum natus enim rerum quia."
+          "blabla la disparité de niveau n'a peut-être pas toujours eu de cohérence avec le programme imposé, causant certaines déceptions.(reformuler positif)"
       },
       {
         type: "text",

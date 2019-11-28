@@ -23,7 +23,7 @@ const TextArea = ({ name, value, onChange, label, error }) => {
         rows="5"
         value={value}
         maxLength="500"
-        placeholder="Ecrivez ici votre message (max : 500 caracters)"
+        placeholder="Ecrivez ici votre message (max : 500 caractères)"
       ></textarea>
       {error && (
         <div className="alert alert-danger m-1 p-1" role="alert">
