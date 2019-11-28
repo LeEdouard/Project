@@ -176,7 +176,7 @@ class Footer extends Component {
           </div>
           <div className="w-100 bg-white text-dark justify-content-center">
             contact@edouard-dev.com
-            <form
+            {/* <form
               onSubmit={this.submit}
               className="col contact border border-danger p-3 mx-auto"
             >
@@ -205,7 +205,7 @@ class Footer extends Component {
               <button type="submit" className="btn btn-primary">
                 Envoyer
               </button>
-            </form>
+            </form> */}
             {/* ---------------------formulaire ? style béton/brique style sous-sol
             égout, --------------------------rajouter ciel étoilé dans le main
             suivant le % de scroll, -------------------rajouter contenu à type
