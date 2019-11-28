@@ -118,11 +118,13 @@ class Projet14 extends Component {
                 return (
                   <li key={key}>
                     {key} :{" "}
-                    {sectionTimer % 1 != 0 ? sectionTimer : sectionTimer + ".0"}
+                    {sectionTimer % 1 !== 0
+                      ? sectionTimer
+                      : sectionTimer + ".0"}
                   </li>
                 );
               })}
-              <h6 id="ip"></h6>
+              <h6 id="ip">.</h6>
               {/* <h6>Browser : {window.navigator.appCodeName}</h6>
               <h6>OS : {window.navigator.oscpu}</h6>
               <h6>{this.state.dateOpen}</h6> */}

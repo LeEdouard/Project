@@ -103,6 +103,7 @@ class Exercice extends Component {
         }
       }
     });
+    console.log(myChart);
   };
   render() {
     return (

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Input from "./input";
+// import Input from "./input";
 import Joi from "@hapi/joi";
-import TextArea from "./textarea";
+// import TextArea from "./textarea";
 // import http from "http";
 // import express from "express";
 // import nodemailer from "nodemailer";
