@@ -12,11 +12,9 @@ import Main from "./main/main";
 
 class App extends Component {
   state = {};
-  componentDidMount() {
-    // fetch("https://jsonplaceholder.typicode.com/todos")
-    //   .then(file => file.json())
-    //   .then(jsonObj => console.log(jsonObj));
-  }
+  // componentDidMount() {
+  //   fetch("https://mysterious-bayou-69637.herokuapp.com/szBcbzadb7HBc78E6WszBcbzadb7HBc78E6W");
+  // }
   render() {
     return (
       <div className="app">
