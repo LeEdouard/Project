@@ -7,9 +7,16 @@ import Projet13 from "./projet1-3/projet1-3";
 import Projet14 from "./projet1-4/projet1-4";
 import Main from "./main/main";
 
+// const fs = require("fs");
+// const fse = require("fs-extra");
+
 class App extends Component {
   state = {};
-
+  componentDidMount() {
+    // fetch("https://jsonplaceholder.typicode.com/todos")
+    //   .then(file => file.json())
+    //   .then(jsonObj => console.log(jsonObj));
+  }
   render() {
     return (
       <div className="app">

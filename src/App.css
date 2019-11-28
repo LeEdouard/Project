@@ -1060,3 +1060,7 @@ PROEJT 1-4
 .inspiration [id="10"] .quote {
   font-size: 1.25rem;
 }
+
+.inspiration {
+  overflow: hidden;
+}

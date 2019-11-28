@@ -40,6 +40,11 @@ class Main extends Component {
   };
   componentDidMount() {
     window.history.pushState("test", "TITLE", `/`);
+    // console.log(fs);
+    // PROBLEM
+    // fse.writeFile("helo.txt", "hello", err => {
+    //   console.log(err);
+    // });
   }
 
   onchange = e => {
