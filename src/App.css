@@ -1060,7 +1060,24 @@ PROEJT 1-4
 .inspiration [id="10"] .quote {
   font-size: 1.25rem;
 }
+.goDownOne,
+.goUpOne {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  border: 1px solid black;
+  background: black;
+  color: white;
+}
+.goDownOne {
+  bottom: 0;
+}
 
-.inspiration {
-  overflow: hidden;
+.goUpOne {
+  top: 0;
+}
+
+.noscroll::-webkit-scrollbar {
+  display: none;
 }
