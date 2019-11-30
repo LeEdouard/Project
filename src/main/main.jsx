@@ -32,6 +32,13 @@ class Main extends Component {
         label: "inspire",
         link: "inspiration",
         className: "projet projet1 m-1"
+      },
+      {
+        id: 4,
+        name: "Projet5",
+        label: "contact + api",
+        link: "contact",
+        className: "projet projet1 m-1"
       }
     ],
     terminalinput: "",
@@ -40,11 +47,6 @@ class Main extends Component {
   };
   componentDidMount() {
     window.history.pushState("test", "TITLE", `/`);
-    // console.log(fs);
-    // PROBLEM
-    // fse.writeFile("helo.txt", "hello", err => {
-    //   console.log(err);
-    // });
   }
 
   onchange = e => {

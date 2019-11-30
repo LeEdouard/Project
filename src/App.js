@@ -6,9 +6,7 @@ import Projet12 from "./projet1-2/projet1-2";
 import Projet13 from "./projet1-3/projet1-3";
 import Projet14 from "./projet1-4/projet1-4";
 import Main from "./main/main";
-
-// const fs = require("fs");
-// const fse = require("fs-extra");
+import Projet15 from "./projet1-5/projet1-5";
 
 class App extends Component {
   state = {};
@@ -20,6 +18,7 @@ class App extends Component {
       <div className="app">
         <BrowserRouter>
           <Switch>
+            <Route path="/contact" component={Projet15} />
             <Route path="/inspiration" component={Projet14} />
             <Route path="/fitness_log" component={Projet13} />
             <Route path="/db_process" component={Projet12} />

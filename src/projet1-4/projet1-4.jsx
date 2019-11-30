@@ -90,98 +90,96 @@ class Projet14 extends Component {
 
   render() {
     return (
-      <div className="scroll">
-        <div className="inspiration">
-          <section id="0">
-            <div className="filter d-flex">
-              <div className="quote m-auto h1">
-                Photo de chat juste parce que
-                {this.state.currentSection !== 0 ? (
-                  <div className="goUpOne" onClick={this.goUpOne}>
-                    <FontAwesomeIcon icon={faAngleDoubleUp} />
-                  </div>
-                ) : null}
-                {this.state.currentSection !== 10 ? (
-                  <div className="goDownOne" onClick={this.goDownOne}>
-                    <FontAwesomeIcon icon={faAngleDoubleDown} />
-                  </div>
-                ) : null}
-              </div>
+      <div className="inspiration">
+        <section id="0">
+          <div className="filter d-flex">
+            <div className="quote m-auto h1">
+              Photo de chat juste parce que
+              {this.state.currentSection !== 0 ? (
+                <div className="goUpOne" onClick={this.goUpOne}>
+                  <FontAwesomeIcon icon={faAngleDoubleUp} />
+                </div>
+              ) : null}
+              {this.state.currentSection !== 10 ? (
+                <div className="goDownOne" onClick={this.goDownOne}>
+                  <FontAwesomeIcon icon={faAngleDoubleDown} />
+                </div>
+              ) : null}
             </div>
-          </section>
-          <section id="1">
-            <div className="filter d-flex">
-              <div className="quote m-auto h1">Un enfant qui rit</div>
+          </div>
+        </section>
+        <section id="1">
+          <div className="filter d-flex">
+            <div className="quote m-auto h1">Un enfant qui rit</div>
+          </div>
+        </section>
+        <section id="2">
+          <div className="filter d-flex">
+            <div className="quote m-auto h1">Victoire</div>
+          </div>
+        </section>
+        <section id="3">
+          <div className="filter d-flex">
+            <div className="quote m-auto h1">Un gars content</div>
+          </div>
+        </section>
+        <section id="4">
+          <div className="filter d-flex">
+            <div className="quote m-auto h1">Au sommet du monde</div>
+          </div>
+        </section>
+        <section id="5">
+          <div className="filter d-flex">
+            <div className="quote m-auto h1">trouver image horizontale</div>
+          </div>
+        </section>
+        <section id="6">
+          <div className="filter d-flex">
+            <div className="quote m-auto h1">
+              La lumière est au bout du couloir
             </div>
-          </section>
-          <section id="2">
-            <div className="filter d-flex">
-              <div className="quote m-auto h1">Victoire</div>
+          </div>
+        </section>
+        <section id="7">
+          <div className="filter d-flex">
+            <div className="quote m-auto h1">blble</div>
+          </div>
+        </section>
+        <section id="8">
+          <div className="filter d-flex">
+            <div className="quote m-auto h1">trouver image horizontale</div>
+          </div>
+        </section>
+        <section id="9">
+          <div className="filter d-flex">
+            <div className="quote m-auto h1">Fin ?</div>
+          </div>
+        </section>
+        <section id="10">
+          <div className="filter d-flex">
+            <div className="quote m-auto h1">
+              <h1>Temps passé sur chaque image</h1>
+              <h5>
+                utilisation d'un simple setIntervale de 100ms en fonction du
+                currentSection
+              </h5>
+              {this.state.timer.map((sectionTimer, key) => {
+                return (
+                  <li key={key}>
+                    {key} :{" "}
+                    {sectionTimer % 1 !== 0
+                      ? sectionTimer
+                      : sectionTimer + ".0"}
+                  </li>
+                );
+              })}
+              <h6 id="ip">.</h6>
+              <h6>Browser : {window.navigator.appCodeName}</h6>
+              <h6>OS : {window.navigator.oscpu}</h6>
+              <h6>{this.state.dateOpen}</h6>
             </div>
-          </section>
-          <section id="3">
-            <div className="filter d-flex">
-              <div className="quote m-auto h1">Un gars content</div>
-            </div>
-          </section>
-          <section id="4">
-            <div className="filter d-flex">
-              <div className="quote m-auto h1">Au sommet du monde</div>
-            </div>
-          </section>
-          <section id="5">
-            <div className="filter d-flex">
-              <div className="quote m-auto h1">trouver image horizontale</div>
-            </div>
-          </section>
-          <section id="6">
-            <div className="filter d-flex">
-              <div className="quote m-auto h1">
-                La lumière est au bout du couloir
-              </div>
-            </div>
-          </section>
-          <section id="7">
-            <div className="filter d-flex">
-              <div className="quote m-auto h1">blble</div>
-            </div>
-          </section>
-          <section id="8">
-            <div className="filter d-flex">
-              <div className="quote m-auto h1">trouver image horizontale</div>
-            </div>
-          </section>
-          <section id="9">
-            <div className="filter d-flex">
-              <div className="quote m-auto h1">Fin ?</div>
-            </div>
-          </section>
-          <section id="10">
-            <div className="filter d-flex">
-              <div className="quote m-auto h1">
-                <h1>Temps passé sur chaque image</h1>
-                <h5>
-                  utilisation d'un simple setIntervale de 100ms en fonction du
-                  currentSection
-                </h5>
-                {this.state.timer.map((sectionTimer, key) => {
-                  return (
-                    <li key={key}>
-                      {key} :{" "}
-                      {sectionTimer % 1 !== 0
-                        ? sectionTimer
-                        : sectionTimer + ".0"}
-                    </li>
-                  );
-                })}
-                <h6 id="ip">.</h6>
-                <h6>Browser : {window.navigator.appCodeName}</h6>
-                <h6>OS : {window.navigator.oscpu}</h6>
-                <h6>{this.state.dateOpen}</h6>
-              </div>
-            </div>
-          </section>
-        </div>
+          </div>
+        </section>
       </div>
     );
   }
