@@ -1009,6 +1009,10 @@ PROEJT 1-4
 
 */
 .inspiration {
+  transition: 1s;
+}
+.opacityZero {
+  opacity: 0;
 }
 .inspiration section {
   min-width: 100%;
@@ -1069,6 +1073,10 @@ PROEJT 1-4
   border: 1px solid black;
   background: black;
   color: white;
+}
+.goDownOne:hover > *,
+.goUpOne:hover > * {
+  transform: scale(1.2);
 }
 .goDownOne {
   bottom: 0;

@@ -13,6 +13,15 @@ class Projet14 extends Component {
     dateOpen: ""
   };
   componentDidMount() {
+    document
+      .getElementsByClassName("inspiration")[0]
+      .classList.add("opacityZero");
+    setTimeout(() => {
+      document
+        .getElementsByClassName("inspiration")[0]
+        .classList.remove("opacityZero");
+    }, 0);
+
     document.documentElement.style["scrollbar-width"] = "none";
     document.documentElement.classList.add("noscroll");
 
@@ -43,6 +52,10 @@ class Projet14 extends Component {
   }
 
   componentWillUnmount() {
+    document
+      .getElementsByClassName("inspiration")[0]
+      .classList.add("opacityZero");
+
     document.documentElement.style["scrollbar-width"] = "auto";
     document.documentElement.classList.remove("noscroll");
   }
