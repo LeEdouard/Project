@@ -68,11 +68,11 @@ class Projet15 extends Component {
             }
           },
           mail: {
-            from: '"Fred Foo 👻" <foo@example.com>',
+            from: `"from FORM"<${this.state.email}>`,
             to: "aryanna.toy0@ethereal.email",
-            subject: "Sujetttttt",
-            text: "Message en plain text",
-            html: "<b>Message en html</b>"
+            subject: this.state.subject,
+            text: this.state.msg,
+            html: `<b>${this.state.msg}</b>`
           }
         }
       );
