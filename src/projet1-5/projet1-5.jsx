@@ -24,7 +24,6 @@ class Projet15 extends Component {
     const result = checkRules.validate(this.state.mailing, {
       abortEarly: false
     });
-    console.log(result);
 
     if (!result.error) return null;
 
@@ -43,39 +42,34 @@ class Projet15 extends Component {
     return errors;
   };
 
-  submit = e => {
+  submit = async e => {
     e.preventDefault();
     const errMsg = this.check();
     this.setState({ error: errMsg || {} });
     if (!errMsg) {
       // ici le code si check true
       console.log("check success");
-
-      fetch(
-        "https://mysterious-bayou-69637.herokuapp.com/szBcbzadb7HBc78E6WszBcbzadb7HBc78E6W",
+      const aaa = fetch(
+        "https://mysterious-bayou-69637.herokuapp.com/szBcbzadb777HBc78E6W",
         {
           method: "POST",
-          mode: "no-cors",
+          // mode: "no-cors",
           cache: "no-cache",
-          credentials: "same-origin",
-          transporter: {
-            host: "smtp.ethereal.email",
-            port: 587,
-            secure: false,
-            auth: {
-              user: "aryanna.toy0@ethereal.email",
-              pass: "szBcbzadb7HBc78E6W"
-            }
+          // credentials: "same-origin",
+          headers: {
+            "Content-Type": "application/json"
           },
-          mail: {
-            from: `"from FORM"<${this.state.email}>`,
-            to: "aryanna.toy0@ethereal.email",
-            subject: this.state.subject,
-            text: this.state.msg,
-            html: `<b>${this.state.msg}</b>`
-          }
+          body: JSON.stringify({
+            from: this.state.mailing.email,
+            subject: this.state.mailing.subject,
+            text: this.state.mailing.msg
+          })
         }
       );
+
+      setTimeout(() => {
+        console.log(aaa);
+      }, 2000);
     }
   };
 
@@ -117,6 +111,10 @@ class Projet15 extends Component {
             Envoyer
           </button>
         </form>
+        <h6>
+          Utilisation d'un serveur node, et gestion de la requête post dans
+          cette api pour envoyer un mail
+        </h6>
       </div>
     );
   }

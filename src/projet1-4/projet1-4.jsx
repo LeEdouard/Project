@@ -94,7 +94,7 @@ class Projet14 extends Component {
         <section id="0">
           <div className="filter d-flex">
             <div className="quote m-auto h1">
-              Photo de chat juste parce que
+              Image 1
               {this.state.currentSection !== 0 ? (
                 <div className="goUpOne" onClick={this.goUpOne}>
                   <FontAwesomeIcon icon={faAngleDoubleUp} />
@@ -110,44 +110,42 @@ class Projet14 extends Component {
         </section>
         <section id="1">
           <div className="filter d-flex">
-            <div className="quote m-auto h1">Un enfant qui rit</div>
+            <div className="quote m-auto h1">Image 2</div>
           </div>
         </section>
         <section id="2">
           <div className="filter d-flex">
-            <div className="quote m-auto h1">Victoire</div>
+            <div className="quote m-auto h1">Image 3</div>
           </div>
         </section>
         <section id="3">
           <div className="filter d-flex">
-            <div className="quote m-auto h1">Un gars content</div>
+            <div className="quote m-auto h1">Image 4</div>
           </div>
         </section>
         <section id="4">
           <div className="filter d-flex">
-            <div className="quote m-auto h1">Au sommet du monde</div>
+            <div className="quote m-auto h1">Image 5</div>
           </div>
         </section>
         <section id="5">
           <div className="filter d-flex">
-            <div className="quote m-auto h1">trouver image horizontale</div>
+            <div className="quote m-auto h1">Image 6</div>
           </div>
         </section>
         <section id="6">
           <div className="filter d-flex">
-            <div className="quote m-auto h1">
-              La lumière est au bout du couloir
-            </div>
+            <div className="quote m-auto h1">Image 7</div>
           </div>
         </section>
         <section id="7">
           <div className="filter d-flex">
-            <div className="quote m-auto h1">blble</div>
+            <div className="quote m-auto h1">Image 8</div>
           </div>
         </section>
         <section id="8">
           <div className="filter d-flex">
-            <div className="quote m-auto h1">trouver image horizontale</div>
+            <div className="quote m-auto h1">Image 9</div>
           </div>
         </section>
         <section id="9">
@@ -159,10 +157,6 @@ class Projet14 extends Component {
           <div className="filter d-flex">
             <div className="quote m-auto h1">
               <h1>Temps passé sur chaque image</h1>
-              <h5>
-                utilisation d'un simple setIntervale de 100ms en fonction du
-                currentSection
-              </h5>
               {this.state.timer.map((sectionTimer, key) => {
                 return (
                   <li key={key}>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import SideForm from "./sideForm";
 import ExercicesDisplay from "./exercicesDisplay";
-import db from "../../src/data/fitness.json";
+// import db from "../../src/data/fitness.json";
 // const http = require("http");
 // const fs = require("fs-extra");
 
@@ -14,16 +14,12 @@ class Projet13 extends Component {
     repsInput: "",
     select: 0,
     newExoInput: "",
-    exercices: db
+    exercices: []
   };
-  componentDidUpdate() {
-    // écrire dans le fichier
-    // console.log(fs.writeFile);
-    // ERROR
-    // fs.writeFile("src/data/test.json", "hello", err => {
-    //   if (err) throw err;
-    //   console.log("The file has been saved!");
-    // });
+  componentDidMount() {
+    fetch("https://mysterious-bayou-69637.herokuapp.com/df6g54sd65f4g6sd5fg")
+      .then(fetchedData => fetchedData.json())
+      .then(jsoned => this.setState({ exercices: jsoned.body }));
   }
   moveToFirst = () => {
     this.setState({ movingToTop: true });
@@ -35,6 +31,19 @@ class Projet13 extends Component {
     newExercices.unshift(findingExoToDelete);
     newExercices.splice(indexOfFoundExo + 1, 1);
     this.setState({ exercices: newExercices });
+    // fetch(
+    //   "https://mysterious-bayou-69637.herokuapp.com/dfbn65i4dfv4z6er654ze",
+    //   {
+    //     method: "POST",
+    //     // mode: "no-cors",
+    //     cache: "no-cache",
+    //     // credentials: "same-origin",
+    //     headers: {
+    //       "Content-Type": "application/json"
+    //     },
+    //     body: JSON.stringify({ exos: newExercices })
+    //   }
+    // ).then(resp => console.log(resp));
 
     setTimeout(() => {
       this.setState({ movingToTop: false });
@@ -116,6 +125,7 @@ class Projet13 extends Component {
   };
 
   deleteLog = () => {
+    this.setState({ movingToTop: true });
     console.log(this.state.exercices);
     console.log("select", this.state.select);
     let newExercices = [...this.state.exercices];
@@ -136,6 +146,9 @@ class Projet13 extends Component {
         select:
           this.state.exercices.length !== 0 ? this.state.exercices[0].id : 0
       });
+    }, 0);
+    setTimeout(() => {
+      this.setState({ movingToTop: false });
     }, 0);
   };
   newExo = e => {
