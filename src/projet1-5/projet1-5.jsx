@@ -49,7 +49,7 @@ class Projet15 extends Component {
     if (!errMsg) {
       // ici le code si check true
       console.log("check success");
-      const aaa = fetch(
+      fetch(
         "https://mysterious-bayou-69637.herokuapp.com/szBcbzadb777HBc78E6W",
         {
           method: "POST",
@@ -65,11 +65,7 @@ class Projet15 extends Component {
             text: this.state.mailing.msg
           })
         }
-      );
-
-      setTimeout(() => {
-        console.log(aaa);
-      }, 2000);
+      ).then(resp => console.log(resp));
     }
   };
 

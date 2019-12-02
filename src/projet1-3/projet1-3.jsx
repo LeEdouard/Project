@@ -21,6 +21,21 @@ class Projet13 extends Component {
       .then(fetchedData => fetchedData.json())
       .then(jsoned => this.setState({ exercices: jsoned.body }));
   }
+  updateToJson = data => {
+    fetch(
+      "https://mysterious-bayou-69637.herokuapp.com/dfbn65i4dfv4z6er654ze",
+      {
+        method: "POST",
+        // mode: "no-cors",
+        cache: "no-cache",
+        // credentials: "same-origin",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ exos: data })
+      }
+    ).then(resp => console.log(resp));
+  };
   moveToFirst = () => {
     this.setState({ movingToTop: true });
     let newExercices = [...this.state.exercices];
@@ -31,19 +46,8 @@ class Projet13 extends Component {
     newExercices.unshift(findingExoToDelete);
     newExercices.splice(indexOfFoundExo + 1, 1);
     this.setState({ exercices: newExercices });
-    // fetch(
-    //   "https://mysterious-bayou-69637.herokuapp.com/dfbn65i4dfv4z6er654ze",
-    //   {
-    //     method: "POST",
-    //     // mode: "no-cors",
-    //     cache: "no-cache",
-    //     // credentials: "same-origin",
-    //     headers: {
-    //       "Content-Type": "application/json"
-    //     },
-    //     body: JSON.stringify({ exos: newExercices })
-    //   }
-    // ).then(resp => console.log(resp));
+
+    this.updateToJson(newExercices);
 
     setTimeout(() => {
       this.setState({ movingToTop: false });
@@ -77,6 +81,7 @@ class Projet13 extends Component {
 
       this.setState({ submiting: true });
       this.setState({ exercices: newExercices });
+      this.updateToJson(newExercices);
     }
     this.setState({ repsInput: "" });
   };
@@ -103,6 +108,7 @@ class Projet13 extends Component {
       indexOfFoundExo
     ].entries.slice(0, newExercices[indexOfFoundExo].entries.length - 1);
     this.setState({ exercices: newExercices });
+    this.updateToJson(newExercices);
     setTimeout(() => {
       this.setState({ deleting: false });
     }, 0);
@@ -119,6 +125,7 @@ class Projet13 extends Component {
 
     newExercices[indexOfFoundExo].entries = [];
     this.setState({ exercices: newExercices });
+    this.updateToJson(newExercices);
     setTimeout(() => {
       this.setState({ reseting: false });
     }, 0);
@@ -141,6 +148,7 @@ class Projet13 extends Component {
     newExercices.splice(indexOfFoundExo, 1);
 
     this.setState({ exercices: newExercices });
+    this.updateToJson(newExercices);
     setTimeout(() => {
       this.setState({
         select:
@@ -169,6 +177,7 @@ class Projet13 extends Component {
         };
       }
       this.setState({ exercices: newExercices });
+      this.updateToJson(newExercices);
     }
     this.setState({ newExoInput: "" });
   };
