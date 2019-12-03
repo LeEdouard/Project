@@ -47,8 +47,9 @@ Envoie d'un formulaire de contacten method post vers l'api qui lui enverra le ma
 
 #### (Projet3)
 
-Sur ce même serveur, j'ai mis le fichier json qui sera lisable et modifiable(de manière permanente)
-Prochaine étape, faire des comptes avec des fichier json différents
+Sur ce même serveur, j'ai mis le fichier json qui sera lisable et modifiable PROBLEME: Apparemment HEROKU (l'hébergeur de l'api) reset les fichiers à chaque fois après un certain temps.
+
+Du coup, apprentissage de mongoDB avec mongoose. Ne reste plus qu'à appliquer sur fitness
 
 ### (Idées)
 
