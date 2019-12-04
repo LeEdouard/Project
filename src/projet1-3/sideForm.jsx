@@ -13,7 +13,9 @@ class SideForm extends Component {
             <FontAwesomeIcon icon={faStepBackward} />
           </DelayLink>
         </div>
-        <h1>test de la librairie chart.js</h1>
+        <h1>
+          test de la librairie chart.js, ainsi que mongoDB sur serveur node
+        </h1>
         <form onSubmit={this.props.onsubmit} className="form-group">
           <select
             className="form-control"
