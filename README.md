@@ -51,6 +51,4 @@ Utilisation de mongoDB(mongoose) sur le serveur node, tout marche nickel. Reste 
 
 ### (Idées)
 
--Tous les projets précedement faits ont tous une structure très simpliste. Je reviendrais donc encore plus sur du visuel et de l'intégration, histoire de travailler mieux sur les positionnements, bootstrap, grid, etc....
-
 -voir comment marche graphql
