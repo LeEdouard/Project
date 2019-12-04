@@ -53,9 +53,6 @@ class Projet15 extends Component {
         "https://mysterious-bayou-69637.herokuapp.com/szBcbzadb777HBc78E6W",
         {
           method: "POST",
-          // mode: "no-cors",
-          cache: "no-cache",
-          // credentials: "same-origin",
           headers: {
             "Content-Type": "application/json"
           },

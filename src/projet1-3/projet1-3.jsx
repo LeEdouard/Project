@@ -20,17 +20,14 @@ class Projet13 extends Component {
     fetch("https://mysterious-bayou-69637.herokuapp.com/df6g54sd65f4g6sd5fg9")
       .then(fetchedData => fetchedData.json())
       .then(jsoned => this.setState({ exercices: jsoned.body.exos }))
-      .then(a => this.setState({ select: this.state.exercices[0].id }))
-      .catch(e => console.log("error"));
+      .then(() => this.setState({ select: this.state.exercices[0].id }))
+      .catch(() => console.log("error"));
   }
   updateToJson = data => {
     fetch(
       "https://mysterious-bayou-69637.herokuapp.com/dfbn65i4dfv4z6er654ze9",
       {
         method: "POST",
-        // mode: "no-cors",
-        cache: "no-cache",
-        // credentials: "same-origin",
         headers: {
           "Content-Type": "application/json"
         },

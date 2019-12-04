@@ -17,8 +17,6 @@ class Article extends Component {
         window.scrollY - 100 + window.innerHeight
     ) {
       this.setState({ visible: true });
-
-      // this.changeURL();
     } else {
       this.setState({ visible: false });
     }
