@@ -24,7 +24,7 @@ class SideForm extends Component {
             {this.props.data.map((exercice, key) => {
               return (
                 <option key={key} value={exercice.id}>
-                  {exercice.name}
+                  {exercice.exoName}
                 </option>
               );
             })}

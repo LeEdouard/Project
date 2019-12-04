@@ -17,13 +17,15 @@ class Projet13 extends Component {
     exercices: []
   };
   componentDidMount() {
-    fetch("https://mysterious-bayou-69637.herokuapp.com/df6g54sd65f4g6sd5fg")
+    fetch("https://mysterious-bayou-69637.herokuapp.com/df6g54sd65f4g6sd5fg9")
       .then(fetchedData => fetchedData.json())
-      .then(jsoned => this.setState({ exercices: jsoned.body }));
+      .then(jsoned => this.setState({ exercices: jsoned.body.exos }))
+      // .then(jsoned => console.log(jsoned.body.exos))
+      .catch(e => console.log("error"));
   }
   updateToJson = data => {
     fetch(
-      "https://mysterious-bayou-69637.herokuapp.com/dfbn65i4dfv4z6er654ze",
+      "https://mysterious-bayou-69637.herokuapp.com/dfbn65i4dfv4z6er654ze9",
       {
         method: "POST",
         // mode: "no-cors",
@@ -166,13 +168,13 @@ class Projet13 extends Component {
       if (newExercices.length === 0) {
         newExercices[0] = {
           id: 0,
-          name: this.state.newExoInput,
+          exoName: this.state.newExoInput,
           entries: []
         };
       } else {
         newExercices[newExercices.length] = {
           id: newExercices[newExercices.length - 1].id + 1,
-          name: this.state.newExoInput,
+          exoName: this.state.newExoInput,
           entries: []
         };
       }
@@ -212,83 +214,3 @@ class Projet13 extends Component {
 }
 
 export default Projet13;
-// [
-//   {
-//     "id": 0,
-//     "name": "Sit-Ups",
-//     "entries": [
-//       {
-//         "id": 1,
-//         "value": 10
-//       },
-//       {
-//         "id": 2,
-//         "value": 20
-//       },
-//       {
-//         "id": 3,
-//         "value": 75
-//       },
-//       {
-//         "id": 4,
-//         "value": 50
-//       },
-//       {
-//         "id": 5,
-//         "value": 100
-//       }
-//     ]
-//   },
-//   {
-//     "id": 1,
-//     "name": "Chin-Ups",
-//     "entries": [
-//       {
-//         "id": 1,
-//         "value": 10
-//       },
-//       {
-//         "id": 2,
-//         "value": 20
-//       },
-//       {
-//         "id": 3,
-//         "value": 75
-//       },
-//       {
-//         "id": 4,
-//         "value": 50
-//       },
-//       {
-//         "id": 5,
-//         "value": 100
-//       }
-//     ]
-//   },
-//   {
-//     "id": 2,
-//     "name": "Rows",
-//     "entries": [
-//       {
-//         "id": 1,
-//         "value": 10
-//       },
-//       {
-//         "id": 2,
-//         "value": 20
-//       },
-//       {
-//         "id": 3,
-//         "value": 75
-//       },
-//       {
-//         "id": 4,
-//         "value": 50
-//       },
-//       {
-//         "id": 5,
-//         "value": 100
-//       }
-//     ]
-//   }
-// ]

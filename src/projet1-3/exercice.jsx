@@ -108,7 +108,7 @@ class Exercice extends Component {
     return (
       <div className="exercice col-lg-4 col-md-6  col-sm-12 p-2">
         <h3 className="text-white text-center">
-          {this.props.exerciceData.name}
+          {this.props.exerciceData.exoName}
         </h3>
         <canvas
           id={this.props.exerciceData.id}
