@@ -17,14 +17,14 @@ class Projet13 extends Component {
     exercices: []
   };
   componentDidMount() {
-    fetch("http://127.0.0.1:8081/getLog")
+    fetch("http://127.0.0.1:8082/getLog")
       .then(fetchedData => fetchedData.json())
       .then(jsoned => this.setState({ exercices: jsoned.body.exos }))
       .then(() => this.setState({ select: this.state.exercices[0].id }))
       .catch(() => console.log("error"));
   }
   updateToJson = data => {
-    fetch("http://127.0.0.1:8081/editLog", {
+    fetch("http://127.0.0.1:8082/editLog", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

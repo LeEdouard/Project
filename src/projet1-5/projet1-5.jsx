@@ -49,7 +49,7 @@ class Projet15 extends Component {
     if (!errMsg) {
       // ici le code si check true
       console.log("check success");
-      fetch("http://127.0.0.1:8080/mailing", {
+      fetch("http://127.0.0.1:8081/mailing", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

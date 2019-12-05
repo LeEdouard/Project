@@ -3,8 +3,8 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const util = require("util");
-// const originURL = "http://127.0.0.1:3000";
-const originURL = "http://edouard-dev.com";
+const originURL = "http://127.0.0.1:3000";
+// const originURL = "http://edouard-dev.com";
 
 // Shortening Functions
 const nodeFull = obj => {
@@ -14,7 +14,7 @@ const nodeFull = obj => {
 //
 // server init
 //
-const port = 8081;
+const port = 8082;
 const app = express();
 app.use(
   bodyParser.urlencoded({
@@ -24,7 +24,7 @@ app.use(
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: "http://127.0.0.1:3000"
+    origin: originURL
   })
 );
 app.listen(port, err => {

@@ -2,12 +2,12 @@ const express = require("express");
 const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-// const originURL = "http://127.0.0.1:3000";
-const originURL = "http://edouard-dev.com";
+const originURL = "http://127.0.0.1:3000";
+// const originURL = "http://edouard-dev.com";
 //
 // server init
 //
-const port = 8080;
+const port = 8081;
 const app = express();
 app.use(
   bodyParser.urlencoded({
