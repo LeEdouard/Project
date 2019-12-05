@@ -282,6 +282,29 @@ app.post("/dfbn65i4dfv4z6er654ze9", (request, response) => {
 
 ```
 
+#### (Projet 3 & 5)
+
+J'ai trouvé un moyen de lancé un site react en simultané avec plusieurs serveurs node. Du coup, plus besoin d'utiliser un autre host. Restriction des api en provenance d'autres source que le site.
+
+key code:
+
+```
+"scripts": {
+  "start": "react-scripts start",
+  "mailing": "node mailing.js",
+  "fitness": "node fitness.js",
+  "dev": "run-p mailing fitness start"
+}
+```
+
+```
+app.use(
+  cors({
+    origin: originURL
+  })
+);
+```
+
 ### (Idées)
 
 -voir comment marche graphql
