@@ -284,7 +284,7 @@ app.post("/dfbn65i4dfv4z6er654ze9", (request, response) => {
 
 #### (Projet 3 & 5)
 
-J'ai trouvé un moyen de lancé un site react en simultané avec plusieurs serveurs node. Du coup, plus besoin d'utiliser un autre host. Restriction des api en provenance d'autres source que le site.
+J'ai trouvé un moyen de lancé un site react en simultané avec plusieurs serveurs node. Du coup, plus besoin d'utiliser un autre host. PROBLEME: Ne marche que en local....
 
 key code:
 
