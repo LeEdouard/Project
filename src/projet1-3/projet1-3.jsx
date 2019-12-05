@@ -17,20 +17,27 @@ class Projet13 extends Component {
     exercices: []
   };
   componentDidMount() {
-    fetch("http://127.0.0.1:8082/getLog")
+    fetch("https://mysterious-bayou-69637.herokuapp.com/df6g54sd65f4g6sd5fg9")
       .then(fetchedData => fetchedData.json())
       .then(jsoned => this.setState({ exercices: jsoned.body.exos }))
       .then(() => this.setState({ select: this.state.exercices[0].id }))
       .catch(() => console.log("error"));
+
+    fetch("http://127.0.0.1:8082/getLog").catch(() =>
+      console.log("error from try out")
+    );
   }
   updateToJson = data => {
-    fetch("http://127.0.0.1:8082/editLog", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ exos: data })
-    }).then(resp => console.log(resp));
+    fetch(
+      "https://mysterious-bayou-69637.herokuapp.com/dfbn65i4dfv4z6er654ze9",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ exos: data })
+      }
+    ).then(resp => console.log(resp));
   };
   moveToFirst = () => {
     this.setState({ movingToTop: true });
