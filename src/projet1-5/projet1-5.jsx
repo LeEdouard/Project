@@ -49,17 +49,20 @@ class Projet15 extends Component {
     if (!errMsg) {
       // ici le code si check true
       console.log("check success");
-      fetch("http://127.0.0.1:8081/mailing", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          from: this.state.mailing.email,
-          subject: this.state.mailing.subject,
-          text: this.state.mailing.msg
-        })
-      }).then(resp => console.log(resp));
+      fetch(
+        "https://mysterious-bayou-69637.herokuapp.com/szBcbzadb777HBc78E6W",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            from: this.state.mailing.email,
+            subject: this.state.mailing.subject,
+            text: this.state.mailing.msg
+          })
+        }
+      ).then(resp => console.log(resp));
     }
   };
 

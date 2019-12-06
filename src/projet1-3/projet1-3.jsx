@@ -22,10 +22,6 @@ class Projet13 extends Component {
       .then(jsoned => this.setState({ exercices: jsoned.body.exos }))
       .then(() => this.setState({ select: this.state.exercices[0].id }))
       .catch(() => console.log("error"));
-
-    fetch("http://127.0.0.1:8082/getLog").catch(() =>
-      console.log("error from try out")
-    );
   }
   updateToJson = data => {
     fetch(
