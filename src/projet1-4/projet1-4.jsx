@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import $ from "jquery";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAngleDoubleDown,
@@ -27,7 +26,7 @@ class Projet14 extends Component {
 
     const d = new Date();
     this.setState({
-      dateOpen: "Page ouverte à " + d.getHours() + " heures"
+      dateOpen: "Page ouverte à " + d.getHours() + "H"
     });
 
     let allSections = document.getElementsByTagName("section");
@@ -167,7 +166,6 @@ class Projet14 extends Component {
                   </li>
                 );
               })}
-              <h6 id="ip">.</h6>
               <h6>Browser : {window.navigator.appCodeName}</h6>
               <h6>OS : {window.navigator.oscpu}</h6>
               <h6>{this.state.dateOpen}</h6>
@@ -178,7 +176,5 @@ class Projet14 extends Component {
     );
   }
 }
-$.getJSON("https://api.ipify.org?format=json", function(data) {
-  $("#ip").html("IP : " + data.ip);
-});
+
 export default Projet14;
