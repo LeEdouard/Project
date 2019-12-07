@@ -198,7 +198,7 @@ class Projet13 extends Component {
 
   render() {
     return (
-      <div className="fitness row m-0 p-0">
+      <div className="fitness row m-0 p-0 bg-dark">
         <SideForm
           data={this.state.exercices}
           onsubmit={this.onsubmit}

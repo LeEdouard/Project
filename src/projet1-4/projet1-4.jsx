@@ -34,25 +34,33 @@ class Projet14 extends Component {
       allSections[index].style["height"] = window.innerHeight + "px";
     }
 
-    document.addEventListener("wheel", e => {
-      if (e.deltaY > 0) {
-        this.goDownOne();
-      } else if (e.deltaY < 0) {
-        this.goUpOne();
-      }
-    });
+    document.addEventListener("wheel", this.wheely);
 
+    this.timerInterval();
+  }
+
+  timerInterval = () => {
     setInterval(() => {
       let newTimer = [...this.state.timer];
       newTimer[this.state.currentSection] =
         Math.round((newTimer[this.state.currentSection] + 0.1) * 10) / 10;
       this.setState({ timer: newTimer });
     }, 100);
-  }
+  };
+
+  wheely = e => {
+    if (e.deltaY > 0) {
+      this.goDownOne();
+    } else if (e.deltaY < 0) {
+      this.goUpOne();
+    }
+  };
 
   componentWillUnmount() {
     document.documentElement.style["scrollbar-width"] = "auto";
     document.documentElement.classList.remove("noscroll");
+    document.removeEventListener("wheel", this.wheely);
+    this.timerInterval = null;
   }
 
   goDownOne = () => {
@@ -82,7 +90,6 @@ class Projet14 extends Component {
       this.setState({ currentSection: this.state.currentSection - 1 });
     }
   };
-
   render() {
     return (
       <div className="inspiration">

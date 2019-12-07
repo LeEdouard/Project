@@ -898,34 +898,21 @@ PROJET 1-3
 
 */
 .fitness {
-  background: rgb(38, 36, 58);
+  /* background: rgb(38, 36, 58); */
+  /* background: black; */
   transition: 1.5s;
 }
 
-.sideForm {
-  background: lightgray;
-  /* width: 100%;
-  height: 100%; */
+.sideForm_sticky {
+  top: 0;
 }
-/* 
 .sideForm input {
-  border: none;
-  max-width: 10rem;
-  text-align: center;
-} */
+  margin-top: 5px;
+}
 
 .exercicesDisplay {
   min-height: 1000px;
-  /* display: grid;
-  grid-template-columns: 1fr 1fr; */
-  /* grid-gap: 100px; */
 }
-/* 
-@media screen and (max-width: 540) {
-  .exercicesDisplay {
-    grid-template-columns: 1fr;
-  }
-} */
 
 .exercice {
   /* width: 23rem; */
@@ -939,12 +926,11 @@ PROJET 1-3
 }
 
 .fitness canvas {
-  background: rgb(176, 199, 209);
   border-radius: 10px;
 }
 
 .fitness h1 {
-  font-size: 3vh;
+  font-size: 1rem;
 }
 
 .fitness .back:hover > * {

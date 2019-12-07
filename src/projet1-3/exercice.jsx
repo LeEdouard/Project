@@ -54,7 +54,7 @@ class Exercice extends Component {
         display: false,
         datasets: [
           {
-            label: "Reps",
+            label: "Reps/Min/Km",
             data: newValues,
             backgroundColor: "rgba(0, 0, 0, 0.1)",
             borderColor: "rgba(0, 0, 0, 1)",
@@ -114,6 +114,7 @@ class Exercice extends Component {
           id={this.props.exerciceData.id}
           // width="400"
           height="300vh"
+          className="bg-light"
         ></canvas>
       </div>
     );
