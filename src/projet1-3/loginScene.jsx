@@ -25,15 +25,13 @@ class LoginScene extends Component {
     form.style["height"] === "0rem"
       ? (form.style["height"] = "10rem")
       : (form.style["height"] = "0rem");
-
-    // document.getElementById("loginForm").style["opacity"] = "0";
   };
   render() {
     return (
-      <div className="loginScene">
+      <div className="loginScene text-dark">
         <h1>Fitness Log</h1>
-        <div onClick={this.clicking} className="btn">
-          <h3>Log in</h3>
+        <div onClick={this.clicking} className="w-100 bg-dark text-white mb-2">
+          <h3 className="text-center">Log in</h3>
           <div className="arrowDown"></div>
         </div>
 
