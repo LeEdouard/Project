@@ -46,7 +46,7 @@ class Projet13 extends Component {
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({ exos: data })
+        body: JSON.stringify({ id: this.props.userId, exos: data })
       }
     ).then(resp => console.log(resp));
   };
