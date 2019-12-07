@@ -34,7 +34,6 @@ class Projet13 extends Component {
       body: JSON.stringify({ id: this.props.userId })
     })
       .then(fetchedData => fetchedData.json())
-      // .then(resp => console.log(resp))
       .then(jsoned => this.setState({ exercices: jsoned.body.exos }))
       .then(() => this.setState({ select: this.state.exercices[0].id }))
       .catch(() => console.log("error could not fetch"));

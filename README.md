@@ -240,44 +240,31 @@ app.post("/szBcbzadb777HBc78E6W", (request, response) => {
 
 #### (Projet3)
 
-Utilisation de mongoDB(mongoose) sur le serveur node, tout marche nickel. Reste à faire un système de compte (voir comment gérer les cookies)
+Utilisation de mongoDB(mongoose) sur le serveur node, tout marche nickel. Système de compte. Reste à pouvoir créer des comptes et voir comment gérer les cookies)
 
 key code:
 
 ```
 componentDidMount() {
-  fetch("https://mysterious-bayou-69637.herokuapp.com/df6g54sd65f4g6sd5fg9")
-    .then(fetchedData => fetchedData.json())
-    .then(jsoned => this.setState({ exercices: jsoned.body.exos }))
-    .then(() => this.setState({ select: this.state.exercices[0].id }))
-    .catch(() => console.log("error"));
-}
-updateToJson = data => {
-  fetch(
-    "https://mysterious-bayou-69637.herokuapp.com/dfbn65i4dfv4z6er654ze9",
-    {
+  fetch("https://mysterious-bayou-69637.herokuapp.com/df6g54sd65f4g6sd5fg9", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ exos: data })
-    }
-  ).then(resp => console.log(resp));
-};
+      body: JSON.stringify({ id: this.props.userId })
+    })
+      .then(fetchedData => fetchedData.json())
+      .then(jsoned => this.setState({ exercices: jsoned.body.exos }))
+      .then(() => this.setState({ select: this.state.exercices[0].id }))
+      .catch(() => console.log("error could not fetch"));
+}
 ```
 
 ```
-app.get("/df6g54sd65f4g6sd5fg9", (request, response) => {
-  User.findById(request.id)
+app.post("/df6g54sd65f4g6sd5fg9", (request, response) => {
+  User.findById(request.body.id)
     .then(foundUser => response.send({ body: foundUser }))
-    .catch(error => response.send(error));
-});
-app.post("/dfbn65i4dfv4z6er654ze9", (request, response) => {
-  User.findByIdAndUpdate(request.id, {
-    exos: [...request.exos]
-  })
-    .then(updatedUser => console.log("UPDATED", updatedUser))
-    .catch(error => console.log(error));
+    .catch(error => response.send({ error: "Could not find" }));
 });
 
 ```
