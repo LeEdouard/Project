@@ -81,7 +81,7 @@ class Projet15 extends Component {
   };
   render() {
     return (
-      <div className="contact">
+      <div className="contact text-dark">
         <form onSubmit={this.submit} className="">
           <h1>Contact</h1>
           <Input

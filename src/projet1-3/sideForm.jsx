@@ -39,7 +39,7 @@ class SideForm extends Component {
               value={this.props.entryValue}
             />
             <input
-              className="form-control btn btn-outline-primary"
+              className="form-control btn btn-outline-primary text-white"
               type="submit"
               value="New entry"
             />
@@ -48,25 +48,25 @@ class SideForm extends Component {
           vraie db */}
           </form>
           <input
-            className="form-control btn btn-outline-danger"
+            className="form-control btn btn-outline-danger text-white"
             type="submit"
             value="Delete entry"
             onClick={this.props.deleteEntry}
           />
           <input
-            className="form-control btn btn-outline-danger"
+            className="form-control btn btn-outline-danger text-white"
             type="submit"
             value="Reset log"
             onClick={this.props.resetLog}
           />
           <input
-            className="form-control btn btn-outline-danger"
+            className="form-control btn btn-outline-danger text-white"
             type="submit"
             value="Delete Exo"
             onClick={this.props.deleteLog}
           />
           <input
-            className="form-control btn btn-outline-primary"
+            className="form-control btn btn-outline-primary text-white"
             type="submit"
             value="Move to first"
             onClick={this.props.moveToFirst}
@@ -74,14 +74,14 @@ class SideForm extends Component {
           <form onSubmit={this.props.newExo}>
             <input
               id="newExoInput"
-              className="form-control"
+              className="form-control "
               type="text"
               placeholder="New exo name"
               onChange={this.props.onchange}
               value={this.props.exoValue}
             />
             <input
-              className="form-control btn btn-outline-primary"
+              className="form-control btn btn-outline-primary text-white"
               type="submit"
               value="New Exo"
             />

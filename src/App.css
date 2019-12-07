@@ -59,10 +59,9 @@ a:hover {
 .terminalTxt {
   padding: 3px;
   margin: 0;
-  /* color: #39d695; */
   color: white;
   text-shadow: 2px 2px 1px hsla(155, 55%, 28%, 0.568);
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-family: terminal;
 }
 
@@ -71,7 +70,7 @@ a:hover {
   color: white;
   border: none;
   width: 90%;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-family: terminal;
 }
 .main input:focus {
@@ -123,8 +122,6 @@ a:hover {
 }
 
 .projet {
-  /* position: relative; */
-  /* width: 200px; */
   background: #39d695;
   color: white;
   border-radius: 10px;
@@ -141,28 +138,73 @@ a:hover {
   cursor: default;
 }
 
+.projet_important {
+  background: #00ff95;
+  box-shadow: 2px 2px 1px #00bb6d;
+  text-shadow: 2px 2px 1px #00bb6d;
+}
+
+.projet_bof {
+  background: #9dc2b2;
+  box-shadow: 2px 2px 1px #779487;
+  text-shadow: 2px 2px 1px #779487;
+}
+
+.projet_vide {
+  background: #c5c5c5;
+  box-shadow: 2px 2px 1px #9b9b9b;
+  text-shadow: 2px 2px 1px #9b9b9b;
+}
+
+.projet_chantier {
+  background: #c5c5c5;
+  box-shadow: 2px 2px 1px #9b9b9b;
+  text-shadow: 2px 2px 1px #9b9b9b;
+}
+
 .projet:hover {
   box-shadow: 2px 2px 2px black;
   transform: scale(1.1);
 }
 
-/* .projet1 {
-  background-image: url("./img/screenshot_projet1-1.png");
-  background-size: cover;
-} */
+/*
 
-/* .imgZoom {
-  position: absolute;
-  z-index: 999999;
-  top: 0;
-  width: 100% !important;
-  height: 100% !important;
-  font-size: calc(10px + 10vh);
-}
 
-.imgFit {
-  top: 0;
-} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+PROJET 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
 
 .first,
 .second {
@@ -937,7 +979,7 @@ PROJET 1-3
 }
 
 .fitness h1 {
-  font-size: 1rem;
+  font-size: 2rem;
 }
 
 .fitness .back:hover > * {
@@ -955,6 +997,9 @@ PROJET 1-3
   .fitness input,
   .fitness select {
     font-size: 0.7rem;
+  }
+  .fitness h1 {
+    font-size: 1rem;
   }
 }
 

@@ -10,35 +10,35 @@ class Main extends Component {
         name: "Projet1",
         label: "2019",
         link: "2019",
-        className: "projet projet1 m-1"
+        className: "projet m-1 projet_important"
       },
       {
         id: 1,
         name: "Projet2",
         label: "db",
         link: "db_process",
-        className: "projet projet1 m-1"
+        className: "projet m-1 projet_bof"
       },
       {
         id: 2,
         name: "Projet3",
         label: "fitness",
         link: "fitness_log",
-        className: "projet projet1 m-1"
+        className: "projet m-1 projet_important"
       },
       {
         id: 3,
         name: "Projet4",
         label: "inspire",
         link: "inspiration",
-        className: "projet projet1 m-1"
+        className: "projet m-1"
       },
       {
         id: 4,
         name: "Projet5",
         label: "contact",
         link: "contact",
-        className: "projet projet1 m-1"
+        className: "projet m-1"
       }
     ],
     terminalinput: "",
@@ -61,7 +61,17 @@ class Main extends Component {
     }
 
     if (this.state.terminalinput === "ls") {
-      this.setState({ h1: "2019 db_process secretfolder" });
+      this.setState({
+        h1: "2019 db_process fitness_log inspire contact secretfolder"
+      });
+    } else if (folder === "contact") {
+      window.location = "/contact";
+    } else if (folder === "inspire") {
+      window.location = "/inspire";
+    } else if (folder === "fitness_log") {
+      window.location = "/fitness_log";
+    } else if (folder === "db_process") {
+      window.location = "/db_process";
     } else if (folder === "2019") {
       window.location = "/2019";
     } else if (folder === "secretfolder") {
@@ -99,10 +109,10 @@ class Main extends Component {
                 <Project key={key} project={project} fadeOut={this.fadeout} />
               );
             })}
-            <div className="projet projet1 m-1">...</div>
-            <div className="projet projet1 m-1">...</div>
-            <div className="projet projet1 m-1">...</div>
-            <div className="projet projet1 m-1">...</div>
+            <div className="projet m-1 projet_vide">...</div>
+            <div className="projet m-1 projet_vide">...</div>
+            <div className="projet m-1 projet_vide">...</div>
+            <div className="projet m-1 projet_vide">...</div>
           </div>
         </div>
       </div>

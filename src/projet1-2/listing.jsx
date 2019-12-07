@@ -18,65 +18,6 @@ class Listing extends Component {
 
   componentDidMount() {}
 
-  // onsubmit = e => {
-  //   e.preventDefault();
-  //   const unitList = document.getElementsByClassName("unit");
-  //   let counting = 0;
-  //   for (const elem of unitList) {
-  //     if (
-  //       elem.attributes["data-drug"].value
-  //         .toLowerCase()
-  //         .includes(this.state.input.toLowerCase()) ||
-  //       elem.attributes["data-company"].value
-  //         .toLowerCase()
-  //         .includes(this.state.input.toLowerCase())
-  //     ) {
-  //       elem.style["opacity"] = "1";
-  //       elem.style["height"] = "3.15rem";
-  //       elem.style["border"] = "1px solid black";
-  //       counting = counting + 1;
-  //     } else {
-  //       elem.style["opacity"] = "0";
-  //       elem.style["height"] = "0em";
-  //       elem.style["border"] = "none";
-  //     }
-  //   }
-  //   this.setState({ empty: false });
-  //   if (counting === 0) {
-  //     this.setState({ empty: true });
-  //   }
-
-  // this.setState({ input: "" });
-
-  // $.ajax({
-  //   url: "https://sg.media-imdb.com/suggests/a/aa.json",
-  //   dataType: "jsonp",
-  //   cache: true,
-  //   jsonp: false,
-  //   jsonpCallback: "imdb$aa"
-  // }).then(function(results) {
-  //   console.log(results);
-  // });
-  // };
-
-  // onclick = e => {
-  //   console.log(e.target.parentElement);
-
-  //   if (e.target.parentElement.childNodes[4].style["display"] === "none") {
-  //     e.target.parentElement.childNodes[4].style["display"] = "block";
-  //   } else {
-  //     e.target.parentElement.childNodes[4].style["display"] = "none";
-  //   }
-  // };
-
-  // onclickfade = e => {
-  //   if (e.target.id === "popup") {
-  //     document.getElementById("popup").style["display"] = "none";
-
-  //     document.getElementById("popup_img").src = "";
-  //   }
-  // };
-
   onchange = e => {
     this.setState({ input: e.target.value });
     setTimeout(() => {
@@ -226,7 +167,6 @@ class Listing extends Component {
                 data-rating={elem.rating}
                 data-review={elem.review}
                 data-picture={elem.picture}
-                // onClick={this.onclick}
               >
                 <div className="border-right drug col-lg-4 col-4">
                   {elem.drug}
@@ -330,13 +270,6 @@ class Listing extends Component {
             </div>
           ) : null}
         </div>
-        {/* <div id="popup" onClick={this.onclickfade}>
-          <div id="popup_window">
-            <div id="popup_drug"></div>
-            <img id="popup_img" src="" alt="" />
-            <div id="popup_review"></div>
-          </div>
-        </div> */}
       </div>
     );
   }
