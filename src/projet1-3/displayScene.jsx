@@ -23,12 +23,10 @@ class Projet13 extends Component {
         .getElementsByClassName("fitness")[0]
         .classList.remove("opacityZero");
     }, 0);
-    // fetch("https://mysterious-bayou-69637.herokuapp.com/df6g54sd65f4g6sd5fg9")
-    //   .then(fetchedData => fetchedData.json())
-    //   .then(jsoned => this.setState({ exercices: jsoned.body.exos }))
-    //   .then(() => this.setState({ select: this.state.exercices[0].id }))
-    //   .catch(() => console.log("error"));
-    fetch("http://localhost:8000/df6g54sd65f4g6sd5fg9", {
+
+    // https://mysterious-bayou-69637.herokuapp.com/df6g54sd65f4g6sd5fg9
+    // http://localhost:8000/df6g54sd65f4g6sd5fg9
+    fetch("https://mysterious-bayou-69637.herokuapp.com/df6g54sd65f4g6sd5fg9", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
