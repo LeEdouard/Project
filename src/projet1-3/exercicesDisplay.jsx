@@ -14,7 +14,7 @@ class ExercicesDisplay extends Component {
     } = this.props;
 
     return (
-      <div className="exercicesDisplay col-9 row p-0 m-0">
+      <div className="exercicesDisplay col row p-0 m-0">
         {data.map((exerciceData, key) => {
           return (
             <Exercice

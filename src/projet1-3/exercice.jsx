@@ -106,7 +106,7 @@ class Exercice extends Component {
   };
   render() {
     return (
-      <div className="exercice col-lg-4 col-md-6  col-sm-12 p-2">
+      <div className="exercice col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 p-2">
         <h3 className="text-white text-center">
           {this.props.exerciceData.exoName}
         </h3>
