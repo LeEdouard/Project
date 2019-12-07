@@ -9,12 +9,6 @@ class Projet13 extends Component {
   };
   checking = e => {
     e.preventDefault();
-    console.log(
-      "log: ",
-      e.target.children[0].value,
-      "pwd:",
-      e.target.children[1].value
-    );
     fetch("http://localhost:8000/u1ert6er7tvc1sdf6546df", {
       method: "POST",
       headers: {
@@ -27,27 +21,21 @@ class Projet13 extends Component {
     })
       .then(fetchedData => fetchedData.json())
       .then(jsoned => {
-        console.log("ANSWER:", jsoned.answer);
-
         if (jsoned.answer === "RIGHT") {
           this.setState({ id: jsoned.id });
         } else {
-          this.setState({ error: "Wrong, check again !" });
+          this.setState({ error: "Wrong, try again !" });
         }
-        setTimeout(() => {
-          console.log(this.state.id);
-        }, 0);
       })
-
       .catch(() => console.log("error to get response"));
   };
   render() {
     return (
       <>
         {this.state.id ? (
-          <DisplayScene />
+          <DisplayScene userId={this.state.id} />
         ) : (
-          <LoginScene checking={this.checking} />
+          <LoginScene checking={this.checking} error={this.state.error} />
         )}
       </>
     );

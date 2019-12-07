@@ -28,11 +28,18 @@ class Projet13 extends Component {
     //   .then(jsoned => this.setState({ exercices: jsoned.body.exos }))
     //   .then(() => this.setState({ select: this.state.exercices[0].id }))
     //   .catch(() => console.log("error"));
-    fetch("http://localhost:8000/df6g54sd65f4g6sd5fg9")
+    fetch("http://localhost:8000/df6g54sd65f4g6sd5fg9", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ id: this.props.userId })
+    })
       .then(fetchedData => fetchedData.json())
+      // .then(resp => console.log(resp))
       .then(jsoned => this.setState({ exercices: jsoned.body.exos }))
       .then(() => this.setState({ select: this.state.exercices[0].id }))
-      .catch(() => console.log("error"));
+      .catch(() => console.log("error could not fetch"));
   }
   updateToJson = data => {
     fetch(

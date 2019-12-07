@@ -27,6 +27,11 @@ class LoginScene extends Component {
           <input id="pwd" type="password" placeholder="password" />
           <input type="submit" value="Login" />
         </form>
+        {this.props.error && (
+          <div className="alert alert-danger m-1 p-1" role="alert">
+            {this.props.error}
+          </div>
+        )}
       </div>
     );
   }
