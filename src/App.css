@@ -909,6 +909,9 @@ PROJET 1-3
 .sideForm input {
   margin-top: 5px;
 }
+.sideForm {
+  background: rgba(255, 255, 255, 0.1);
+}
 
 .exercicesDisplay {
   min-height: 1000px;
