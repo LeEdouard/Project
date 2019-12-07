@@ -7,7 +7,7 @@ class SideForm extends Component {
   state = {};
   render() {
     return (
-      <div className="sideForm col-2 p-0 text-white pl-1 pr-1">
+      <div className="sideForm col-3 p-0 text-white pl-1 pr-1">
         <div className="sideForm_sticky position-sticky">
           <div className="back">
             <DelayLink delay={0} to="" clickAction={this.fadeout}>
