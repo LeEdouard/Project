@@ -891,6 +891,7 @@ PROJET 1-3
 */
 .fitness {
   background: rgb(38, 36, 58);
+  transition: 1.5s;
 }
 
 .sideForm {
@@ -954,6 +955,15 @@ PROJET 1-3
   .fitness select {
     font-size: 0.7rem;
   }
+}
+
+.loginScene {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 1.5s;
 }
 /*
 

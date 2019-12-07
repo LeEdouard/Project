@@ -51,10 +51,6 @@ class Projet14 extends Component {
   }
 
   componentWillUnmount() {
-    document
-      .getElementsByClassName("inspiration")[0]
-      .classList.add("opacityZero");
-
     document.documentElement.style["scrollbar-width"] = "auto";
     document.documentElement.classList.remove("noscroll");
   }
