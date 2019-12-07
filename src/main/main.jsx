@@ -42,8 +42,7 @@ class Main extends Component {
       }
     ],
     terminalinput: "",
-    h1: "Edouard Chang",
-    opacity: 1
+    h1: "Edouard Chang"
   };
   componentDidMount() {
     window.history.pushState("test", "TITLE", `/`);
@@ -80,11 +79,11 @@ class Main extends Component {
   };
 
   fadeout = () => {
-    this.setState({ opacity: 0 });
+    document.getElementsByClassName("main")[0].classList.add("opacityZero");
   };
   render() {
     return (
-      <div className="main" style={{ opacity: this.state.opacity }}>
+      <div className="main">
         <label className="terminalWrap w-100" htmlFor="terminalInput">
           <h1 className=" terminalTxt">{this.state.h1}</h1>
           <TerminalInput
