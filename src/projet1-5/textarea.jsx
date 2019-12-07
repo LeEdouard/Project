@@ -2,19 +2,10 @@ import React from "react";
 
 const TextArea = ({ name, value, onChange, label, error }) => {
   return (
-    <div className="row form-group">
+    <div className="">
       <label className="" htmlFor={name}>
         {label}
       </label>
-      {/* <input
-    type="text"
-    className="form-control"
-    id={name}
-    placeholder={label}
-    onChange={onChange}
-    value={value}
-    maxLength="50"
-  /> */}
       <textarea
         className="form-control"
         id={name}
@@ -25,10 +16,18 @@ const TextArea = ({ name, value, onChange, label, error }) => {
         maxLength="500"
         placeholder="Ecrivez ici votre message (max : 500 caractères)"
       ></textarea>
-      {error && (
-        <div className="alert alert-danger m-1 p-1" role="alert">
+      {error ? (
+        <div
+          className="alert form-control alert-danger p-1 transition05 h2rem m-0"
+          role="alert"
+        >
           {error}
         </div>
+      ) : (
+        <div
+          className="alert form-control p-1 transition05 h0rem m-0"
+          role="alert"
+        ></div>
       )}
     </div>
   );

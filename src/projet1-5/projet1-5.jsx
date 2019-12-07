@@ -13,6 +13,14 @@ class Projet15 extends Component {
     error: {}
   };
 
+  componentDidMount() {
+    document.getElementsByClassName("contact")[0].classList.add("opacityZero");
+    setTimeout(() => {
+      document
+        .getElementsByClassName("contact")[0]
+        .classList.remove("opacityZero");
+    }, 0);
+  }
   check = () => {
     const checkRules = Joi.object({
       email: Joi.string().email({
@@ -74,10 +82,7 @@ class Projet15 extends Component {
   render() {
     return (
       <div className="contact">
-        <form
-          onSubmit={this.submit}
-          className="col contact border border-danger p-3 mx-auto"
-        >
+        <form onSubmit={this.submit} className="">
           <h1>Contact</h1>
           <Input
             name="email"
@@ -97,17 +102,13 @@ class Projet15 extends Component {
             name="msg"
             value={this.state.mailing.msg}
             onChange={this.change}
-            label="Sujet"
+            label="Message"
             error={this.state.error.msg}
           />
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="form-control btn btn-primary">
             Envoyer
           </button>
         </form>
-        <h6>
-          Utilisation d'un serveur node, et gestion de la requête post dans
-          cette api pour envoyer un mail
-        </h6>
       </div>
     );
   }

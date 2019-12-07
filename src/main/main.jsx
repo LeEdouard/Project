@@ -36,7 +36,7 @@ class Main extends Component {
       {
         id: 4,
         name: "Projet5",
-        label: "contact + api",
+        label: "contact",
         link: "contact",
         className: "projet projet1 m-1"
       }

@@ -2,7 +2,7 @@ import React from "react";
 
 const Input = ({ name, value, onChange, label, error }) => {
   return (
-    <div className="row form-group">
+    <div className="m-0">
       <label className="" htmlFor={name}>
         {label}
       </label>
@@ -15,10 +15,18 @@ const Input = ({ name, value, onChange, label, error }) => {
         value={value}
         maxLength="50"
       />
-      {error && (
-        <div className="alert alert-danger m-1 p-1" role="alert">
+      {error ? (
+        <div
+          className="alert form-control alert-danger p-1 transition05 h2rem m-0"
+          role="alert"
+        >
           {error}
         </div>
+      ) : (
+        <div
+          className="alert form-control p-1 transition05 h0rem m-0"
+          role="alert"
+        ></div>
       )}
     </div>
   );

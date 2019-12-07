@@ -61,15 +61,16 @@ class LoginScene extends Component {
           />
           {this.props.error ? (
             <div
-              className="alert form-control alert-secondary p-1 text-center"
+              className="alert form-control alert-secondary p-1 text-center transition05 h2rem m-0"
               role="alert"
             >
               {this.props.error}
             </div>
           ) : (
-            <div className="alert form-control p-1 invisible" role="alert">
-              good
-            </div>
+            <div
+              className="alert form-control p-1 h0rem transition05 m-0"
+              role="alert"
+            ></div>
           )}
         </form>
 
