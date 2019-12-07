@@ -32,6 +32,8 @@ class LoginScene extends Component {
             {this.props.error}
           </div>
         )}
+        <div>test account, login : Edouard, password : HAHA</div>
+        <div>next step account creation and cookies</div>
       </div>
     );
   }
