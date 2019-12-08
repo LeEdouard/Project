@@ -46,6 +46,12 @@ class Main extends Component {
   };
   componentDidMount() {
     window.history.pushState("test", "TITLE", `/`);
+    document.getElementsByClassName("main")[0].classList.add("opacityZero");
+    setTimeout(() => {
+      document
+        .getElementsByClassName("main")[0]
+        .classList.remove("opacityZero");
+    }, 0);
   }
 
   onchange = e => {

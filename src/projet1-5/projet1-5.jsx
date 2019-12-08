@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import Joi from "@hapi/joi";
 import Input from "./input";
 import TextArea from "./textarea";
+import DelayLink from "react-delay-link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStepBackward } from "@fortawesome/free-solid-svg-icons";
 
 class Projet15 extends Component {
   state = {
@@ -48,6 +51,10 @@ class Projet15 extends Component {
     //   }
     // }
     return errors;
+  };
+
+  fadeout = () => {
+    document.getElementsByClassName("contact")[0].classList.add("opacityZero");
   };
 
   submit = async e => {
@@ -134,6 +141,11 @@ class Projet15 extends Component {
         <div className="toasty toasty-error bg-danger w-75 text-white text-center">
           Veuillez remplir tous les champs et utiliser une adresse valide.
         </div>
+        <DelayLink delay={1000} to="" clickAction={this.fadeout}>
+          <div className="back bg-dark text-white">
+            <FontAwesomeIcon icon={faStepBackward} />
+          </div>{" "}
+        </DelayLink>
       </div>
     );
   }

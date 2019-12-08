@@ -13,7 +13,7 @@ class Menu extends Component {
     return (
       <header className="bg-white shadow border-bottom border-dark p-1">
         <div className="back border-right">
-          <DelayLink delay={500} to="" clickAction={this.props.fadeOut}>
+          <DelayLink delay={1000} to="" clickAction={this.props.fadeOut}>
             <FontAwesomeIcon icon={faStepBackward} />
           </DelayLink>
         </div>

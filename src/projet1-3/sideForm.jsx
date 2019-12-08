@@ -10,7 +10,7 @@ class SideForm extends Component {
       <div className="sideForm col-xl-1 col-md-2 col-3 p-0 text-white pl-1 pr-1">
         <div className="sideForm_sticky position-sticky">
           <div className="back">
-            <DelayLink delay={0} to="" clickAction={this.fadeout}>
+            <DelayLink delay={1000} to="" clickAction={this.props.fadeout}>
               <FontAwesomeIcon icon={faStepBackward} />
             </DelayLink>
           </div>
@@ -43,9 +43,6 @@ class SideForm extends Component {
               type="submit"
               value="New entry"
             />
-            {/* A AJOUTER: styliser line/filler/point/animation type de chart, reset,
-          delete exo, add new exo, en dernier enregistrement et fetch dans une
-          vraie db */}
           </form>
           <input
             className="form-control btn btn-outline-danger text-white"

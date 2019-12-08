@@ -5,30 +5,24 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStepBackward } from "@fortawesome/free-solid-svg-icons";
 
 class Projet12 extends Component {
-  state = {
-    opacity: 0
-  };
+  state = {};
   componentDidMount() {
+    document.getElementsByClassName("projet12")[0].classList.add("opacityZero");
     setTimeout(() => {
-      this.setState({ opacity: 1 });
+      document
+        .getElementsByClassName("projet12")[0]
+        .classList.remove("opacityZero");
     }, 0);
   }
   fadeout = () => {
-    setTimeout(() => {
-      this.setState({ opacity: 0 });
-    }, 0);
+    document.getElementsByClassName("projet12")[0].classList.add("opacityZero");
   };
   render() {
     return (
-      <div
-        className="projet12"
-        style={{
-          opacity: this.state.opacity
-        }}
-      >
+      <div className="projet12">
         <header>
           <div className="back">
-            <DelayLink delay={500} to="" clickAction={this.fadeout}>
+            <DelayLink delay={1000} to="" clickAction={this.fadeout}>
               <FontAwesomeIcon icon={faStepBackward} />
             </DelayLink>
           </div>

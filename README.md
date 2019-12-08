@@ -101,7 +101,7 @@ key code:
 const project = this.props.project;
 return (
   <DelayLink
-    delay={500}
+    delay={1000}
     to={`/${project.link}`}
     clickAction={this.props.fadeOut}
   >

@@ -38,6 +38,11 @@ class Projet13 extends Component {
       .then(() => this.setState({ select: this.state.exercices[0].id }))
       .catch(() => console.log("error could not fetch"));
   }
+
+  fadeout = () => {
+    document.getElementsByClassName("fitness")[0].classList.add("opacityZero");
+  };
+
   updateToJson = data => {
     fetch(
       "https://mysterious-bayou-69637.herokuapp.com/dfbn65i4dfv4z6er654ze9",
@@ -211,6 +216,7 @@ class Projet13 extends Component {
           moveToFirst={this.moveToFirst}
           exoValue={this.state.newExoInput}
           newExo={this.newExo}
+          fadeout={this.fadeout}
         />
         <ExercicesDisplay
           data={this.state.exercices}
