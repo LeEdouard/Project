@@ -240,31 +240,51 @@ app.post("/szBcbzadb777HBc78E6W", (request, response) => {
 
 #### (Projet3)
 
-Utilisation de mongoDB(mongoose) sur le serveur node, tout marche nickel. Système de compte. Reste à pouvoir créer des comptes et voir comment gérer les cookies)
+Utilisation de mongoDB(mongoose) sur le serveur node, tout marche nickel. Ajout d'un système de compte(creation, login, fecthing et modifications des données suivant l'utilisateur)
 
 key code:
 
 ```
-componentDidMount() {
-  fetch("https://mysterious-bayou-69637.herokuapp.com/df6g54sd65f4g6sd5fg9", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ id: this.props.userId })
+fetch(
+  "https://mysterious-bayou-69637.herokuapp.com/u1ert6er7tvc1sdf6546df",
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      userName: e.target.children[0].value,
+      pwd: e.target.children[1].value
     })
-      .then(fetchedData => fetchedData.json())
-      .then(jsoned => this.setState({ exercices: jsoned.body.exos }))
-      .then(() => this.setState({ select: this.state.exercices[0].id }))
-      .catch(() => console.log("error could not fetch"));
+  }
+)
+  .then(fetchedData => fetchedData.json())
+  .then(jsoned => {
+    if (jsoned.answer === "RIGHT") {
+      this.setState({ id: jsoned.id });
+    } else {
+      this.setState({ error: "Wrong, try again !" });
+    }
+  })
+  .catch(() => console.log("error to get response"));
 }
 ```
 
 ```
-app.post("/df6g54sd65f4g6sd5fg9", (request, response) => {
-  User.findById(request.body.id)
-    .then(foundUser => response.send({ body: foundUser }))
-    .catch(error => response.send({ error: "Could not find" }));
+app.post("/u1ert6er7tvc1sdf6546df", (request, response) => {
+  Creds.findOne({ userName: request.body.userName })
+    .then(foundCreds => {
+      const hash = crypto
+        .createHmac("sha256", request.body.pwd)
+        .update(foundCreds.key)
+        .digest("hex");
+      if (hash === foundCreds.pwd) {
+        response.send({ answer: "RIGHT", id: foundCreds.id });
+      } else {
+        response.send({ answer: "WRONG" });
+      }
+    })
+    .catch(error => response.send({ answer: "Error fecthing in db" }));
 });
 
 ```
