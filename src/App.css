@@ -959,8 +959,13 @@ PROJET 1-3
   background: rgba(255, 255, 255, 0.1);
 }
 
-.exercicesDisplay {
-  min-height: 1000px;
+.fitness .empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid red;
+  width: 100%;
 }
 
 .fitness canvas {

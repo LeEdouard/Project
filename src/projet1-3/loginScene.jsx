@@ -94,8 +94,7 @@ class LoginScene extends Component {
           )}
         </form>
 
-        <div>test account | login : Edouard, password : HAHA</div>
-        <div>next step account creation</div>
+        <div>test account | login : TOTO, password : TOTO</div>
 
         <div
           onClick={this.clicking2}

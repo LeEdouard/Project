@@ -14,7 +14,8 @@ class Projet13 extends Component {
     repsInput: "",
     select: 0,
     newExoInput: "",
-    exercices: []
+    exercices: [],
+    userName: ""
   };
   componentDidMount() {
     document.getElementsByClassName("fitness")[0].classList.add("opacityZero");
@@ -34,7 +35,12 @@ class Projet13 extends Component {
       body: JSON.stringify({ id: this.props.userId })
     })
       .then(fetchedData => fetchedData.json())
-      .then(jsoned => this.setState({ exercices: jsoned.body.exos }))
+      .then(jsoned =>
+        this.setState({
+          exercices: jsoned.body.exos,
+          userName: jsoned.body.userName
+        })
+      )
       .then(() => this.setState({ select: this.state.exercices[0].id }))
       .catch(() => console.log("error could not fetch"));
   }
@@ -205,6 +211,7 @@ class Projet13 extends Component {
     return (
       <div className="fitness row m-0 p-0 bg-dark">
         <SideForm
+          userName={this.state.userName}
           data={this.state.exercices}
           onsubmit={this.onsubmit}
           onchange={this.onchange}
