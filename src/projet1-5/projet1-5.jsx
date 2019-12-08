@@ -71,6 +71,7 @@ class Projet15 extends Component {
           })
         }
       ).then(resp => console.log(resp));
+      this.setState({ mailing: { email: "", subject: "", msg: "" } });
     }
   };
 
