@@ -26,8 +26,8 @@ class Projet15 extends Component {
       email: Joi.string().email({
         minDomainSegments: 2
       }),
-      subject: Joi.string().min(5),
-      msg: Joi.string().min(5)
+      subject: Joi.string().min(1),
+      msg: Joi.string().min(1)
     });
     const result = checkRules.validate(this.state.mailing, {
       abortEarly: false
@@ -36,17 +36,17 @@ class Projet15 extends Component {
     if (!result.error) return null;
 
     const errors = {};
-    for (let item of result.error.details) {
-      if (item.type === "any.empty") {
-        errors[item.path[0]] = "Veuillez remplir le champs";
-      }
-      if (item.type === "string.email") {
-        errors[item.path[0]] = "Adresse e-mail non valide";
-      }
-      if (item.type === "string.min") {
-        errors[item.path[0]] = "Ecrivez au moins 5 lettres !";
-      }
-    }
+    // for (let item of result.error.details) {
+    //   if (item.type === "any.empty") {
+    //     errors[item.path[0]] = "Veuillez remplir le champs";
+    //   }
+    //   if (item.type === "string.email") {
+    //     errors[item.path[0]] = "Adresse e-mail non valide";
+    //   }
+    //   if (item.type === "string.min") {
+    //     errors[item.path[0]] = "Ecrivez au moins 5 lettres !";
+    //   }
+    // }
     return errors;
   };
 
@@ -72,6 +72,9 @@ class Projet15 extends Component {
         }
       ).then(resp => console.log(resp));
       this.setState({ mailing: { email: "", subject: "", msg: "" } });
+      this.success();
+    } else {
+      this.error();
     }
   };
 
@@ -80,11 +83,26 @@ class Projet15 extends Component {
     newMailing[e.currentTarget.id] = e.currentTarget.value;
     this.setState({ mailing: newMailing });
   };
+
+  toast = toastType => {
+    document.getElementsByClassName(toastType)[0].style["right"] = 0;
+    setTimeout(() => {
+      document.getElementsByClassName(toastType)[0].style["right"] = "-74%";
+    }, 5000);
+  };
+  success = () => {
+    this.toast("toasty-success");
+  };
+  error = () => {
+    this.toast("toasty-error");
+  };
+
   render() {
     return (
       <div className="contact text-dark">
         <form onSubmit={this.submit} className="">
           <h1>Contact</h1>
+
           <Input
             name="email"
             value={this.state.mailing.email}
@@ -110,6 +128,12 @@ class Projet15 extends Component {
             Envoyer
           </button>
         </form>
+        <div className="toasty toasty-success bg-success w-75 text-white text-center">
+          Message envoyé !
+        </div>
+        <div className="toasty toasty-error bg-danger w-75 text-white text-center">
+          Veuillez remplir tous les champs et utiliser une adresse valide.
+        </div>
       </div>
     );
   }
