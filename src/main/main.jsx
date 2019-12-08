@@ -46,12 +46,7 @@ class Main extends Component {
   };
   componentDidMount() {
     window.history.pushState("test", "TITLE", `/`);
-    document.getElementsByClassName("main")[0].classList.add("opacityZero");
-    setTimeout(() => {
-      document
-        .getElementsByClassName("main")[0]
-        .classList.remove("opacityZero");
-    }, 0);
+    document.getElementsByClassName("main")[0].style["opacity"] = 1;
   }
 
   onchange = e => {
@@ -95,7 +90,7 @@ class Main extends Component {
   };
 
   fadeout = () => {
-    document.getElementsByClassName("main")[0].classList.add("opacityZero");
+    document.getElementsByClassName("main")[0].style["opacity"] = 0;
   };
   render() {
     return (
@@ -112,7 +107,7 @@ class Main extends Component {
           <div className="project_wrap">
             {this.state.projects.map((project, key) => {
               return (
-                <Project key={key} project={project} fadeOut={this.fadeout} />
+                <Project key={key} project={project} fadeout={this.fadeout} />
               );
             })}
             <div className="projet m-1 projet_vide">...</div>

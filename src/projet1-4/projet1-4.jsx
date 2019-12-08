@@ -4,6 +4,8 @@ import {
   faAngleDoubleDown,
   faAngleDoubleUp
 } from "@fortawesome/free-solid-svg-icons";
+import DelayLink from "react-delay-link";
+import { faStepBackward } from "@fortawesome/free-solid-svg-icons";
 
 class Projet14 extends Component {
   state = {
@@ -62,6 +64,12 @@ class Projet14 extends Component {
     document.removeEventListener("wheel", this.wheely);
     this.timerInterval = null;
   }
+
+  fadeout = () => {
+    document
+      .getElementsByClassName("inspiration")[0]
+      .classList.add("opacityZero");
+  };
 
   goDownOne = () => {
     let allSections = document.getElementsByTagName("section");
@@ -175,6 +183,11 @@ class Projet14 extends Component {
             </div>
           </div>
         </section>
+        <DelayLink delay={1000} to="" clickAction={this.fadeout}>
+          <div className="back bg-dark text-white">
+            <FontAwesomeIcon icon={faStepBackward} />
+          </div>{" "}
+        </DelayLink>
       </div>
     );
   }

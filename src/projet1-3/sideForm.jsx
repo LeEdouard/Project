@@ -9,11 +9,11 @@ class SideForm extends Component {
     return (
       <div className="sideForm col-xl-1 col-md-2 col-3 p-0 text-white pl-1 pr-1">
         <div className="sideForm_sticky position-sticky">
-          <div className="back">
-            <DelayLink delay={1000} to="" clickAction={this.props.fadeout}>
+          <DelayLink delay={1000} to="" clickAction={this.props.fadeout}>
+            <div className="back border-bottom p-2">
               <FontAwesomeIcon icon={faStepBackward} />
-            </DelayLink>
-          </div>
+            </div>
+          </DelayLink>
           <h1 className="text-center">Fitness Log</h1>
           <form onSubmit={this.props.onsubmit} className="form-group">
             <select

@@ -26,7 +26,7 @@ class Projet12 extends Component {
               <FontAwesomeIcon icon={faStepBackward} />
             </DelayLink>
           </div>
-          <h1>Les médicaments</h1>
+          <h1 className="text-right pr-1 mb-0">Les médicaments</h1>
         </header>
         <Listing />
         <footer>-----------</footer>

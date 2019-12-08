@@ -10,7 +10,7 @@ class Project extends Component {
       <DelayLink
         delay={1000}
         to={`/${project.link}`}
-        clickAction={this.props.fadeOut}
+        clickAction={this.props.fadeout}
       >
         <div id={project.id} className={project.className}>
           {project.label}
