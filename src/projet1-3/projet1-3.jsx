@@ -12,32 +12,36 @@ class Projet13 extends Component {
   checking = e => {
     e.preventDefault();
     document.getElementsByClassName("loading")[0].style["opacity"] = 1;
-    fetch(
-      "https://mysterious-bayou-69637.herokuapp.com/u1ert6er7tvc1sdf6546df",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          userName: e.target.children[0].value,
-          pwd: e.target.children[1].value
-        })
-      }
-    )
-      .then(fetchedData => fetchedData.json())
-      .then(jsoned => {
-        if (jsoned.answer === "RIGHT") {
-          this.setState({ id: jsoned.id });
-        } else {
-          this.setState({ error: "Wrong, try again !" });
+    if (e.target.children[0].value && e.target.children[1].value) {
+      fetch(
+        "https://mysterious-bayou-69637.herokuapp.com/u1ert6er7tvc1sdf6546df",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            userName: e.target.children[0].value,
+            pwd: e.target.children[1].value
+          })
         }
-        document.getElementsByClassName("loading")[0].style["opacity"] = 0;
-      })
-      .catch(() => {
-        console.log("error to get response");
-        document.getElementsByClassName("loading")[0].style["opacity"] = 0;
-      });
+      )
+        .then(fetchedData => fetchedData.json())
+        .then(jsoned => {
+          if (jsoned.answer === "RIGHT") {
+            this.setState({ id: jsoned.id });
+          } else {
+            this.setState({ error: "Wrong, try again !" });
+          }
+          document.getElementsByClassName("loading")[0].style["opacity"] = 0;
+        })
+        .catch(() => {
+          console.log("error to get response");
+        });
+    } else {
+      this.setState({ error: "Please fill everything" });
+      document.getElementsByClassName("loading")[0].style["opacity"] = 0;
+    }
   };
   registering = e => {
     e.preventDefault();

@@ -1030,6 +1030,11 @@ PROJET 1-3
 .fitness h1 {
   font-size: 2rem;
 }
+.fitness h1:nth-child(3) {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
 
 .fitness .back:hover > * {
   transform: scale(1.25);
@@ -1084,7 +1089,7 @@ PROJET 1-3
 
 #loginForm > *,
 #signinForm > * {
-  margin-bottom: 3px;
+  margin-top: 3px;
 }
 
 .loginScene .back {

@@ -52,7 +52,7 @@ class LoginScene extends Component {
     return (
       <div className="loginScene text-dark">
         <h1>Fitness Log</h1>
-        <div onClick={this.clicking} className="w-100 bg-dark text-white mb-2">
+        <div onClick={this.clicking} className="w-100 bg-dark text-white">
           <h3 className="text-center">Sign in</h3>
           <div className="arrowDown"></div>
         </div>
@@ -60,7 +60,7 @@ class LoginScene extends Component {
         <form
           id="loginForm"
           onSubmit={this.props.checking}
-          className="loginForm form-group overflow-hidden"
+          className="loginForm form-group overflow-hidden m-0"
         >
           <input
             id="login"
@@ -94,11 +94,11 @@ class LoginScene extends Component {
           )}
         </form>
 
-        <div>test account | login : TOTO, password : TOTO</div>
+        <h2 className="text-center">Keep your a record of your progress</h2>
 
         <div
           onClick={this.clicking2}
-          className="signup_link w-100 bg-dark text-white  mb-2"
+          className="signup_link w-100 bg-dark text-white"
         >
           <h3 className="text-center m-0 mt-1">Create an account</h3>
           <div className="arrowDown"></div>
@@ -106,7 +106,7 @@ class LoginScene extends Component {
         <form
           id="signinForm"
           onSubmit={this.props.registering}
-          className="loginForm form-group overflow-hidden"
+          className="loginForm form-group overflow-hidden m-0"
         >
           <input
             id="login"

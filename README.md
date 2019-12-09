@@ -240,7 +240,7 @@ app.post("/szBcbzadb777HBc78E6W", (request, response) => {
 
 #### (Projet3)
 
-Utilisation de mongoDB(mongoose) sur le serveur node, tout marche nickel. Ajout d'un système de compte(creation, login, fecthing et modifications des données suivant l'utilisateur)
+Utilisation de mongoDB(mongoose) sur le serveur node, tout marche nickel. Ajout d'un système de compte(creation, login, fecthing et modifications des données suivant l'utilisateur). Ajout d'une animation de chargement le temps des fetch car ce n'est pas instantanné
 
 key code:
 
