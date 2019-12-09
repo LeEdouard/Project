@@ -496,7 +496,7 @@ SECOND
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 5px;
 }
-@media screen and (min-width: 578px) {
+@media screen and (min-width: 540px) {
   .menu {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   }
@@ -560,7 +560,7 @@ SECOND
 .content {
   padding-top: 50px;
 }
-@media screen and (min-width: 964px) {
+@media screen and (min-width: 960px) {
   .content {
     padding-top: 30px;
   }
@@ -636,8 +636,11 @@ section {
   transform-origin: bottom;
   transition: 1s;
 }
+.building svg {
+  max-width: 100px;
+}
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 540px) {
   .menuItem {
     height: 30px;
     font-size: 0.6em;

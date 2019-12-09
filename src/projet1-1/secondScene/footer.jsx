@@ -195,65 +195,6 @@ class Footer extends Component {
           </div>
           <div className="w-100 bg-white text-dark justify-content-center">
             contact@edouard-dev.com
-            {/* <form
-              onSubmit={this.submit}
-              className="col contact border border-danger p-3 mx-auto"
-            >
-              <h1>Contact</h1>
-              <Input
-                name="email"
-                value={this.state.mailing.email}
-                onChange={this.change}
-                label="Adresse E-mail"
-                error={this.state.error.email}
-              />
-              <Input
-                name="subject"
-                value={this.state.mailing.subject}
-                onChange={this.change}
-                label="Sujet"
-                error={this.state.error.subject}
-              />
-              <TextArea
-                name="msg"
-                value={this.state.mailing.msg}
-                onChange={this.change}
-                label="Sujet"
-                error={this.state.error.msg}
-              />
-              <button type="submit" className="btn btn-primary">
-                Envoyer
-              </button>
-            </form> */}
-            {/* ---------------------formulaire ? style béton/brique style sous-sol
-            égout, --------------------------rajouter ciel étoilé dans le main
-            suivant le % de scroll, -------------------rajouter contenu à type
-            conditionnel si je veut faire autre que simple text (ex:si je veux
-            coloration syntaxique sur exemples de code),
-            ---------------------------changer la top bar ?, rajouter des routes
-            et redirection, -------------------------mettre main content dans
-            bdd externe?, créer partie admin pour pas avoir besoin de rajouter
-            manuellement du contenu, --------------------------revoir le
-            responsive, ---------------------mettre le tout en composant pour
-            pouvoir avoir plusieurs projets qu'on peut cliquer à l'accueil(de
-            style mur avec des tableaus où l'on rentre dedans) */}
-            {/* <form action="">
-              <input type="text" placeholder="votre titre" />
-              <div>
-                <select name="" id="">
-                  <option value="">1</option>
-                  <option value="">2</option>
-                </select>
-                <textarea
-                  name=""
-                  id=""
-                  cols="30"
-                  rows="10"
-                  placeholder="1er paragraph"
-                ></textarea>
-                <button>Ajouter un 2e paragraph</button>
-              </div>
-            </form> */}
           </div>
         </div>
       </footer>
