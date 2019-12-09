@@ -95,6 +95,10 @@ class LoginScene extends Component {
         </form>
 
         <h2 className="text-center">Keep your a record of your progress</h2>
+        <h6 className="text-center">
+          Test account if you don't want to bother
+        </h6>
+        <h6>account: TOTO, password:TOTO</h6>
 
         <div
           onClick={this.clicking2}
