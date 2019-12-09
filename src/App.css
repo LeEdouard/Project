@@ -58,7 +58,7 @@ a:hover {
   color: white;
   text-shadow: 2px 2px 1px hsla(155, 55%, 28%, 0.568);
   font-size: 1.1rem;
-  font-family: "Ubuntu Mono";
+  font-family: "Ubuntu Mono", monospace;
 }
 
 .main input {
@@ -67,7 +67,7 @@ a:hover {
   border: none;
   width: 90%;
   font-size: 1.1rem;
-  font-family: "Ubuntu Mono";
+  font-family: "Ubuntu Mono", monospace;
 }
 .main input:focus {
   outline: none;
