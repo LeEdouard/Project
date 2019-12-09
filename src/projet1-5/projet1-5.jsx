@@ -59,6 +59,7 @@ class Projet15 extends Component {
 
   submit = async e => {
     e.preventDefault();
+    document.getElementsByClassName("loading")[0].style["opacity"] = 1;
     const errMsg = this.check();
     this.setState({ error: errMsg || {} });
     if (!errMsg) {
@@ -80,8 +81,10 @@ class Projet15 extends Component {
       ).then(resp => console.log(resp));
       this.setState({ mailing: { email: "", subject: "", msg: "" } });
       this.success();
+      document.getElementsByClassName("loading")[0].style["opacity"] = 0;
     } else {
       this.error();
+      document.getElementsByClassName("loading")[0].style["opacity"] = 0;
     }
   };
 
@@ -94,7 +97,9 @@ class Projet15 extends Component {
   toast = toastType => {
     document.getElementsByClassName(toastType)[0].style["right"] = 0;
     setTimeout(() => {
-      document.getElementsByClassName(toastType)[0].style["right"] = "-74%";
+      if (document.getElementsByClassName(toastType)[0]) {
+        document.getElementsByClassName(toastType)[0].style["right"] = "-74%";
+      }
     }, 5000);
   };
   success = () => {
@@ -141,6 +146,7 @@ class Projet15 extends Component {
         <div className="toasty toasty-error bg-danger w-75 text-white text-center">
           Veuillez remplir tous les champs et utiliser une adresse valide.
         </div>
+        <div class="loading m-2"></div>
         <DelayLink delay={1000} to="" clickAction={this.fadeout}>
           <div className="back bg-dark text-white">
             <FontAwesomeIcon icon={faStepBackward} />

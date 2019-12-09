@@ -11,6 +11,7 @@ class Projet13 extends Component {
   };
   checking = e => {
     e.preventDefault();
+    document.getElementsByClassName("loading")[0].style["opacity"] = 1;
     fetch(
       "https://mysterious-bayou-69637.herokuapp.com/u1ert6er7tvc1sdf6546df",
       {
@@ -31,11 +32,16 @@ class Projet13 extends Component {
         } else {
           this.setState({ error: "Wrong, try again !" });
         }
+        document.getElementsByClassName("loading")[0].style["opacity"] = 0;
       })
-      .catch(() => console.log("error to get response"));
+      .catch(() => {
+        console.log("error to get response");
+        document.getElementsByClassName("loading")[0].style["opacity"] = 0;
+      });
   };
   registering = e => {
     e.preventDefault();
+    document.getElementsByClassName("loading")[0].style["opacity"] = 1;
     if (e.target.children[0].value && e.target.children[1].value) {
       fetch(
         "https://mysterious-bayou-69637.herokuapp.com/u1ef87f5j98ue2b6iy8f",
@@ -57,10 +63,15 @@ class Projet13 extends Component {
           } else {
             this.setState({ error2: jsoned.answer });
           }
+          document.getElementsByClassName("loading")[0].style["opacity"] = 0;
         })
-        .catch(() => console.log("error to get response"));
+        .catch(() => {
+          console.log("error to get response");
+          document.getElementsByClassName("loading")[0].style["opacity"] = 0;
+        });
     } else {
       this.setState({ error2: "Please fill everything" });
+      document.getElementsByClassName("loading")[0].style["opacity"] = 0;
     }
   };
   render() {

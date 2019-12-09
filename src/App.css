@@ -37,7 +37,74 @@ a:hover {
   right: 0;
   bottom: 0;
 }
+.loading {
+  border: 3px solid #343a40;
+  border-top-color: rgba(255, 255, 255, 0);
+  border-bottom-color: rgba(255, 255, 255, 0);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  transition: opacity 0.3s;
+  opacity: 0;
+  animation: spin 0.5s linear infinite;
+}
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MAIN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
 .main {
   position: absolute;
   top: 0;
@@ -953,7 +1020,6 @@ PROJET 1-3
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid red;
   width: 100%;
 }
 
@@ -1264,6 +1330,12 @@ PROJET 5 CONTACT
 .toasty-error {
   top: 50px;
   font-size: 0.95rem;
+}
+
+@media screen and (min-width: 900px) {
+  .toasty-error {
+    font-size: 1.2rem;
+  }
 }
 .contact .back {
   display: flex;
