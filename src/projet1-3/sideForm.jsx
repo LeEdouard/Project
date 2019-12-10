@@ -16,7 +16,10 @@ class SideForm extends Component {
           </DelayLink>
           <h1 className="text-center">Fitness Log</h1>
           <h1 className="text-center border-top border-bottom">
-            {this.props.userName}
+            {this.props.userName
+              .replace(/&/g, "&amp;")
+              .replace(/</g, "&lt;")
+              .replace(/"/g, "&quot;")}
           </h1>
           {this.props.data.length > 0 && (
             <>
