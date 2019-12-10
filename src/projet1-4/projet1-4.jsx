@@ -39,6 +39,24 @@ class Projet14 extends Component {
     document.addEventListener("wheel", this.wheely);
 
     this.timerInterval();
+
+    // test touchscreen
+    let touchstartPos;
+    document.addEventListener("touchstart", e => {
+      touchstartPos = e.touches[0].clientY;
+      console.log(touchstartPos);
+    });
+    document.addEventListener("touchend", e => {
+      let touchendPos = e.changedTouches[0].clientY;
+      console.log(e.changedTouches[0].clientY);
+      if (touchstartPos > touchendPos + 5) {
+        console.log("slide down");
+        this.goDownOne();
+      } else if (touchstartPos < touchendPos + 5) {
+        console.log("slide up");
+        this.goUpOne();
+      }
+    });
   }
 
   timerInterval = () => {
