@@ -97,10 +97,10 @@ class Projet15 extends Component {
   };
 
   toast = toastType => {
-    document.getElementsByClassName(toastType)[0].style["right"] = 0;
+    document.getElementsByClassName(toastType)[0].classList.add("r0");
     setTimeout(() => {
       if (document.getElementsByClassName(toastType)[0]) {
-        document.getElementsByClassName(toastType)[0].style["right"] = "-74%";
+        document.getElementsByClassName(toastType)[0].classList.remove("r0");
       }
     }, 5000);
   };
@@ -142,10 +142,10 @@ class Projet15 extends Component {
             Envoyer
           </button>
         </form>
-        <div className="toasty toasty-success bg-success w-75 text-white text-center">
+        <div className="toasty toasty-success bg-success text-white text-center">
           Message envoyé !
         </div>
-        <div className="toasty toasty-error bg-danger w-75 text-white text-center">
+        <div className="toasty toasty-error bg-danger text-white text-center">
           Veuillez remplir tous les champs et utiliser une adresse valide.
         </div>
         <div class="loading m-2"></div>
