@@ -36,7 +36,8 @@ class Projet13 extends Component {
           document.getElementsByClassName("loading")[0].style["opacity"] = 0;
         })
         .catch(() => {
-          console.log("error to get response");
+          // console.log("error to get response");
+          return null;
         });
     } else {
       this.setState({ error: "Please fill everything" });

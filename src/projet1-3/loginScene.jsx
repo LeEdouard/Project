@@ -4,9 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStepBackward } from "@fortawesome/free-solid-svg-icons";
 
 class LoginScene extends Component {
-  state = {
-    credentials: { login: "", pwd: "" }
-  };
+  state = {};
   componentDidMount() {
     document
       .getElementsByClassName("loginScene")[0]
@@ -24,11 +22,6 @@ class LoginScene extends Component {
     document
       .getElementsByClassName("loginScene")[0]
       .classList.add("opacityZero");
-  };
-  onchange = e => {
-    const newCredentials = { ...this.state.credentials };
-    newCredentials[e.target.id] = e.target.value;
-    this.setState({ credentials: newCredentials });
   };
   clicking = () => {
     if (document.getElementById("signinForm").style["height"] === "10rem") {
@@ -63,13 +56,11 @@ class LoginScene extends Component {
           className="loginForm form-group overflow-hidden m-0"
         >
           <input
-            id="login"
             className="form-control"
             type="text"
             placeholder="account's name"
           />
           <input
-            id="pwd"
             className="form-control"
             type="password"
             placeholder="password"
@@ -113,13 +104,11 @@ class LoginScene extends Component {
           className="loginForm form-group overflow-hidden m-0"
         >
           <input
-            id="login"
             className="form-control"
             type="text"
             placeholder="account's name"
           />
           <input
-            id="pwd"
             className="form-control"
             type="password"
             placeholder="password"
@@ -143,7 +132,7 @@ class LoginScene extends Component {
             ></div>
           )}
         </form>
-        <div class="loading m-2"></div>
+        <div className="loading m-2"></div>
         <DelayLink delay={1000} to="" clickAction={this.fadeout}>
           <div className="back bg-dark text-white">
             <FontAwesomeIcon icon={faStepBackward} />

@@ -11,7 +11,8 @@ class Projet14 extends Component {
   state = {
     currentSection: 0,
     timer: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    dateOpen: ""
+    dateOpen: "",
+    touchstartPos: 0
   };
   componentDidMount() {
     document
@@ -40,30 +41,31 @@ class Projet14 extends Component {
 
     this.timerInterval();
 
-    let touchstartPos;
-    document.addEventListener("touchstart", e => {
-      touchstartPos = e.touches[0].clientY;
-      console.log(touchstartPos);
-    });
-    document.addEventListener("touchend", e => {
-      let touchendPos = e.changedTouches[0].clientY;
-      console.log(e.changedTouches[0].clientY);
-      if (touchstartPos > touchendPos) {
-        console.log("slide down");
-        this.goDownOne();
-      } else if (touchstartPos < touchendPos) {
-        console.log("slide up");
-        this.goUpOne();
-      }
-    });
+    document.addEventListener("touchstart", this.touchStart);
+    document.addEventListener("touchend", this.touchEnd);
   }
+
+  touchStart = e => {
+    this.setState({ touchstartPos: e.touches[0].clientY });
+  };
+
+  touchEnd = e => {
+    let touchendPos = e.changedTouches[0].clientY;
+    if (this.state.touchstartPos > touchendPos) {
+      this.goDownOne();
+    } else if (this.state.touchstartPos < touchendPos) {
+      this.goUpOne();
+    }
+  };
 
   timerInterval = () => {
     setInterval(() => {
-      let newTimer = [...this.state.timer];
-      newTimer[this.state.currentSection] =
-        Math.round((newTimer[this.state.currentSection] + 0.1) * 10) / 10;
-      this.setState({ timer: newTimer });
+      if (this.state.timer) {
+        let newTimer = [...this.state.timer];
+        newTimer[this.state.currentSection] =
+          Math.round((newTimer[this.state.currentSection] + 0.1) * 10) / 10;
+        this.setState({ timer: newTimer });
+      }
     }, 100);
   };
 
@@ -79,6 +81,8 @@ class Projet14 extends Component {
     document.documentElement.style["scrollbar-width"] = "auto";
     document.documentElement.classList.remove("noscroll");
     document.removeEventListener("wheel", this.wheely);
+    document.removeEventListener("touchstart", this.touchStart);
+    document.removeEventListener("touchend", this.touchEnd);
     this.timerInterval = null;
   }
 
