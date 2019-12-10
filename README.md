@@ -20,6 +20,7 @@ key code:
 
 ```
 // effect apparition/disparition
+
 scrollFade = () => {
   const elementStats = document
     .getElementById(this.props.chapter.id)
@@ -38,15 +39,7 @@ scrollFade = () => {
 ```
 
 ```
-// composant variable
-import TypePlain from "./typePlain";
-import TypeCode from "./typeCode";
-import TypeQuote from "./typeQuote";
-import TypeChart from "./typeChart";
-
-...
-
-const { type, content } = this.props;
+// composants variables
 
 const types = {
   text: TypePlain,
@@ -65,6 +58,8 @@ return (
 ```
 
 ```
+// nuages voyagent à des vitesses différentes
+
 <FontAwesomeIcon
   icon={faCloud}
   className="cloud cloud2"
@@ -98,6 +93,8 @@ J'y ai mis 2-3 fonctionnalités basiques, similaire au vrai bash, histoire d'amu
 key code:
 
 ```
+// delay fadeout pour ne pas avoir de changement abrupt de route
+
 const project = this.props.project;
 return (
   <DelayLink
@@ -124,6 +121,7 @@ key code:
 
 ```
 // filtre + effet
+
 for (const elem of unitList) {
   if (
     elem.attributes["data-drug"].value
@@ -150,12 +148,6 @@ for (const elem of unitList) {
 Test de l'utilisation de la librairie chart.js, sous le thème d'un log de progression.
 La librairire est facile à utiliser. Le challenge se trouve sur le formulaire pour faire toutes les modifications en mode react.
 
-key code:
-
-```
-
-```
-
 ### Projet4
 
 Cette fois-ci j'ai choisi de repartir plus sur du visuel. J'ai décidé de reprendre le style du "one-page-scroll".
@@ -167,7 +159,7 @@ Après avoir fini, j'ai rajouté un tracker sur chaque section afin de voir laqu
 key code :
 
 ```
-// screen scroll down
+// one page scroll down
 goDownOne = () => {
   let allSections = document.getElementsByTagName("section");
   let nextPosition =
@@ -181,10 +173,28 @@ goDownOne = () => {
     this.setState({ currentSection: this.state.currentSection + 1 });
   }
 };
+
+// touch event
+let touchstartPos;
+    document.addEventListener("touchstart", e => {
+      touchstartPos = e.touches[0].clientY;
+      console.log(touchstartPos);
+    });
+    document.addEventListener("touchend", e => {
+      let touchendPos = e.changedTouches[0].clientY;
+      console.log(e.changedTouches[0].clientY);
+      if (touchstartPos > touchendPos) {
+        console.log("slide down");
+        this.goDownOne();
+      } else if (touchstartPos < touchendPos) {
+        console.log("slide up");
+        this.goUpOne();
+      }
+    });
 ```
 
 ```
-// timer per section
+// timer par section
 setInterval(() => {
   let newTimer = [...this.state.timer];
   newTimer[this.state.currentSection] =
@@ -201,23 +211,31 @@ Envoie d'un formulaire de contacten method post vers l'api qui lui enverra le ma
 key code:
 
 ```
+// envoi du mail côté client
+
 fetch(
-  "https://mysterious-bayou-69637.herokuapp.com/szBcbzadb777HBc78E6W",
-  {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      from: this.state.mailing.email,
-      subject: this.state.mailing.subject,
-      text: this.state.mailing.msg
-    })
-  }
-).then(resp => console.log(resp));
+        "https://mysterious-bayou-69637.herokuapp.com/szBcbzadb777HBc78E6W",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            from: this.state.mailing.email,
+            subject: this.state.mailing.subject,
+            text: this.state.mailing.msg
+          })
+        }
+      ).then(resp => {
+        console.log(resp);
+        this.success();
+        document.getElementsByClassName("loading")[0].style["opacity"] = 0;
+      });
 ```
 
 ```
+// envoi du mail côté serveur
+
 app.post("/szBcbzadb777HBc78E6W", (request, response) => {
   let transporter = nodemailer.createTransport({
     host: emailHost,
@@ -245,6 +263,8 @@ Utilisation de mongoDB(mongoose) sur le serveur node, tout marche nickel. Ajout 
 key code:
 
 ```
+// signin côté client
+
 fetch(
   "https://mysterious-bayou-69637.herokuapp.com/u1ert6er7tvc1sdf6546df",
   {
@@ -271,6 +291,7 @@ fetch(
 ```
 
 ```
+// signin côté serveur
 app.post("/u1ert6er7tvc1sdf6546df", (request, response) => {
   Creds.findOne({ userName: request.body.userName })
     .then(foundCreds => {

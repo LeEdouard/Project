@@ -40,7 +40,6 @@ class Projet14 extends Component {
 
     this.timerInterval();
 
-    // test touchscreen
     let touchstartPos;
     document.addEventListener("touchstart", e => {
       touchstartPos = e.touches[0].clientY;
@@ -49,10 +48,10 @@ class Projet14 extends Component {
     document.addEventListener("touchend", e => {
       let touchendPos = e.changedTouches[0].clientY;
       console.log(e.changedTouches[0].clientY);
-      if (touchstartPos > touchendPos + 5) {
+      if (touchstartPos > touchendPos) {
         console.log("slide down");
         this.goDownOne();
-      } else if (touchstartPos < touchendPos + 5) {
+      } else if (touchstartPos < touchendPos) {
         console.log("slide up");
         this.goUpOne();
       }

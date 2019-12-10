@@ -78,10 +78,12 @@ class Projet15 extends Component {
             text: this.state.mailing.msg
           })
         }
-      ).then(resp => console.log(resp));
+      ).then(resp => {
+        console.log(resp);
+        this.success();
+        document.getElementsByClassName("loading")[0].style["opacity"] = 0;
+      });
       this.setState({ mailing: { email: "", subject: "", msg: "" } });
-      this.success();
-      document.getElementsByClassName("loading")[0].style["opacity"] = 0;
     } else {
       this.error();
       document.getElementsByClassName("loading")[0].style["opacity"] = 0;
