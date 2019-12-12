@@ -116,6 +116,12 @@ class Main extends Component {
             <div className="projet m-1 projet_vide">...</div>
           </div>
         </div>
+        <footer className="w-100 bg-dark text-light text-center">
+          <span>Le code sur </span>
+          <a href="https://github.com/LeEdouard/Project">
+            https://github.com/LeEdouard/Project
+          </a>
+        </footer>
       </div>
     );
   }
