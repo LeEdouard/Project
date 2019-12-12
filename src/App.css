@@ -258,6 +258,10 @@ MAIN
   color: #00ff95;
 }
 
+.main footer a:hover {
+  text-decoration: underline !important;
+}
+
 /*
 
 
@@ -1370,7 +1374,8 @@ PROJET 5 CONTACT
 
 .toasty-error {
   top: 50px;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  padding-left: 5px;
 }
 
 @media screen and (min-width: 540px) {
@@ -1384,7 +1389,6 @@ PROJET 5 CONTACT
   .toasty {
     right: -24%;
     width: 25%;
-    padding-left: 5px;
   }
 }
 
