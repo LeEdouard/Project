@@ -117,10 +117,8 @@ class Main extends Component {
           </div>
         </div>
         <footer className="w-100 bg-dark text-light text-center">
-          <span>Le code sur </span>
-          <a href="https://github.com/LeEdouard/Project">
-            https://github.com/LeEdouard/Project
-          </a>
+          <span>Tout le code </span>
+          <a href="https://github.com/LeEdouard/Project">ici</a>
         </footer>
       </div>
     );
