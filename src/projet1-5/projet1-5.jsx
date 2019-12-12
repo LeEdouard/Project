@@ -148,7 +148,10 @@ class Projet15 extends Component {
         <div className="toasty toasty-error bg-danger text-white text-center">
           Veuillez remplir tous les champs et utiliser une adresse valide.
         </div>
-        <div class="loading m-2"></div>
+        <div class="loading m-2">
+          <div className="insideLoading"></div>
+          <div className="insideLoading insideLoading2"></div>
+        </div>
         <DelayLink delay={1000} to="" clickAction={this.fadeout}>
           <div className="back bg-dark text-white">
             <FontAwesomeIcon icon={faStepBackward} />

@@ -132,7 +132,10 @@ class LoginScene extends Component {
             ></div>
           )}
         </form>
-        <div className="loading m-2"></div>
+        <div className="loading m-2">
+          <div className="insideLoading"></div>
+          <div className="insideLoading insideLoading2"></div>
+        </div>
         <DelayLink delay={1000} to="" clickAction={this.fadeout}>
           <div className="back bg-dark text-white">
             <FontAwesomeIcon icon={faStepBackward} />
