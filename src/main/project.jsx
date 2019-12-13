@@ -4,6 +4,11 @@ import DelayLink from "react-delay-link";
 
 class Project extends Component {
   state = {};
+  componentDidMount() {}
+  clickEffect = e => {
+    e.target.style["transition"] = "1s";
+    e.target.style["transform"] = "scale(10)";
+  };
   render() {
     const project = this.props.project;
     return (
@@ -12,7 +17,11 @@ class Project extends Component {
         to={`/${project.link}`}
         clickAction={this.props.fadeout}
       >
-        <div id={project.id} className={project.className}>
+        <div
+          id={project.id}
+          onClick={this.clickEffect}
+          className={project.className}
+        >
           {project.label}
         </div>
       </DelayLink>
