@@ -32,6 +32,9 @@ class Projet13 extends Component {
             this.setState({ id: jsoned.id });
           } else {
             this.setState({ error: "Wrong, try again !" });
+            setTimeout(() => {
+              this.setState({ error: "" });
+            }, 1500);
           }
           document.getElementsByClassName("loading")[0].style["opacity"] = 0;
         })
@@ -41,6 +44,9 @@ class Projet13 extends Component {
         });
     } else {
       this.setState({ error: "Please fill everything" });
+      setTimeout(() => {
+        this.setState({ error: "" });
+      }, 1500);
       document.getElementsByClassName("loading")[0].style["opacity"] = 0;
     }
   };
@@ -67,6 +73,9 @@ class Projet13 extends Component {
             this.setState({ id: jsoned.id });
           } else {
             this.setState({ error2: jsoned.answer });
+            setTimeout(() => {
+              this.setState({ error2: "" });
+            }, 1500);
           }
           document.getElementsByClassName("loading")[0].style["opacity"] = 0;
         })
@@ -76,6 +85,9 @@ class Projet13 extends Component {
         });
     } else {
       this.setState({ error2: "Please fill everything" });
+      setTimeout(() => {
+        this.setState({ error2: "" });
+      }, 1500);
       document.getElementsByClassName("loading")[0].style["opacity"] = 0;
     }
   };
