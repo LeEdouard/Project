@@ -148,7 +148,7 @@ class Projet15 extends Component {
         <div className="toasty toasty-error bg-danger text-white text-center">
           Veuillez remplir tous les champs et utiliser une adresse valide.
         </div>
-        <div class="loading m-2">
+        <div className="loading m-2">
           <div className="insideLoading"></div>
           <div className="insideLoading insideLoading2"></div>
         </div>
