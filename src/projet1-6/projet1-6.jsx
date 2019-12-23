@@ -402,7 +402,7 @@ class Projet16 extends Component {
           />
           <input className="form-control" type="submit" value="Add" />
         </form>
-        <a href="">
+        <a href="data:text/plain;charset=utf-8,nothing">
           <button className="w-100">Download</button>
         </a>
         <h3>or copypaste this:</h3>
