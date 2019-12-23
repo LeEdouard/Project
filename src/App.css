@@ -236,6 +236,7 @@ MAIN
   background: #9dc2b2;
   box-shadow: 2px 2px 1px #779487;
   text-shadow: 2px 2px 1px #779487;
+  opacity: 0.5;
 }
 
 .projet_vide {

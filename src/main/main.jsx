@@ -16,16 +16,6 @@ class Main extends Component {
           "Mon aventure à la formation Concepteur Développeur FrontEnd par le GRETA 92. Quelques animations par-ci par-là."
       },
       {
-        id: 1,
-        name: "Projet2",
-        label: "db",
-        link: "db_process",
-        className: "projet m-1 projet_bof",
-        description: "table filtering/sorting",
-        longDescription:
-          "Pas grand chose à voir dans ce projet là. json, fonctions de tri et filtre"
-      },
-      {
         id: 2,
         name: "Projet3",
         label: "fitness",
@@ -45,6 +35,16 @@ class Main extends Component {
         longDescription: "J'ai voulu copier le style de certains sites"
       },
       {
+        id: 5,
+        name: "Projet6",
+        label: "svg random",
+        link: "svg_random",
+        className: "projet m-1",
+        description: "randomizer de cercle svg",
+        longDescription:
+          "Animation randomizer qui peut servir de loading ou bien animation de fond dans vos vidéos"
+      },
+      {
         id: 4,
         name: "Projet5",
         label: "contact",
@@ -55,14 +55,14 @@ class Main extends Component {
           "Apprentrissage création d'un serveur node et de ses requêtes"
       },
       {
-        id: 5,
-        name: "Projet6",
-        label: "svg random",
-        link: "svg_random",
-        className: "projet m-1",
-        description: "randomizer de cercle svg",
+        id: 1,
+        name: "Projet2",
+        label: "db",
+        link: "db_process",
+        className: "projet m-1 projet_bof",
+        description: "table filtering/sorting",
         longDescription:
-          "Animation randomizer qui peut servir de loading ou bien animation de fond dans vos vidéos"
+          "Pas grand chose à voir dans ce projet là. json, fonctions de tri et filtre"
       }
     ],
     terminalinput: "",

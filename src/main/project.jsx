@@ -12,7 +12,7 @@ class Project extends Component {
   render() {
     const project = this.props.project;
     return (
-      <div className="projetAll">
+      <div className="projetAll" title={project.longDescription}>
         <DelayLink
           delay={1000}
           to={`/${project.link}`}
@@ -26,9 +26,7 @@ class Project extends Component {
             {project.label}
           </div>
         </DelayLink>
-        <div className="description" title="test">
-          {project.description}
-        </div>
+        <div className="description">{project.description}</div>
       </div>
     );
   }
