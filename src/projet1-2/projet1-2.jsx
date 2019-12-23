@@ -21,11 +21,12 @@ class Projet12 extends Component {
     return (
       <div className="projet12">
         <header>
-          <div className="back">
-            <DelayLink delay={1000} to="" clickAction={this.fadeout}>
+          <DelayLink delay={1000} to="" clickAction={this.fadeout}>
+            <div className="back">
               <FontAwesomeIcon icon={faStepBackward} />
-            </DelayLink>
-          </div>
+            </div>
+          </DelayLink>
+
           <h1 className="text-right pr-1 mb-0">Les médicaments</h1>
         </header>
         <Listing />
