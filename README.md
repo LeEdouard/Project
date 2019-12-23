@@ -310,6 +310,6 @@ app.post("/u1ert6er7tvc1sdf6546df", (request, response) => {
 
 ```
 
-### (Idées)
+### Projet 6
 
--voir comment marche graphql
+Un randomizer de cercle animés avec svg/circle/animate
