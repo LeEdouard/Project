@@ -12,19 +12,24 @@ class Project extends Component {
   render() {
     const project = this.props.project;
     return (
-      <DelayLink
-        delay={1000}
-        to={`/${project.link}`}
-        clickAction={this.props.fadeout}
-      >
-        <div
-          id={project.id}
-          onClick={this.clickEffect}
-          className={project.className}
+      <div className="projetAll">
+        <DelayLink
+          delay={1000}
+          to={`/${project.link}`}
+          clickAction={this.props.fadeout}
         >
-          {project.label}
+          <div
+            id={project.id}
+            onClick={this.clickEffect}
+            className={project.className}
+          >
+            {project.label}
+          </div>
+        </DelayLink>
+        <div className="description" title="test">
+          {project.description}
         </div>
-      </DelayLink>
+      </div>
     );
   }
 }

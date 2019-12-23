@@ -102,7 +102,7 @@ class Projet15 extends Component {
       if (document.getElementsByClassName(toastType)[0]) {
         document.getElementsByClassName(toastType)[0].classList.remove("r0");
       }
-    }, 5000);
+    }, 3000);
   };
   success = () => {
     this.toast("toasty-success");

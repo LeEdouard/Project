@@ -196,6 +196,19 @@ MAIN
   }
 }
 
+.projetAll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  text-align: center;
+}
+
+.description {
+  width: 150px;
+  margin: auto;
+}
+
 .projet {
   background: #39d695;
   color: white;
@@ -1461,5 +1474,9 @@ PROJET 1-6
 */
 
 .svg_random input::placeholder {
+  text-align: center;
+}
+
+.svg_random #svg {
   text-align: center;
 }

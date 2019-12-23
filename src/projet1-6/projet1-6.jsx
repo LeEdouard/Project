@@ -325,6 +325,13 @@ class Projet16 extends Component {
     ];
     return (
       <div className="svg_random">
+        <p>
+          L'idée m'est venue après avoir vu{" "}
+          <a href="https://www.youtube.com/watch?v=bRIL9kMJJSc">
+            cette vidéo sur youtube
+          </a>
+          , qui parle des différentes combinaisons de positionnement de cercles.
+        </p>
         <div id="svg">
           <svg height="400" width="400">
             <desc>This SVG was created on https://edouard-dev.com</desc>
@@ -356,6 +363,7 @@ class Projet16 extends Component {
             type="text"
             placeholder="variety"
             required
+            value="100"
           />
           <div className="row m-0 p-0">
             <label htmlFor="fill" className="col text-right my-auto">
@@ -364,7 +372,11 @@ class Projet16 extends Component {
             <select id="fill" className="col" onChange={this.fillChanging}>
               {colorsName.map((color, key) => {
                 return (
-                  <option key={key} value={color}>
+                  <option
+                    key={key}
+                    value={color}
+                    selected={color == "Purple" ? true : false}
+                  >
                     {color}
                   </option>
                 );
@@ -382,7 +394,11 @@ class Projet16 extends Component {
             <select id="stroke" className="col" onChange={this.strokeChanging}>
               {colorsName.map((color, key) => {
                 return (
-                  <option key={key} value={color}>
+                  <option
+                    key={key}
+                    value={color}
+                    selected={color == "Purple" ? true : false}
+                  >
                     {color}
                   </option>
                 );
@@ -398,15 +414,20 @@ class Projet16 extends Component {
             className="form-control"
             type="text"
             placeholder="duration"
+            value="100"
             required
           />
-          <input className="form-control" type="submit" value="Add" />
+          <input
+            className="form-control btn btn-dark"
+            type="submit"
+            value="Add"
+          />
         </form>
         <a href="data:text/plain;charset=utf-8,nothing">
-          <button className="w-100">Download</button>
+          <button className="w-100 mt-5 btn btn-dark">Download</button>
         </a>
-        <h3>or copypaste this:</h3>
-        <div id="code"></div>
+        <h4 className="text-center">or copypaste this:</h4>
+        <div id="code" style={{ width: "70%", margin: "auto" }}></div>
       </div>
     );
   }

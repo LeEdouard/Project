@@ -10,35 +10,59 @@ class Main extends Component {
         name: "Projet1",
         label: "2019",
         link: "2019",
-        className: "projet m-1 projet_important"
+        className: "projet m-1 projet_important",
+        description: "long scroll blog",
+        longDescription:
+          "Mon aventure à la formation Concepteur Développeur FrontEnd par le GRETA 92. Quelques animations par-ci par-là."
       },
       {
         id: 1,
         name: "Projet2",
         label: "db",
         link: "db_process",
-        className: "projet m-1 projet_bof"
+        className: "projet m-1 projet_bof",
+        description: "table filtering/sorting",
+        longDescription:
+          "Pas grand chose à voir dans ce projet là. json, fonctions de tri et filtre"
       },
       {
         id: 2,
         name: "Projet3",
         label: "fitness",
         link: "fitness_log",
-        className: "projet m-1 projet_important"
+        className: "projet m-1 projet_important",
+        description: "account + chart.js + mongoDB",
+        longDescription:
+          "J'ai voulu voir comment marche chart.js, puis j'ai continuer à développer le système de compte avec base de donnée mongoDB et serveur node"
       },
       {
         id: 3,
         name: "Projet4",
         label: "inspire",
         link: "inspiration",
-        className: "projet m-1"
+        className: "projet m-1",
+        description: "one scroll page + tracking",
+        longDescription: "J'ai voulu copier le style de certains sites"
       },
       {
         id: 4,
         name: "Projet5",
         label: "contact",
         link: "contact",
-        className: "projet m-1"
+        className: "projet m-1",
+        description: "simple form",
+        longDescription:
+          "Apprentrissage création d'un serveur node et de ses requêtes"
+      },
+      {
+        id: 5,
+        name: "Projet6",
+        label: "svg random",
+        link: "svg_random",
+        className: "projet m-1",
+        description: "randomizer de cercle svg",
+        longDescription:
+          "Animation randomizer qui peut servir de loading ou bien animation de fond dans vos vidéos"
       }
     ],
     terminalinput: "",
@@ -63,8 +87,11 @@ class Main extends Component {
 
     if (this.state.terminalinput === "ls") {
       this.setState({
-        h1: "2019 db_process fitness_log inspire contact secretfolder"
+        h1:
+          "2019 db_process fitness_log inspire contact svg_random secretfolder"
       });
+    } else if (folder === "svg_random") {
+      window.location = "/svg_random";
     } else if (folder === "contact") {
       window.location = "/contact";
     } else if (folder === "inspire") {
