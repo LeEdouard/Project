@@ -11,9 +11,6 @@ import Projet16 from "./projet1-6/projet1-6";
 
 class App extends Component {
   state = {};
-  // componentDidMount() {
-  //   fetch("https://mysterious-bayou-69637.herokuapp.com/szBcbzadb7HBc78E6WszBcbzadb7HBc78E6W");
-  // }
   render() {
     return (
       <div className="app">

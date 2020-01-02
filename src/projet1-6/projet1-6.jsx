@@ -367,14 +367,15 @@ class Projet16 extends Component {
             <label htmlFor="fill" className="col text-right my-auto">
               Background:
             </label>
-            <select id="fill" className="col" onChange={this.fillChanging}>
+            <select
+              id="fill"
+              className="col"
+              onChange={this.fillChanging}
+              defaultValue="Purple"
+            >
               {colorsName.map((color, key) => {
                 return (
-                  <option
-                    key={key}
-                    value={color}
-                    selected={color == "Purple" ? true : false}
-                  >
+                  <option key={key} value={color}>
                     {color}
                   </option>
                 );
@@ -389,14 +390,15 @@ class Projet16 extends Component {
             <label htmlFor="stroke" className="col text-right my-auto">
               Line:
             </label>
-            <select id="stroke" className="col" onChange={this.strokeChanging}>
+            <select
+              id="stroke"
+              className="col"
+              onChange={this.strokeChanging}
+              defaultValue="Purple"
+            >
               {colorsName.map((color, key) => {
                 return (
-                  <option
-                    key={key}
-                    value={color}
-                    selected={color == "Purple" ? true : false}
-                  >
+                  <option key={key} value={color}>
                     {color}
                   </option>
                 );

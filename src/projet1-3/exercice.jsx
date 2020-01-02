@@ -45,8 +45,8 @@ class Exercice extends Component {
     }
     diff.unshift(0);
 
-    var ctx = document.getElementById(exerciceData.id);
-    var myChart = new Chart(ctx, {
+    let ctx = document.getElementById(exerciceData.id);
+    new Chart(ctx, {
       type: "line",
       display: false,
       data: {
