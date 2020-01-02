@@ -148,10 +148,10 @@ class Projet16 extends Component {
     e.preventDefault();
     this.setNewShape(
       e.target[0].value,
-      parseInt(e.target[1].value) ? e.target[1].value : 1,
+      parseInt(e.target[1].value) ? e.target[1].value : 100,
       e.target[2].value,
       e.target[3].value,
-      parseInt(e.target[4].value) ? e.target[4].value : 1
+      parseInt(e.target[4].value) ? e.target[4].value : 100
     );
   };
 
@@ -350,7 +350,7 @@ class Projet16 extends Component {
 
         <form
           className="form-group"
-          style={{ width: "70%", margin: "auto" }}
+          style={{ width: "70%", margin: "auto", maxWidth: "500px" }}
           onSubmit={this.submiting}
         >
           <select id="type" className="col" onChange={this.typeChanging}>
@@ -361,9 +361,7 @@ class Projet16 extends Component {
           <input
             className="form-control"
             type="text"
-            placeholder="variety"
-            required
-            value="100"
+            placeholder="100 varieties"
           />
           <div className="row m-0 p-0">
             <label htmlFor="fill" className="col text-right my-auto">
@@ -413,9 +411,7 @@ class Projet16 extends Component {
           <input
             className="form-control"
             type="text"
-            placeholder="duration"
-            value="100"
-            required
+            placeholder="100s duration"
           />
           <input
             className="form-control btn btn-dark"

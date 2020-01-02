@@ -1474,9 +1474,9 @@ PROJET 1-6
 
 */
 
-.svg_random input::placeholder {
+/* .svg_random input::placeholder {
   text-align: center;
-}
+} */
 
 .svg_random #svg {
   text-align: center;
