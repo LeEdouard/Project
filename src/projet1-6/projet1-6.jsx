@@ -136,7 +136,7 @@ class Projet16 extends Component {
     const filename = "svg.svg";
     const text = document.getElementById("svg").innerHTML;
     document
-      .getElementsByTagName("a")[0]
+      .getElementById("download")
       .setAttribute(
         "href",
         "data:text/plain;charset=utf-8," + encodeURIComponent(text)
@@ -325,7 +325,7 @@ class Projet16 extends Component {
     ];
     return (
       <div className="svg_random">
-        <p>
+        <p className="w-50 m-auto">
           L'idée m'est venue après avoir vu{" "}
           <a href="https://www.youtube.com/watch?v=bRIL9kMJJSc">
             cette vidéo sur youtube
@@ -421,8 +421,22 @@ class Projet16 extends Component {
             value="Add"
           />
         </form>
-        <a href="data:text/plain;charset=utf-8,nothing">
-          <button className="w-100 mt-5 btn btn-dark">Download</button>
+        <a
+          id="download"
+          href="data:text/plain;charset=utf-8,nothing"
+          className="w-100 d-block text-center"
+        >
+          <button
+            className="mt-5 btn btn-dark"
+            style={{
+              width: "70%",
+              margin: "auto",
+              maxWidth: "500px",
+              height: "3em"
+            }}
+          >
+            Download
+          </button>
         </a>
         <h4 className="text-center">or copypaste this:</h4>
         <div id="code" style={{ width: "70%", margin: "auto" }}></div>
