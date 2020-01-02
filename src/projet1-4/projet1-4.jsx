@@ -10,7 +10,7 @@ import { faStepBackward } from "@fortawesome/free-solid-svg-icons";
 class Projet14 extends Component {
   state = {
     currentSection: 0,
-    timer: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    timer: [0, 0, 0, 0, 0, 0],
     dateOpen: "",
     touchstartPos: 0
   };
@@ -95,13 +95,13 @@ class Projet14 extends Component {
   goDownOne = () => {
     let allSections = document.getElementsByTagName("section");
     let nextPosition =
-      this.state.currentSection < 10
+      this.state.currentSection < 5
         ? allSections[this.state.currentSection + 1].getBoundingClientRect().y +
           window.scrollY
         : allSections[this.state.currentSection].getBoundingClientRect().y +
           window.scrollY;
     window.scrollTo(0, nextPosition);
-    if (this.state.currentSection < 10) {
+    if (this.state.currentSection < 5) {
       this.setState({ currentSection: this.state.currentSection + 1 });
     }
   };
@@ -161,37 +161,12 @@ class Projet14 extends Component {
         </section>
         <section id="5">
           <div className="filter d-flex">
-            <div className="quote m-auto h1">Image 6</div>
-          </div>
-        </section>
-        <section id="6">
-          <div className="filter d-flex">
-            <div className="quote m-auto h1">Image 7</div>
-          </div>
-        </section>
-        <section id="7">
-          <div className="filter d-flex">
-            <div className="quote m-auto h1">Image 8</div>
-          </div>
-        </section>
-        <section id="8">
-          <div className="filter d-flex">
-            <div className="quote m-auto h1">Image 9</div>
-          </div>
-        </section>
-        <section id="9">
-          <div className="filter d-flex">
-            <div className="quote m-auto h1">Fin ?</div>
-          </div>
-        </section>
-        <section id="10">
-          <div className="filter d-flex">
             <div className="quote m-auto h1">
               <h1>Temps passé sur chaque image</h1>
               {this.state.timer.map((sectionTimer, key) => {
                 return (
                   <li key={key}>
-                    {key} :{" "}
+                    {key + 1} :{" "}
                     {sectionTimer % 1 !== 0
                       ? sectionTimer
                       : sectionTimer + ".0"}
