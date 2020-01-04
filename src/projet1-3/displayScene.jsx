@@ -25,9 +25,8 @@ class Projet13 extends Component {
         .classList.remove("opacityZero");
     }, 0);
 
-    // https://mysterious-bayou-69637.herokuapp.com/df6g54sd65f4g6sd5fg9
-    // http://localhost:8000/df6g54sd65f4g6sd5fg9
-    fetch("https://mysterious-bayou-69637.herokuapp.com/df6g54sd65f4g6sd5fg9", {
+    fetch("http://localhost:8000/df6g54sd65f4g6sd5fg9", {
+      // fetch("https://mysterious-bayou-69637.herokuapp.com/df6g54sd65f4g6sd5fg9", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -42,7 +41,7 @@ class Projet13 extends Component {
         })
       )
       .then(() => this.setState({ select: this.state.exercices[0].id }))
-      .catch(() => console.log("error could not fetch"));
+      .catch(() => console.log("nothing fetched"));
   }
 
   fadeout = () => {
@@ -80,7 +79,7 @@ class Projet13 extends Component {
   };
   onsubmit = e => {
     e.preventDefault();
-    if (parseInt(this.state.repsInput)) {
+    if (parseFloat(this.state.repsInput)) {
       let newExercices = [...this.state.exercices];
       const findingExo = newExercices.find(
         exo => exo.id === parseInt(this.state.select)
@@ -89,7 +88,7 @@ class Projet13 extends Component {
       if (newExercices[indexOfFoundExo].entries.length === 0) {
         newExercices[indexOfFoundExo].entries[0] = {
           id: 1,
-          value: parseInt(this.state.repsInput)
+          value: parseFloat(this.state.repsInput)
         };
       } else {
         const previousEntryId =
@@ -100,7 +99,7 @@ class Projet13 extends Component {
           newExercices[indexOfFoundExo].entries.length
         ] = {
           id: previousEntryId + 1,
-          value: parseInt(this.state.repsInput)
+          value: parseFloat(this.state.repsInput)
         };
       }
 
@@ -158,17 +157,13 @@ class Projet13 extends Component {
 
   deleteLog = () => {
     this.setState({ movingToTop: true });
-    console.log(this.state.exercices);
-    console.log("select", this.state.select);
+
     let newExercices = [...this.state.exercices];
     const findingExo = newExercices.find(
       exo => parseInt(exo.id) === parseInt(this.state.select)
     );
 
-    console.log(findingExo);
-
     const indexOfFoundExo = newExercices.indexOf(findingExo);
-    console.log(indexOfFoundExo);
 
     newExercices.splice(indexOfFoundExo, 1);
 

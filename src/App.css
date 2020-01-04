@@ -1055,7 +1055,8 @@ PROJET 1-3
 .sideForm_sticky {
   top: 0;
 }
-.sideForm input {
+.sideForm input,
+#typeSelect {
   margin-top: 5px;
 }
 .sideForm {

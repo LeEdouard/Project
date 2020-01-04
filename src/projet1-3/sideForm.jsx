@@ -52,30 +52,32 @@ class SideForm extends Component {
                   value="New entry"
                 />
               </form>
-              <input
-                className="form-control btn btn-outline-danger text-white"
-                type="submit"
-                value="Delete entry"
-                onClick={this.props.deleteEntry}
-              />
-              <input
-                className="form-control btn btn-outline-danger text-white"
-                type="submit"
-                value="Reset log"
-                onClick={this.props.resetLog}
-              />
-              <input
-                className="form-control btn btn-outline-danger text-white"
-                type="submit"
-                value="Delete Exo"
-                onClick={this.props.deleteLog}
-              />
-              <input
-                className="form-control btn btn-outline-primary text-white"
-                type="submit"
-                value="Move to first"
-                onClick={this.props.moveToFirst}
-              />
+              <div className="form-group">
+                <input
+                  className="form-control btn btn-outline-danger text-white"
+                  type="submit"
+                  value="Delete entry"
+                  onClick={this.props.deleteEntry}
+                />
+                <input
+                  className="form-control btn btn-outline-danger text-white"
+                  type="submit"
+                  value="Reset log"
+                  onClick={this.props.resetLog}
+                />
+                <input
+                  className="form-control btn btn-outline-danger text-white"
+                  type="submit"
+                  value="Delete Exo"
+                  onClick={this.props.deleteLog}
+                />
+                <input
+                  className="form-control btn btn-outline-primary text-white"
+                  type="submit"
+                  value="Move to first"
+                  onClick={this.props.moveToFirst}
+                />
+              </div>
             </>
           )}
 
@@ -88,6 +90,15 @@ class SideForm extends Component {
               onChange={this.props.onchange}
               value={this.props.exoValue}
             />
+            {/* <select
+              className="w-100 text-center custom-select"
+              id="typeSelect"
+              onChange={this.props.onchange}
+            >
+              <option value="Reps">Reps</option>
+              <option value="Minutes">Minutes</option>
+              <option value="Km">Kilometers</option>
+            </select> */}
             <input
               className="form-control btn btn-outline-primary text-white"
               type="submit"

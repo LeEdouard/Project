@@ -80,8 +80,7 @@ class Projet13 extends Component {
           document.getElementsByClassName("loading")[0].style["opacity"] = 0;
         })
         .catch(() => {
-          console.log("error to get response");
-          document.getElementsByClassName("loading")[0].style["opacity"] = 0;
+          console.log("catch registering");
         });
     } else {
       this.setState({ error2: "Please fill everything" });
